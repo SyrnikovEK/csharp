@@ -10,8 +10,63 @@ namespace firstgit
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hi, GitHub!!!");
+            //----------------------------------------------------------------------------------------------------------------
+            /*System.Console.WriteLine("+-------------------------------+");
+            System.Console.WriteLine("|Сырников Евгений Константинович|");
+            System.Console.WriteLine("+-------------------------------+");
+            System.Console.ReadKey();*/
+            //----------------------------------------------------------------------------------------------------------------
+            /*int a,b;
+            int sup;
+            Console.WriteLine("Write two numbers");
+            a = int.Parse(Console.ReadLine());
+            b = int.Parse(Console.ReadLine());
+            sup = a > b ? a : b;
+            Console.WriteLine(sup + " is bigger");
+            System.Console.ReadKey();*/
+            //----------------------------------------------------------------------------------------------------------------
+            /*string s;
+            Console.WriteLine("Say something, animal");
+            s = Console.ReadLine();
+            switch (s)
+            {
+                case "myau":
+                    {
+                        Console.WriteLine("feed the cat!");
+                        break;
+                    }
+                case "gav":
+                    {
+                        Console.WriteLine("walk the dog!");
+                        break;
+                    }
+                default:
+                    {
+                        Console.WriteLine("wrong!");
+                        break;
+                    }
+            }
+            Console.ReadKey();*/
+            //----------------------------------------------------------------------------------------------------------------
+            int m;
+            m = int.Parse(Console.ReadLine());
+            if (m > 12 || m < 1)
+            {
+                Console.WriteLine("error!");
+            }
+            else
+            {
+                if (m == 1 || m == 2 || m == 12)
+                    Console.WriteLine("winter");
+                if (m == 3 || m == 4 || m == 5)
+                    Console.WriteLine("spring");
+                if (m == 6 || m == 7 || m == 8)
+                    Console.WriteLine("summer");
+                if (m == 9 || m == 10 || m == 11)
+                    Console.WriteLine("autumn");
+            }
             Console.ReadKey();
+            //----------------------------------------------------------------------------------------------------------------
         }
     }
 }
