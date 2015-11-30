@@ -48,7 +48,7 @@ namespace firstgit
             }
             Console.ReadKey();*/
             //----------------------------------------------------------------------------------------------------------------
-            int m;
+            /*int m;
             m = int.Parse(Console.ReadLine());
             if (m > 12 || m < 1)
             {
@@ -65,8 +65,60 @@ namespace firstgit
                 if (m == 9 || m == 10 || m == 11)
                     Console.WriteLine("autumn");
             }
-            Console.ReadKey();
+            Console.ReadKey();*/
             //----------------------------------------------------------------------------------------------------------------
+            /*int q;
+            Console.WriteLine("enter 1 or 0");
+            q = int.Parse(Console.ReadLine());          
+            Console.WriteLine(q == 1 ? "good" : "bad");
+            Console.ReadKey();*/
+            //----------------------------------------------------------------------------------------------------------------
+            /*int day;
+            Console.WriteLine("enter number of day");
+            day = int.Parse(Console.ReadLine());
+            switch (day)
+            {
+                case 1:
+                    {
+                        Console.WriteLine("monday");
+                        break;
+                    }
+                case 2:
+                    {
+                        Console.WriteLine("tuesday");
+                        break;
+                    }
+                case 3:
+                    {
+                        Console.WriteLine("wednesday");
+                        break;
+                    }
+                case 4:
+                    {
+                        Console.WriteLine("thursday");
+                        break;
+                    }
+                case 5:
+                    {
+                        Console.WriteLine("friday");
+                        break;
+                    }
+                case 6:
+                    {
+                        Console.WriteLine("saturday");
+                        break;
+                    }
+                case 7:
+                    {
+                        Console.WriteLine("sundey");
+                        break;
+                    }
+                default:
+                    break;
+            }
+            Console.ReadKey();*/
+            //----------------------------------------------------------------------------------------------------------------
+
         }
     }
 }
