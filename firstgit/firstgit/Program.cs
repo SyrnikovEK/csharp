@@ -18,12 +18,12 @@ namespace firstgit
             +-------------------------------+
             */
 
-            /*
+            
             System.Console.WriteLine("+-------------------------------+");
             System.Console.WriteLine("|Сырников Евгений Константинович|");
             System.Console.WriteLine("+-------------------------------+");
             System.Console.ReadKey();
-            */
+            
             //----------------------------------------------------------------------------------------------------------------
             /*
             1.	Пользователь вводит два числа. Вывести на экран большее
@@ -189,7 +189,7 @@ namespace firstgit
             smpl = true;
             Console.WriteLine("inpun N");
             number = int.Parse(Console.ReadLine());
-            for (int i = 2; i < number; i++)
+            for (int i = 2; i < number/2; i++)
             {
                 if (number % i == 0)
                     smpl = false;
@@ -259,6 +259,164 @@ namespace firstgit
             Console.ReadKey();
             */
             //----------------------------------------------------------------------------------------------------------------
+            /*
+            1.	Вывести на экран таблицу умножения на N от 1 до 20 где N число введенное пользователем
+            */
+
+            /*
+            int n;
+            Console.WriteLine("inpun N");
+            n = int.Parse(Console.ReadLine());
+            for (int i = 1; i < 21 ; i++)
+                Console.WriteLine(n + " * " + i + " = " + n * i);
+            Console.ReadKey();
+            */
+            //----------------------------------------------------------------------------------------------------------------
+            /*
+            2.	Пользователь вводит число вывесли на экран количество разрядов в этом числе
+            */
+
+            /*
+            int n , r , i , j;
+            Console.WriteLine("inpun N");
+            n = int.Parse(Console.ReadLine());
+            r = 1;
+            i = 0;
+            j = 10;
+            while (r != 0)
+            {
+                r = n / j;
+                j *= 10;
+                i++;
+            }
+            Console.WriteLine(i);
+            Console.ReadKey();
+            */
+            //----------------------------------------------------------------------------------------------------------------
+            /*
+            3.	Программа загадывает число от 1 до 146. Пользователь пытается его угадать. В случае не верного ответа программа дает подсказку «больше» или «меньше»
+            */
+
+            /*
+            int number , unumber;
+            bool more = true;
+            Random r = new Random();
+            number = r.Next(1, 147);
+            Console.WriteLine("try to guess ther number");
+            while (more)
+            {
+                unumber = int.Parse(Console.ReadLine());
+                if (number == unumber)
+                {
+                    more = false;
+                    Console.WriteLine("you guess");
+                }
+                if (unumber > number)
+                    Console.WriteLine("less, try again");
+                if (unumber < number)
+                    Console.WriteLine("more, try again");
+            }
+            Console.ReadKey();
+            */
+            //----------------------------------------------------------------------------------------------------------------
+            /*
+            4.	Выведите все точные квадраты натуральных чисел, которые (квадраты) меньше заданного числа N. 
+            (натуральные - это числа, которые мы используем при счёте: 1, 2, 3 и т.д.) 
+            */
+
+            /*
+            int number, n;
+            bool smpl;
+            smpl = true;
+            Console.WriteLine("inpun N");
+            number = int.Parse(Console.ReadLine());
+            n = (int)Math.Sqrt(number);
+
+            for (int j = 1; j <= n; j++)
+            {
+                for (int i = 2; i < j; i++)
+                {
+                    if (j % i == 0)
+                        smpl = false;
+                }
+                if (smpl)
+                {
+                    Console.WriteLine(j*j);
+                }
+                smpl = true;
+            }
+            Console.ReadKey();
+            */
+            //----------------------------------------------------------------------------------------------------------------
+            /*
+            5.	Прочитать с клавиатуры 5 целых чисел, посчитать их среднее арифметическое и сообщить его пользователю 
+            */
+            /*
+            int sum;
+            sum = 0;
+            Console.WriteLine("input 5 numbers");
+            for (int i = 0; i < 5; i++)
+            {
+                sum += int.Parse(Console.ReadLine());
+            }
+            Console.WriteLine("average is " + sum/5);
+            Console.ReadKey();
+            */
+            //----------------------------------------------------------------------------------------------------------------
+            /*
+            6.	Создать 5 случайных целых чисел, посчитать их среднее арифметическое и сообщить его пользователю 
+            */
+
+            /*
+            int sum , c;
+            sum = 0;
+            Random r = new Random();
+            for (int i = 0; i < 5; i++)
+            {
+                c = r.Next(1, 1001);
+                sum += c;
+                Console.WriteLine(c);
+            }
+            Console.WriteLine("average is " + sum / 5);
+            Console.ReadKey();
+            */
+            //----------------------------------------------------------------------------------------------------------------
+            /*
+            7.	У гусей и кроликов вместе 64 лапы. Сколько может быть кроликов и гусей (указать все сочетания)? 
+            */
+
+            /*
+            int count;
+            count = 0;
+            while ((64 - count * 4) >= 0)
+            {
+                Console.WriteLine(count + " rabbits and " + (64-count*4)/2 + " gooses");
+                count++;
+            }
+            Console.ReadKey();
+            */
+            //----------------------------------------------------------------------------------------------------------------
+            /*
+            8.	Напишите программу, которая будет «спрашивать» правильный пароль, до тех пор, пока он не будет введен. 
+            Правильный пароль пусть будет «root». Если пароль не верный, программа должна сказать "Неверный пароль!" 
+            */
+
+            /*
+            bool wrongpass = true;
+            while (wrongpass)
+            {
+                Console.WriteLine("enter password");
+                if (Console.ReadLine() == "root")
+                {
+                    Console.WriteLine("correct");
+                    wrongpass = false;
+                }
+                else
+                    Console.WriteLine("wrong password");
+                  
+            }
+            Console.ReadKey();
+            */
         }
     }
 }
