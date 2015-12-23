@@ -10,7 +10,9 @@ namespace homework1
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("s");
+            task1 t1 = new task1();
+            t1.DoSomething();
+            Console.ReadKey();
         }
     }
 }
