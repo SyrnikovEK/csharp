@@ -23,8 +23,28 @@ namespace homework1
         private double side2;
 
 
-        public double Side1 { get; set; }
-        public double Side2 { get; set; }
+        public double Side1
+        {
+            get
+            {
+                return side1;
+            }
+            set
+            {
+                side1 = value;
+            }
+        }
+        public double Side2
+        {
+            get
+            {
+                return side2;
+            }
+            set
+            {
+                side2 = value;
+            }
+        }
 
         public double Area
         {
