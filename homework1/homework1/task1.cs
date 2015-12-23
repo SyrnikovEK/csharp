@@ -6,35 +6,42 @@ using System.Threading.Tasks;
 
 namespace homework1
 {
-    public class task1
+    public class Task1
     {
         public void DoSomething()
         {
             Address adress1 = new Address();
-            adress1.index = 500;
-            adress1.country = "Ukraine";
-            adress1.city = "Dnepropetrovsk";
-            adress1.street = "Gogol st.";
-            adress1.house = 101;
-            adress1.apartment = 303;
+            adress1.Index = 500;
+            adress1.Country = "Ukraine";
+            adress1.City = "Dnepropetrovsk";
+            adress1.Street = "Gogol st.";
+            adress1.House = 101;
+            adress1.Apartment = 303;
 
-            Console.WriteLine("Index: {0}",adress1.index);
-            Console.WriteLine("Country: {0}", adress1.country);
-            Console.WriteLine("City: {0}", adress1.city);
-            Console.WriteLine("Street: {0}", adress1.street);
-            Console.WriteLine("House: {0}", adress1.house);
-            Console.WriteLine("Apartmrnt: {0}", adress1.apartment);
+            Console.WriteLine("Index: {0}",adress1.Index);
+            Console.WriteLine("Country: {0}", adress1.Country);
+            Console.WriteLine("City: {0}", adress1.City);
+            Console.WriteLine("Street: {0}", adress1.Street);
+            Console.WriteLine("House: {0}", adress1.House);
+            Console.WriteLine("Apartmrnt: {0}", adress1.Apartment);
         }
     }
 
     public class Address
     {
-        public int index { get; set; }
-        public string country { get; set; }
-        public string city { get; set; }
-        public string street { get; set; }
-        public int house { get; set; }
-        public int apartment { get; set; }
+        private int index;
+        private string country;
+        private string city;
+        private string street;
+        private int house;
+        private int apartment;
 
+
+        public int Index { get; set; }
+        public string Country { get; set; }
+        public string City { get; set; }
+        public string Street { get; set; }
+        public int House { get; set; }
+        public int Apartment { get; set; }
     }
 }

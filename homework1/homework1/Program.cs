@@ -10,8 +10,14 @@ namespace homework1
     {
         static void Main(string[] args)
         {
-            task1 t1 = new task1();
-            t1.DoSomething();
+
+            //Task1 t1 = new Task1();
+            //t1.DoSomething();
+
+            Task2 t2 = new Task2();
+            t2.DoSomething();
+
+
             Console.ReadKey();
         }
     }
