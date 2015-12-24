@@ -17,8 +17,14 @@ namespace homework1
             //Task2 t2 = new Task2();
             //t2.DoSomething();
 
-            Task3 t3 = new Task3();
-            t3.DoSomething();
+            //Task3 t3 = new Task3();
+            //t3.DoSomething();
+
+            //Task4 t4 = new Task4();
+            //t4.DoSomething();
+
+            Task5 t5 = new Task5();
+            t5.DoSomething();
 
 
             Console.ReadKey();
