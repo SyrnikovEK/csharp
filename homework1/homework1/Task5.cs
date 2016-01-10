@@ -94,11 +94,11 @@ namespace homework1
 
             public void Show()
             {
-                Console.WriteLine(login);
-                Console.WriteLine(name);
-                Console.WriteLine(sname);
-                Console.WriteLine(age);
-                Console.WriteLine(date);
+                Console.WriteLine("Login: " + login);
+                Console.WriteLine("Name: " + name);
+                Console.WriteLine("Second name: " + sname);
+                Console.WriteLine("Age: " + age);
+                Console.WriteLine("Date of creating: " + date.ToShortDateString());
             }
         }
     }
