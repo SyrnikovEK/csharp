@@ -13,14 +13,14 @@ namespace homework2
             //Task1 t1 = new Task1();
             //t1.DoSomething();
 
-            Task2 t2 = new Task2();
-            t2.DoSomething();
+            //Task2 t2 = new Task2();
+            //t2.DoSomething();
 
-            //Task3 t3 = new Task3();
-            //t1.DoSomething();
+            Task3 t3 = new Task3();
+            t3.DoSomething();
 
             //Task4 t4 = new Task4();
-            //t1.DoSomething();
+            //t4.DoSomething();
         }
     }
 }
