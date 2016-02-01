@@ -75,7 +75,7 @@ namespace Task1
                             }
                         default:
                             {
-                                Console.WriteLine("Error!!!");
+                                //Console.WriteLine("Error!!!");
                                 break;
                             }
                     }
