@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Task2
+namespace Task3
 {
     class Program
     {
@@ -12,15 +12,6 @@ namespace Task2
         {
             Random r1 = new Random();
             int[] arr = new int[] { 2, 4, 1, 3, 5, 9, 6, 0, 8, 7 };
-            //for (int i = 0; i < arr.Length; i++)
-            //{
-            //    Console.Write(arr[i] + " ");
-            //}
-
-            //arr.MySort(0, arr.Length - 1);
-
-
-
             int[] arr2 = new int[10];
             for (int i = 0; i < arr2.Length; i++)
             {
@@ -30,7 +21,7 @@ namespace Task2
             {
                 Console.Write(arr2[i] + " ");
             }
-            arr2.MySort(0, arr2.Length - 1);
+            arr2.MySort(0, arr2.Length - 1 , false);
 
             Console.ReadKey();
         }
