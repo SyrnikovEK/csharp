@@ -8,10 +8,10 @@ namespace Task1
 {
     public static class Calculator
     {
-        public static void Sum<S1 , S2>(S1 sum1 , S2 sum2)
+        public static double Calculate(string expression)
         {
-            Console.WriteLine(sum1);
-            Console.WriteLine(sum2);
+            expression.DeleteSpaces();
+            return 0;
         }
     }
 }
