@@ -45,6 +45,7 @@
   <ItemGroup>
     <Compile Include="Calculator.cs" />
     <Compile Include="ExtensionClass.cs" />
+    <Compile Include="PolishNotationCalculator.cs" />
     <Compile Include="PolishNotationConverter.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

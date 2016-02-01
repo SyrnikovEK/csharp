@@ -10,13 +10,19 @@ namespace Task1
     {
         static void Main(string[] args)
         {
-            //int a = 45;
-            //double b = 45.45;
-            //Calculator.Sum(a,b);
             //Console.WriteLine("a a a");
             //Console.WriteLine("   a b c d e   ".DeleteSpaces());
+            //Console.WriteLine(PolishNotationCalculator.Calculate(PolishNotationConverter.Convert()));
 
-            Console.WriteLine(PolishNotationConverter.Convert("3+4*2/(1-5)^2"));
+            string expr = "";
+            //expr = "3+4*2/(1-5)^2";         ans 3.5
+            //expr = "(8+2*5)/(1+3*2-4)";     ans 6
+
+
+
+            Console.WriteLine("Enter expression");
+            expr = Console.ReadLine();
+            Console.WriteLine(Calculator.Calculate(expr));
 
             Console.ReadKey();
         }

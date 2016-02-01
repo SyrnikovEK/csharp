@@ -11,7 +11,7 @@ namespace Task1
         public static double Calculate(string expression)
         {
             expression.DeleteSpaces();
-            return 0;
+            return PolishNotationCalculator.Calculate(PolishNotationConverter.Convert(expression));
         }
     }
 }
