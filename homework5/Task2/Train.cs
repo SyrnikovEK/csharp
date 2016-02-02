@@ -8,11 +8,11 @@ namespace Task2
 {
     struct Train
     {
-        string Name;
-        int Number;
-        DateTime Time;
+        public string Name;
+        public int Number;
+        public string Time;  //kostyl'
 
-        public Train(string name , int number , DateTime time)
+        public Train(string name , int number , string time)
         {
             Name = name;
             Number = number;
