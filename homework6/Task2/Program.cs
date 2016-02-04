@@ -12,14 +12,26 @@ namespace Task2
         public delegate bool MyDelegate2(int par1, int par2 , out double res);
         static void Main(string[] args)
         {
-            int a = 1;
-            int b = 2;
+            int a = 2;
+            int b = 3;
             double c = 0;
 
             MyDelegate1 Sum = (int par1, int par2) => { return (par1 + par2); };
             MyDelegate1 Sub = (int par1, int par2) => { return par1 - par2; };
             MyDelegate1 Mult = (int par1, int par2) => { return par1 * par2; };
-            MyDelegate2 Div = (int par1, int par2, out double res) => { res = ((double)par1 / (double)par2); return true; };
+            MyDelegate2 Div = (int par1, int par2, out double res) => 
+            {
+                if (par2 != 0)
+                {
+                    res = ((double)par1 / (double)par2);
+                    return true;
+                }
+                else
+                {
+                    res = 0;
+                    return false;
+                }
+            };
 
             Console.WriteLine(Sum(a , b));
             Console.WriteLine(Sub(a, b));
