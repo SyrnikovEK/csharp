@@ -36,34 +36,34 @@ namespace Task3
         }
 
 
-        public KeyValuePair this[TKey index]
-        {
-            get
-            {
-                for (int i = 0; i < items.Length; i++)
-                {
-                    if (items[i].key == index) //
-                    {
-                        return items[i];
-                        break;
-                    }
-                }
-            }
+        //public KeyValuePair this[TKey index]
+        //{
+        //    get
+        //    {
+        //        for (int i = 0; i < items.Length; i++)
+        //        {
+        //            if (items[i].key == index) //
+        //            {
+        //                return items[i];
+        //                break;
+        //            }
+        //        }
+        //    }
 
-            set
-            {
-                items[index] = value;
-            }
-        }
+        //    set
+        //    {
+        //        items[index] = value;
+        //    }
+        //}
 
-        public void Add(KeyValuePair item)
-        {
-            KeyValuePair[] newitems = new KeyValuePair[length];
-            Array.Copy(items, newitems, length);
-            items = new KeyValuePair[length + 1];
-            Array.Copy(newitems, items, newitems.Length);
-            items[length] = item;
-            length++;
-        }
+        //public void Add(KeyValuePair item)
+        //{
+        //    KeyValuePair[] newitems = new KeyValuePair[length];
+        //    Array.Copy(items, newitems, length);
+        //    items = new KeyValuePair[length + 1];
+        //    Array.Copy(newitems, items, newitems.Length);
+        //    items[length] = item;
+        //    length++;
+        //}
     }
 }
