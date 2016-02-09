@@ -54,5 +54,31 @@ namespace Task2
             
         }
 
+        public void Delete()
+        {
+            T[] newitems = new T[length];
+            Array.Copy(items, newitems, length);
+            items = new T[length - 1];
+            Array.Copy(newitems, items, newitems.Length-1);
+            length--;
+        }
+
+        public void Delete(int index)
+        {
+            T[] newitems = new T[length];
+            Array.Copy(items, newitems, length);
+            items = new T[length - 1];
+            for (int i = 0; i < index; i++)
+            {
+                items[i] = newitems[i];
+            }
+            for (int i = index + 1; i < newitems.Length; i++)
+            {
+                items[i-1] = newitems[i];
+            }
+            //Array.Copy(newitems, items, newitems.Length - 1);
+            length--;
+        }
+
     }
 }

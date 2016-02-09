@@ -8,7 +8,7 @@ namespace Task3
 {
     public class MyDictionary<TKey , TValue>
     {
-        private struct KeyValuePair//<TKey , TValue>
+        public class KeyValuePair//<TKey , TValue>
         {
             public TKey key;
             public TValue value;
@@ -56,14 +56,14 @@ namespace Task3
         //    }
         //}
 
-        //public void Add(KeyValuePair item)
-        //{
-        //    KeyValuePair[] newitems = new KeyValuePair[length];
-        //    Array.Copy(items, newitems, length);
-        //    items = new KeyValuePair[length + 1];
-        //    Array.Copy(newitems, items, newitems.Length);
-        //    items[length] = item;
-        //    length++;
-        //}
+        public void Add(KeyValuePair item)
+        {
+            KeyValuePair[] newitems = new KeyValuePair[length];
+            Array.Copy(items, newitems, length);
+            items = new KeyValuePair[length + 1];
+            Array.Copy(newitems, items, newitems.Length);
+            items[length] = item;
+            length++;
+        }
     }
 }

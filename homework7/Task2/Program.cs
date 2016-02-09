@@ -13,6 +13,8 @@ namespace Task2
             MyList<int> myList = new MyList<int>(10);
             myList[3] = 2;
             myList.Add(3);
+            //myList.Delete();
+            myList.Delete(3);
 
             for (int i = 0; i < myList.Length; i++)
             {
