@@ -48,14 +48,14 @@ namespace fight_club
         {
             get
             {
-                return straight;
+                return agility;
             }
         }
         public int Stamina
         {
             get
             {
-                return straight;
+                return stamina;
             }
         }
         public int MaxHp
@@ -70,7 +70,7 @@ namespace fight_club
         {
             level = 1;
             name = "PlayerName";
-            straight = 2;
+            straight = 3;
             agility = 2;
             stamina = 1;
             hp = 100 + ((stamina - 1) * 5);
@@ -92,27 +92,20 @@ namespace fight_club
             int damage;
             if (part != blockedPart)
             {
-                if (par.agility > agility)
+                hp -= par.straight * 5;
+                damage = par.straight * 5;
+            }
+            else
+            {
+                if (Dice.Throw() + (par.agility - agility) > 14)
                 {
                     hp -= par.straight * 5;
                     damage = par.straight * 5;
                 }
                 else
                 {
-                    if (Dice.Throw() > 10)
-                    {
-                        hp -= par.straight * 5;
-                        damage = par.straight * 5;
-                    }
-                    else
-                    {
-                        damage = 0;
-                    }
+                    damage = 0;
                 }
-            }
-            else
-            {
-                damage = 0;
             }
             return damage;
         }

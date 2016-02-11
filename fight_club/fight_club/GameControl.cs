@@ -13,8 +13,8 @@ namespace fight_club
 
         public GameControl()
         {
-            player1 = new Player(1 , "Jack" , 3 , 3 , 2);
-            player2 = new Player(1, "Ted", 2, 3, 3); //new NPC();
+            player1 = new Player(2 , "Jack" , 3 , 3 , 2);
+            player2 = new Player(2, "Ted", 2, 2, 4); //new NPC();
         }
 
         public string[] EndTurn(BodyPart player1punch , BodyPart player1block , BodyPart player2punch , BodyPart player2block)

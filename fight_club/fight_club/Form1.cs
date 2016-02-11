@@ -20,8 +20,10 @@ namespace fight_club
         public frmGame()
         {
             InitializeComponent();
-            prbar_1st_hp.Value = 100;
-            prbar_2nd_hp.Value = 100;
+            prbar_1st_hp.Maximum = game.player1.MaxHp;
+            prbar_1st_hp.Value = game.player1.Hp;
+            prbar_2nd_hp.Maximum = game.player2.MaxHp;
+            prbar_2nd_hp.Value = game.player1.Hp;
             lbl_1st_hp.Text = game.player1.Hp + " / " + game.player1.MaxHp;
             lbl_2nd_hp.Text = game.player2.Hp + " / " + game.player2.MaxHp;
             lbl_1st_name.Text = game.player1.Name;
@@ -345,8 +347,8 @@ namespace fight_club
             if ((!btn_1st_endturn.Enabled) && (!btn_2nd_endturn.Enabled))
             {
                 string[] str = game.EndTurn(firstPlPunchChoosenPart, firstPlBlockChoosenPart, secondPlPunchChoosenPart, secondPlBlockChoosenPart);
-                prbar_1st_hp.Value = game.player1.Hp / (100 + (game.player1.Stamina - 1) * 5);
-                prbar_2nd_hp.Value = game.player2.Hp / (100 + (game.player2.Stamina - 1) * 5);
+                prbar_1st_hp.Value = game.player1.Hp;
+                prbar_2nd_hp.Value = game.player2.Hp;
                 lbl_1st_hp.Text = game.player1.Hp + " / " + (100 + (game.player1.Stamina - 1) * 5);
                 lbl_2nd_hp.Text = game.player2.Hp + " / " + (100 + (game.player2.Stamina - 1) * 5);
 
