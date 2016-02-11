@@ -14,7 +14,7 @@ namespace fight_club
         private int straight;
         private int agility;
         private int stamina;
-        private BodyPart blockedPart;
+        protected BodyPart blockedPart;
 
         public int Level
         {
@@ -59,20 +59,47 @@ namespace fight_club
             }
         }
 
+        public AbstractPlayer()
+        {
+            level = 1;
+            hp = 100;
+            name = "PlayerName";
+            straight = 2;
+            agility = 2;
+            stamina = 1;
+        }
+
+        public AbstractPlayer(int level , string name , int straight , int agility , int stamina)
+        {
+            this.level = level;
+            this.name = name;
+            hp = 100 + ((stamina - 1) * 5);
+            this.straight = straight;
+            this.agility = agility;
+            this.stamina = stamina; 
+        }
+
         public abstract void SetBlock(BodyPart part);
-        public void GetHit(BodyPart part , FightPapams par)
+        public int GetHit(BodyPart part , FightPapams par)
         {
             if (par.agility > agility)
             {
                 hp -= par.straight * 5;
+                return par.straight * 5;
             }
             else
             {
                 if (Dice.Throw() > 14)
                 {
                     hp -= par.straight * 5;
-                }         
+                    return par.straight * 5;
+                }
+                else
+                {
+                    return 0;
+                }       
             }
         }
+
     }
 }

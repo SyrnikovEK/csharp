@@ -58,6 +58,9 @@
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="IPlayer.cs" />
+    <Compile Include="NPC.cs" />
+    <Compile Include="Player.cs" />
+    <Compile Include="GameControl.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">

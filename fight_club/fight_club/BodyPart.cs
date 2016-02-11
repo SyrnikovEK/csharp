@@ -8,10 +8,10 @@ namespace fight_club
 {
     public enum BodyPart
     {
-        Head , 
-        Body ,
-        Feet ,
-        LeftHand , 
-        RightHand
+        Head = 0 , 
+        Body = 1,
+        Feet = 2,
+        LeftHand = 3, 
+        RightHand = 4
     }
 }

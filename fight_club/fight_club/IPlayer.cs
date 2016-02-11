@@ -9,6 +9,6 @@ namespace fight_club
     public interface IPlayer
     {
         void SetBlock(BodyPart part);
-        void GetHit(BodyPart part , FightPapams par);
+        int GetHit(BodyPart part , FightPapams par);
     }
 }
