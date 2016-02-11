@@ -70,6 +70,10 @@
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
+            this.panel8 = new System.Windows.Forms.Panel();
+            this.label11 = new System.Windows.Forms.Label();
+            this.panel9 = new System.Windows.Forms.Panel();
+            this.label12 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -77,6 +81,8 @@
             this.panel5.SuspendLayout();
             this.panel6.SuspendLayout();
             this.panel7.SuspendLayout();
+            this.panel8.SuspendLayout();
+            this.panel9.SuspendLayout();
             this.SuspendLayout();
             // 
             // button1
@@ -133,6 +139,7 @@
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.panel8);
             this.panel1.Controls.Add(this.label9);
             this.panel1.Controls.Add(this.button26);
             this.panel1.Controls.Add(this.panel4);
@@ -278,6 +285,7 @@
             // panel2
             // 
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.Controls.Add(this.panel9);
             this.panel2.Controls.Add(this.label10);
             this.panel2.Controls.Add(this.button6);
             this.panel2.Controls.Add(this.panel5);
@@ -478,6 +486,7 @@
             // 
             this.richTextBox1.Location = new System.Drawing.Point(3, 3);
             this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.ReadOnly = true;
             this.richTextBox1.Size = new System.Drawing.Size(478, 113);
             this.richTextBox1.TabIndex = 0;
             this.richTextBox1.Text = "";
@@ -501,6 +510,40 @@
             this.label10.Size = new System.Drawing.Size(66, 20);
             this.label10.TabIndex = 18;
             this.label10.Text = "40 / 100";
+            // 
+            // panel8
+            // 
+            this.panel8.Controls.Add(this.label11);
+            this.panel8.Location = new System.Drawing.Point(277, 10);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(167, 79);
+            this.panel8.TabIndex = 18;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(42, 33);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(79, 13);
+            this.label11.TabIndex = 0;
+            this.label11.Text = "place for image";
+            // 
+            // panel9
+            // 
+            this.panel9.Controls.Add(this.label12);
+            this.panel9.Location = new System.Drawing.Point(277, 10);
+            this.panel9.Name = "panel9";
+            this.panel9.Size = new System.Drawing.Size(167, 79);
+            this.panel9.TabIndex = 19;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(42, 33);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(79, 13);
+            this.label12.TabIndex = 0;
+            this.label12.Text = "place for image";
             // 
             // Form1
             // 
@@ -526,6 +569,10 @@
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
             this.panel7.ResumeLayout(false);
+            this.panel8.ResumeLayout(false);
+            this.panel8.PerformLayout();
+            this.panel9.ResumeLayout(false);
+            this.panel9.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -574,6 +621,10 @@
         private System.Windows.Forms.RichTextBox richTextBox1;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Panel panel8;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Panel panel9;
+        private System.Windows.Forms.Label label12;
     }
 }
 
