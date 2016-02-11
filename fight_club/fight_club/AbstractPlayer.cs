@@ -8,12 +8,12 @@ namespace fight_club
 {
     public abstract class AbstractPlayer : IPlayer
     {
-        private int level;
-        private int hp;
-        private string name;
-        private int straight;
-        private int agility;
-        private int stamina;
+        protected int level;
+        protected int hp;
+        protected string name;
+        protected int straight;
+        protected int agility;
+        protected int stamina;
         protected BodyPart blockedPart;
 
         public int Level
@@ -58,15 +58,22 @@ namespace fight_club
                 return straight;
             }
         }
+        public int MaxHp
+        {
+            get
+            {
+                return (100 + ((stamina - 1) * 5));
+            }
+        }
 
         public AbstractPlayer()
         {
             level = 1;
-            hp = 100;
             name = "PlayerName";
             straight = 2;
             agility = 2;
             stamina = 1;
+            hp = 100 + ((stamina - 1) * 5);
         }
 
         public AbstractPlayer(int level , string name , int straight , int agility , int stamina)
@@ -82,23 +89,32 @@ namespace fight_club
         public abstract void SetBlock(BodyPart part);
         public int GetHit(BodyPart part , FightPapams par)
         {
-            if (par.agility > agility)
+            int damage;
+            if (part != blockedPart)
             {
-                hp -= par.straight * 5;
-                return par.straight * 5;
-            }
-            else
-            {
-                if (Dice.Throw() > 14)
+                if (par.agility > agility)
                 {
                     hp -= par.straight * 5;
-                    return par.straight * 5;
+                    damage = par.straight * 5;
                 }
                 else
                 {
-                    return 0;
-                }       
+                    if (Dice.Throw() > 10)
+                    {
+                        hp -= par.straight * 5;
+                        damage = par.straight * 5;
+                    }
+                    else
+                    {
+                        damage = 0;
+                    }
+                }
             }
+            else
+            {
+                damage = 0;
+            }
+            return damage;
         }
 
     }

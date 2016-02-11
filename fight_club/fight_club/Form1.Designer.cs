@@ -38,14 +38,14 @@
             this.label11 = new System.Windows.Forms.Label();
             this.lbl_1st_hp = new System.Windows.Forms.Label();
             this.btn_1st_endturn = new System.Windows.Forms.Button();
-            this.panel4 = new System.Windows.Forms.Panel();
+            this.pnl_1st_block = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
             this.btn_1st_block_head = new System.Windows.Forms.Button();
             this.btn_1st_block_righthand = new System.Windows.Forms.Button();
             this.btn_1st_block_body = new System.Windows.Forms.Button();
             this.btn_1st_block_lefthand = new System.Windows.Forms.Button();
             this.btn_1st_block_feet = new System.Windows.Forms.Button();
-            this.panel3 = new System.Windows.Forms.Panel();
+            this.pnl_1st_punch = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.prbar_1st_hp = new System.Windows.Forms.ProgressBar();
@@ -55,14 +55,14 @@
             this.label12 = new System.Windows.Forms.Label();
             this.lbl_2nd_hp = new System.Windows.Forms.Label();
             this.btn_2nd_endturn = new System.Windows.Forms.Button();
-            this.panel5 = new System.Windows.Forms.Panel();
+            this.pnl_2nd_block = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
             this.btn_2nd_block_head = new System.Windows.Forms.Button();
             this.btn_2nd_block_righthand = new System.Windows.Forms.Button();
             this.btn_2nd_block_body = new System.Windows.Forms.Button();
             this.btn_2nd_block_lefthand = new System.Windows.Forms.Button();
             this.btn_2nd_block_feet = new System.Windows.Forms.Button();
-            this.panel6 = new System.Windows.Forms.Panel();
+            this.pnl_2nd_punch = new System.Windows.Forms.Panel();
             this.label6 = new System.Windows.Forms.Label();
             this.btn_2nd_punch_head = new System.Windows.Forms.Button();
             this.btn_2nd_punch_righthand = new System.Windows.Forms.Button();
@@ -76,12 +76,12 @@
             this.textlog = new System.Windows.Forms.RichTextBox();
             this.panel1.SuspendLayout();
             this.panel8.SuspendLayout();
-            this.panel4.SuspendLayout();
-            this.panel3.SuspendLayout();
+            this.pnl_1st_block.SuspendLayout();
+            this.pnl_1st_punch.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel9.SuspendLayout();
-            this.panel5.SuspendLayout();
-            this.panel6.SuspendLayout();
+            this.pnl_2nd_block.SuspendLayout();
+            this.pnl_2nd_punch.SuspendLayout();
             this.panel7.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -142,8 +142,8 @@
             this.panel1.Controls.Add(this.panel8);
             this.panel1.Controls.Add(this.lbl_1st_hp);
             this.panel1.Controls.Add(this.btn_1st_endturn);
-            this.panel1.Controls.Add(this.panel4);
-            this.panel1.Controls.Add(this.panel3);
+            this.panel1.Controls.Add(this.pnl_1st_block);
+            this.panel1.Controls.Add(this.pnl_1st_punch);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.prbar_1st_hp);
             this.panel1.Controls.Add(this.lbl_1st_name);
@@ -151,7 +151,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(461, 388);
             this.panel1.TabIndex = 10;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // panel8
             // 
@@ -188,20 +187,21 @@
             this.btn_1st_endturn.TabIndex = 16;
             this.btn_1st_endturn.Text = "End TURN";
             this.btn_1st_endturn.UseVisualStyleBackColor = true;
+            this.btn_1st_endturn.Click += new System.EventHandler(this.btn_1st_endturn_Click);
             // 
-            // panel4
+            // pnl_1st_block
             // 
-            this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel4.Controls.Add(this.label4);
-            this.panel4.Controls.Add(this.btn_1st_block_head);
-            this.panel4.Controls.Add(this.btn_1st_block_righthand);
-            this.panel4.Controls.Add(this.btn_1st_block_body);
-            this.panel4.Controls.Add(this.btn_1st_block_lefthand);
-            this.panel4.Controls.Add(this.btn_1st_block_feet);
-            this.panel4.Location = new System.Drawing.Point(277, 111);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(167, 205);
-            this.panel4.TabIndex = 15;
+            this.pnl_1st_block.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnl_1st_block.Controls.Add(this.label4);
+            this.pnl_1st_block.Controls.Add(this.btn_1st_block_head);
+            this.pnl_1st_block.Controls.Add(this.btn_1st_block_righthand);
+            this.pnl_1st_block.Controls.Add(this.btn_1st_block_body);
+            this.pnl_1st_block.Controls.Add(this.btn_1st_block_lefthand);
+            this.pnl_1st_block.Controls.Add(this.btn_1st_block_feet);
+            this.pnl_1st_block.Location = new System.Drawing.Point(277, 111);
+            this.pnl_1st_block.Name = "pnl_1st_block";
+            this.pnl_1st_block.Size = new System.Drawing.Size(167, 205);
+            this.pnl_1st_block.TabIndex = 15;
             // 
             // label4
             // 
@@ -263,19 +263,19 @@
             this.btn_1st_block_feet.UseVisualStyleBackColor = false;
             this.btn_1st_block_feet.Click += new System.EventHandler(this.btn_1st_block_feet_Click);
             // 
-            // panel3
+            // pnl_1st_punch
             // 
-            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel3.Controls.Add(this.label3);
-            this.panel3.Controls.Add(this.btn_1st_punch_head);
-            this.panel3.Controls.Add(this.btn_1st_punch_righthand);
-            this.panel3.Controls.Add(this.btn_1st_punch_body);
-            this.panel3.Controls.Add(this.btn_1st_punch_lefthand);
-            this.panel3.Controls.Add(this.btn_1st_punch_feet);
-            this.panel3.Location = new System.Drawing.Point(23, 111);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(167, 205);
-            this.panel3.TabIndex = 13;
+            this.pnl_1st_punch.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnl_1st_punch.Controls.Add(this.label3);
+            this.pnl_1st_punch.Controls.Add(this.btn_1st_punch_head);
+            this.pnl_1st_punch.Controls.Add(this.btn_1st_punch_righthand);
+            this.pnl_1st_punch.Controls.Add(this.btn_1st_punch_body);
+            this.pnl_1st_punch.Controls.Add(this.btn_1st_punch_lefthand);
+            this.pnl_1st_punch.Controls.Add(this.btn_1st_punch_feet);
+            this.pnl_1st_punch.Location = new System.Drawing.Point(23, 111);
+            this.pnl_1st_punch.Name = "pnl_1st_punch";
+            this.pnl_1st_punch.Size = new System.Drawing.Size(167, 205);
+            this.pnl_1st_punch.TabIndex = 13;
             // 
             // label3
             // 
@@ -321,8 +321,8 @@
             this.panel2.Controls.Add(this.panel9);
             this.panel2.Controls.Add(this.lbl_2nd_hp);
             this.panel2.Controls.Add(this.btn_2nd_endturn);
-            this.panel2.Controls.Add(this.panel5);
-            this.panel2.Controls.Add(this.panel6);
+            this.panel2.Controls.Add(this.pnl_2nd_block);
+            this.panel2.Controls.Add(this.pnl_2nd_punch);
             this.panel2.Controls.Add(this.label7);
             this.panel2.Controls.Add(this.prbar_2nd_hp);
             this.panel2.Controls.Add(this.lbl_2nd_name);
@@ -366,20 +366,21 @@
             this.btn_2nd_endturn.TabIndex = 16;
             this.btn_2nd_endturn.Text = "End TURN";
             this.btn_2nd_endturn.UseVisualStyleBackColor = true;
+            this.btn_2nd_endturn.Click += new System.EventHandler(this.btn_2nd_endturn_Click);
             // 
-            // panel5
+            // pnl_2nd_block
             // 
-            this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel5.Controls.Add(this.label5);
-            this.panel5.Controls.Add(this.btn_2nd_block_head);
-            this.panel5.Controls.Add(this.btn_2nd_block_righthand);
-            this.panel5.Controls.Add(this.btn_2nd_block_body);
-            this.panel5.Controls.Add(this.btn_2nd_block_lefthand);
-            this.panel5.Controls.Add(this.btn_2nd_block_feet);
-            this.panel5.Location = new System.Drawing.Point(277, 111);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(167, 205);
-            this.panel5.TabIndex = 15;
+            this.pnl_2nd_block.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnl_2nd_block.Controls.Add(this.label5);
+            this.pnl_2nd_block.Controls.Add(this.btn_2nd_block_head);
+            this.pnl_2nd_block.Controls.Add(this.btn_2nd_block_righthand);
+            this.pnl_2nd_block.Controls.Add(this.btn_2nd_block_body);
+            this.pnl_2nd_block.Controls.Add(this.btn_2nd_block_lefthand);
+            this.pnl_2nd_block.Controls.Add(this.btn_2nd_block_feet);
+            this.pnl_2nd_block.Location = new System.Drawing.Point(277, 111);
+            this.pnl_2nd_block.Name = "pnl_2nd_block";
+            this.pnl_2nd_block.Size = new System.Drawing.Size(167, 205);
+            this.pnl_2nd_block.TabIndex = 15;
             // 
             // label5
             // 
@@ -441,19 +442,19 @@
             this.btn_2nd_block_feet.UseVisualStyleBackColor = false;
             this.btn_2nd_block_feet.Click += new System.EventHandler(this.btn_2nd_block_feet_Click);
             // 
-            // panel6
+            // pnl_2nd_punch
             // 
-            this.panel6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel6.Controls.Add(this.label6);
-            this.panel6.Controls.Add(this.btn_2nd_punch_head);
-            this.panel6.Controls.Add(this.btn_2nd_punch_righthand);
-            this.panel6.Controls.Add(this.btn_2nd_punch_body);
-            this.panel6.Controls.Add(this.btn_2nd_punch_lefthand);
-            this.panel6.Controls.Add(this.btn_2nd_punch_feet);
-            this.panel6.Location = new System.Drawing.Point(23, 111);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(167, 205);
-            this.panel6.TabIndex = 13;
+            this.pnl_2nd_punch.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnl_2nd_punch.Controls.Add(this.label6);
+            this.pnl_2nd_punch.Controls.Add(this.btn_2nd_punch_head);
+            this.pnl_2nd_punch.Controls.Add(this.btn_2nd_punch_righthand);
+            this.pnl_2nd_punch.Controls.Add(this.btn_2nd_punch_body);
+            this.pnl_2nd_punch.Controls.Add(this.btn_2nd_punch_lefthand);
+            this.pnl_2nd_punch.Controls.Add(this.btn_2nd_punch_feet);
+            this.pnl_2nd_punch.Location = new System.Drawing.Point(23, 111);
+            this.pnl_2nd_punch.Name = "pnl_2nd_punch";
+            this.pnl_2nd_punch.Size = new System.Drawing.Size(167, 205);
+            this.pnl_2nd_punch.TabIndex = 13;
             // 
             // label6
             // 
@@ -576,18 +577,18 @@
             this.panel1.PerformLayout();
             this.panel8.ResumeLayout(false);
             this.panel8.PerformLayout();
-            this.panel4.ResumeLayout(false);
-            this.panel4.PerformLayout();
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
+            this.pnl_1st_block.ResumeLayout(false);
+            this.pnl_1st_block.PerformLayout();
+            this.pnl_1st_punch.ResumeLayout(false);
+            this.pnl_1st_punch.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel9.ResumeLayout(false);
             this.panel9.PerformLayout();
-            this.panel5.ResumeLayout(false);
-            this.panel5.PerformLayout();
-            this.panel6.ResumeLayout(false);
-            this.panel6.PerformLayout();
+            this.pnl_2nd_block.ResumeLayout(false);
+            this.pnl_2nd_block.PerformLayout();
+            this.pnl_2nd_punch.ResumeLayout(false);
+            this.pnl_2nd_punch.PerformLayout();
             this.panel7.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -602,28 +603,28 @@
         private System.Windows.Forms.Button btn_1st_punch_righthand;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btn_1st_endturn;
-        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Panel pnl_1st_block;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btn_1st_block_head;
         private System.Windows.Forms.Button btn_1st_block_righthand;
         private System.Windows.Forms.Button btn_1st_block_body;
         private System.Windows.Forms.Button btn_1st_block_lefthand;
         private System.Windows.Forms.Button btn_1st_block_feet;
-        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Panel pnl_1st_punch;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ProgressBar prbar_1st_hp;
         private System.Windows.Forms.Label lbl_1st_name;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button btn_2nd_endturn;
-        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Panel pnl_2nd_block;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button btn_2nd_block_head;
         private System.Windows.Forms.Button btn_2nd_block_righthand;
         private System.Windows.Forms.Button btn_2nd_block_body;
         private System.Windows.Forms.Button btn_2nd_block_lefthand;
         private System.Windows.Forms.Button btn_2nd_block_feet;
-        private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.Panel pnl_2nd_punch;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button btn_2nd_punch_head;
         private System.Windows.Forms.Button btn_2nd_punch_righthand;

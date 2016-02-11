@@ -12,11 +12,20 @@ namespace fight_club
 {
     public partial class frmGame : Form
     {
+        public GameControl game = new GameControl();
+        public BodyPart firstPlPunchChoosenPart;
+        public BodyPart firstPlBlockChoosenPart;
+        public BodyPart secondPlPunchChoosenPart;
+        public BodyPart secondPlBlockChoosenPart;
         public frmGame()
         {
             InitializeComponent();
-
-            //BodyPart firstPlPunchChoosenPart;
+            prbar_1st_hp.Value = 100;
+            prbar_2nd_hp.Value = 100;
+            lbl_1st_hp.Text = game.player1.Hp + " / " + game.player1.MaxHp;
+            lbl_2nd_hp.Text = game.player2.Hp + " / " + game.player2.MaxHp;
+            lbl_1st_name.Text = game.player1.Name;
+            lbl_2nd_name.Text = game.player2.Name;
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -27,11 +36,6 @@ namespace fight_club
 
         //  will be deleted-------------------------------------------------------------------------
 
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
 
         #region Обработка заполнения выбора ударов
         public void Player1PunchClean(BodyPart part)
@@ -47,26 +51,31 @@ namespace fight_club
                 case BodyPart.Head:
                     {
                         btn_1st_punch_head.ChangeMark();
+                        firstPlPunchChoosenPart = BodyPart.Head;
                         break;
                     }
                 case BodyPart.Body:
                     {
                         btn_1st_punch_body.ChangeMark();
+                        firstPlPunchChoosenPart = BodyPart.Body;
                         break;
                     }
                 case BodyPart.Feet:
                     {
                         btn_1st_punch_feet.ChangeMark();
+                        firstPlPunchChoosenPart = BodyPart.Feet;
                         break;
                     }
                 case BodyPart.LeftHand:
                     {
                         btn_1st_punch_lefthand.ChangeMark();
+                        firstPlPunchChoosenPart = BodyPart.LeftHand;
                         break;
                     }
                 case BodyPart.RightHand:
                     {
                         btn_1st_punch_righthand.ChangeMark();
+                        firstPlPunchChoosenPart = BodyPart.RightHand;
                         break;
                     }
                 default:
@@ -87,26 +96,31 @@ namespace fight_club
                 case BodyPart.Head:
                     {
                         btn_1st_block_head.ChangeMark();
+                        firstPlBlockChoosenPart = BodyPart.Head;
                         break;
                     }
                 case BodyPart.Body:
                     {
                         btn_1st_block_body.ChangeMark();
+                        firstPlBlockChoosenPart = BodyPart.Body;
                         break;
                     }
                 case BodyPart.Feet:
                     {
                         btn_1st_block_feet.ChangeMark();
+                        firstPlBlockChoosenPart = BodyPart.Feet;
                         break;
                     }
                 case BodyPart.LeftHand:
                     {
                         btn_1st_block_lefthand.ChangeMark();
+                        firstPlBlockChoosenPart = BodyPart.LeftHand;
                         break;
                     }
                 case BodyPart.RightHand:
                     {
                         btn_1st_block_righthand.ChangeMark();
+                        firstPlBlockChoosenPart = BodyPart.RightHand;
                         break;
                     }
                 default:
@@ -127,26 +141,31 @@ namespace fight_club
                 case BodyPart.Head:
                     {
                         btn_2nd_punch_head.ChangeMark();
+                        secondPlPunchChoosenPart = BodyPart.Head;
                         break;
                     }
                 case BodyPart.Body:
                     {
                         btn_2nd_punch_body.ChangeMark();
+                        secondPlPunchChoosenPart = BodyPart.Body;
                         break;
                     }
                 case BodyPart.Feet:
                     {
                         btn_2nd_punch_feet.ChangeMark();
+                        secondPlPunchChoosenPart = BodyPart.Feet;
                         break;
                     }
                 case BodyPart.LeftHand:
                     {
                         btn_2nd_punch_lefthand.ChangeMark();
+                        secondPlPunchChoosenPart = BodyPart.LeftHand;
                         break;
                     }
                 case BodyPart.RightHand:
                     {
                         btn_2nd_punch_righthand.ChangeMark();
+                        secondPlPunchChoosenPart = BodyPart.RightHand;
                         break;
                     }
                 default:
@@ -167,26 +186,31 @@ namespace fight_club
                 case BodyPart.Head:
                     {
                         btn_2nd_block_head.ChangeMark();
+                        secondPlBlockChoosenPart = BodyPart.Head;
                         break;
                     }
                 case BodyPart.Body:
                     {
                         btn_2nd_block_body.ChangeMark();
+                        secondPlBlockChoosenPart = BodyPart.Body;
                         break;
                     }
                 case BodyPart.Feet:
                     {
                         btn_2nd_block_feet.ChangeMark();
+                        secondPlBlockChoosenPart = BodyPart.Feet;
                         break;
                     }
                 case BodyPart.LeftHand:
                     {
                         btn_2nd_block_lefthand.ChangeMark();
+                        secondPlBlockChoosenPart = BodyPart.LeftHand;
                         break;
                     }
                 case BodyPart.RightHand:
                     {
                         btn_2nd_block_righthand.ChangeMark();
+                        secondPlBlockChoosenPart = BodyPart.RightHand;
                         break;
                     }
                 default:
@@ -294,8 +318,48 @@ namespace fight_club
         {
             Player2BlockClean(BodyPart.RightHand);
         }
-        #endregion 
+
+
         #endregion
+
+        #endregion
+
+        private void btn_1st_endturn_Click(object sender, EventArgs e)
+        {
+            btn_1st_endturn.Enabled = false;
+            pnl_1st_block.Enabled = false;
+            pnl_1st_punch.Enabled = false;
+            EndTurn();
+        }
+
+        private void btn_2nd_endturn_Click(object sender, EventArgs e)
+        {
+            btn_2nd_endturn.Enabled = false;
+            pnl_2nd_block.Enabled = false;
+            pnl_2nd_punch.Enabled = false;
+            EndTurn();
+        }
+
+        public void EndTurn()
+        {
+            if ((!btn_1st_endturn.Enabled) && (!btn_2nd_endturn.Enabled))
+            {
+                string[] str = game.EndTurn(firstPlPunchChoosenPart, firstPlBlockChoosenPart, secondPlPunchChoosenPart, secondPlBlockChoosenPart);
+                prbar_1st_hp.Value = game.player1.Hp / (100 + (game.player1.Stamina - 1) * 5);
+                prbar_2nd_hp.Value = game.player2.Hp / (100 + (game.player2.Stamina - 1) * 5);
+                lbl_1st_hp.Text = game.player1.Hp + " / " + (100 + (game.player1.Stamina - 1) * 5);
+                lbl_2nd_hp.Text = game.player2.Hp + " / " + (100 + (game.player2.Stamina - 1) * 5);
+
+                textlog.AppendText(str[0] + "\n");
+                textlog.AppendText(str[1] + "\n");
+                btn_1st_endturn.Enabled = true;
+                btn_2nd_endturn.Enabled = true;
+                pnl_1st_block.Enabled = true;
+                pnl_1st_punch.Enabled = true;
+                pnl_2nd_block.Enabled = true;
+                pnl_2nd_punch.Enabled = true;
+            }
+        }
 
 
 
