@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace fight_club
 {
+    
     public abstract class AbstractPlayer : IPlayer
     {
         protected int level;
@@ -14,7 +15,13 @@ namespace fight_club
         protected int straight;
         protected int agility;
         protected int stamina;
-        protected BodyPart blockedPart;
+        public BodyPart blockedPart;
+
+        public delegate string MyEvent(object sender, BodyPart e);
+
+        public event MyEvent onBlock;
+        public event MyEvent onWound;
+        public event MyEvent onDeath;
 
         public int Level
         {
@@ -76,15 +83,15 @@ namespace fight_club
             hp = 100 + ((stamina - 1) * 5);
         }
 
-        public AbstractPlayer(int level , string name , int straight , int agility , int stamina)
-        {
-            this.level = level;
-            this.name = name;
-            hp = 100 + ((stamina - 1) * 5);
-            this.straight = straight;
-            this.agility = agility;
-            this.stamina = stamina; 
-        }
+        //public AbstractPlayer(int level , string name , int straight , int agility , int stamina)
+        //{
+        //    this.level = level;
+        //    this.name = name;
+        //    hp = 100 + ((stamina - 1) * 5);
+        //    this.straight = straight;
+        //    this.agility = agility;
+        //    this.stamina = stamina; 
+        //}
 
         public abstract void SetBlock(BodyPart part);
         public int GetHit(BodyPart part , FightPapams par)
@@ -94,6 +101,7 @@ namespace fight_club
             {
                 hp -= par.straight * 5;
                 damage = par.straight * 5;
+                onWound(this , part);
             }
             else
             {
@@ -101,14 +109,22 @@ namespace fight_club
                 {
                     hp -= par.straight * 5;
                     damage = par.straight * 5;
+                    onWound(this , part);
                 }
                 else
                 {
                     damage = 0;
+                    onBlock(this , blockedPart);
                 }
+            }
+            if (hp <= 0)
+            {
+                onDeath(this , BodyPart.Head);
             }
             return damage;
         }
 
+
+        
     }
 }

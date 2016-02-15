@@ -33,7 +33,7 @@
             this.btn_1st_punch_feet = new System.Windows.Forms.Button();
             this.btn_1st_punch_lefthand = new System.Windows.Forms.Button();
             this.btn_1st_punch_righthand = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.pnl_1st_player = new System.Windows.Forms.Panel();
             this.panel8 = new System.Windows.Forms.Panel();
             this.label11 = new System.Windows.Forms.Label();
             this.lbl_1st_hp = new System.Windows.Forms.Label();
@@ -50,7 +50,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.prbar_1st_hp = new System.Windows.Forms.ProgressBar();
             this.lbl_1st_name = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.pnl_2nd_player = new System.Windows.Forms.Panel();
             this.panel9 = new System.Windows.Forms.Panel();
             this.label12 = new System.Windows.Forms.Label();
             this.lbl_2nd_hp = new System.Windows.Forms.Label();
@@ -74,11 +74,11 @@
             this.lbl_2nd_name = new System.Windows.Forms.Label();
             this.panel7 = new System.Windows.Forms.Panel();
             this.textlog = new System.Windows.Forms.RichTextBox();
-            this.panel1.SuspendLayout();
+            this.pnl_1st_player.SuspendLayout();
             this.panel8.SuspendLayout();
             this.pnl_1st_block.SuspendLayout();
             this.pnl_1st_punch.SuspendLayout();
-            this.panel2.SuspendLayout();
+            this.pnl_2nd_player.SuspendLayout();
             this.panel9.SuspendLayout();
             this.pnl_2nd_block.SuspendLayout();
             this.pnl_2nd_punch.SuspendLayout();
@@ -136,21 +136,21 @@
             this.btn_1st_punch_righthand.UseVisualStyleBackColor = false;
             this.btn_1st_punch_righthand.Click += new System.EventHandler(this.button5_Click);
             // 
-            // panel1
+            // pnl_1st_player
             // 
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.panel8);
-            this.panel1.Controls.Add(this.lbl_1st_hp);
-            this.panel1.Controls.Add(this.btn_1st_endturn);
-            this.panel1.Controls.Add(this.pnl_1st_block);
-            this.panel1.Controls.Add(this.pnl_1st_punch);
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.prbar_1st_hp);
-            this.panel1.Controls.Add(this.lbl_1st_name);
-            this.panel1.Location = new System.Drawing.Point(17, 12);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(461, 388);
-            this.panel1.TabIndex = 10;
+            this.pnl_1st_player.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnl_1st_player.Controls.Add(this.panel8);
+            this.pnl_1st_player.Controls.Add(this.lbl_1st_hp);
+            this.pnl_1st_player.Controls.Add(this.btn_1st_endturn);
+            this.pnl_1st_player.Controls.Add(this.pnl_1st_block);
+            this.pnl_1st_player.Controls.Add(this.pnl_1st_punch);
+            this.pnl_1st_player.Controls.Add(this.label2);
+            this.pnl_1st_player.Controls.Add(this.prbar_1st_hp);
+            this.pnl_1st_player.Controls.Add(this.lbl_1st_name);
+            this.pnl_1st_player.Location = new System.Drawing.Point(17, 12);
+            this.pnl_1st_player.Name = "pnl_1st_player";
+            this.pnl_1st_player.Size = new System.Drawing.Size(461, 388);
+            this.pnl_1st_player.TabIndex = 10;
             // 
             // panel8
             // 
@@ -315,21 +315,21 @@
             this.lbl_1st_name.TabIndex = 10;
             this.lbl_1st_name.Text = "Name";
             // 
-            // panel2
+            // pnl_2nd_player
             // 
-            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel2.Controls.Add(this.panel9);
-            this.panel2.Controls.Add(this.lbl_2nd_hp);
-            this.panel2.Controls.Add(this.btn_2nd_endturn);
-            this.panel2.Controls.Add(this.pnl_2nd_block);
-            this.panel2.Controls.Add(this.pnl_2nd_punch);
-            this.panel2.Controls.Add(this.label7);
-            this.panel2.Controls.Add(this.prbar_2nd_hp);
-            this.panel2.Controls.Add(this.lbl_2nd_name);
-            this.panel2.Location = new System.Drawing.Point(491, 12);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(461, 388);
-            this.panel2.TabIndex = 17;
+            this.pnl_2nd_player.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnl_2nd_player.Controls.Add(this.panel9);
+            this.pnl_2nd_player.Controls.Add(this.lbl_2nd_hp);
+            this.pnl_2nd_player.Controls.Add(this.btn_2nd_endturn);
+            this.pnl_2nd_player.Controls.Add(this.pnl_2nd_block);
+            this.pnl_2nd_player.Controls.Add(this.pnl_2nd_punch);
+            this.pnl_2nd_player.Controls.Add(this.label7);
+            this.pnl_2nd_player.Controls.Add(this.prbar_2nd_hp);
+            this.pnl_2nd_player.Controls.Add(this.lbl_2nd_name);
+            this.pnl_2nd_player.Location = new System.Drawing.Point(491, 12);
+            this.pnl_2nd_player.Name = "pnl_2nd_player";
+            this.pnl_2nd_player.Size = new System.Drawing.Size(461, 388);
+            this.pnl_2nd_player.TabIndex = 17;
             // 
             // panel9
             // 
@@ -568,21 +568,21 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(964, 536);
             this.Controls.Add(this.panel7);
-            this.Controls.Add(this.panel2);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.pnl_2nd_player);
+            this.Controls.Add(this.pnl_1st_player);
             this.Name = "frmGame";
             this.Text = "Fight Club";
             this.Load += new System.EventHandler(this.Form1_Load);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.pnl_1st_player.ResumeLayout(false);
+            this.pnl_1st_player.PerformLayout();
             this.panel8.ResumeLayout(false);
             this.panel8.PerformLayout();
             this.pnl_1st_block.ResumeLayout(false);
             this.pnl_1st_block.PerformLayout();
             this.pnl_1st_punch.ResumeLayout(false);
             this.pnl_1st_punch.PerformLayout();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
+            this.pnl_2nd_player.ResumeLayout(false);
+            this.pnl_2nd_player.PerformLayout();
             this.panel9.ResumeLayout(false);
             this.panel9.PerformLayout();
             this.pnl_2nd_block.ResumeLayout(false);
@@ -601,7 +601,7 @@
         private System.Windows.Forms.Button btn_1st_punch_feet;
         private System.Windows.Forms.Button btn_1st_punch_lefthand;
         private System.Windows.Forms.Button btn_1st_punch_righthand;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel pnl_1st_player;
         private System.Windows.Forms.Button btn_1st_endturn;
         private System.Windows.Forms.Panel pnl_1st_block;
         private System.Windows.Forms.Label label4;
@@ -615,7 +615,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ProgressBar prbar_1st_hp;
         private System.Windows.Forms.Label lbl_1st_name;
-        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel pnl_2nd_player;
         private System.Windows.Forms.Button btn_2nd_endturn;
         private System.Windows.Forms.Panel pnl_2nd_block;
         private System.Windows.Forms.Label label5;

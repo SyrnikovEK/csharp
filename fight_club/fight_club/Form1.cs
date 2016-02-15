@@ -23,7 +23,7 @@ namespace fight_club
             prbar_1st_hp.Maximum = game.player1.MaxHp;
             prbar_1st_hp.Value = game.player1.Hp;
             prbar_2nd_hp.Maximum = game.player2.MaxHp;
-            prbar_2nd_hp.Value = game.player1.Hp;
+            prbar_2nd_hp.Value = game.player2.Hp;
             lbl_1st_hp.Text = game.player1.Hp + " / " + game.player1.MaxHp;
             lbl_2nd_hp.Text = game.player2.Hp + " / " + game.player2.MaxHp;
             lbl_1st_name.Text = game.player1.Name;
@@ -32,11 +32,14 @@ namespace fight_club
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            if (game.player2 is NPC)
+            {
+                pnl_2nd_player.Enabled = false;
+            }
         }
         
 
-        //  will be deleted-------------------------------------------------------------------------
+        //  -------------------------------------------------------------------------
 
 
         #region Обработка заполнения выбора ударов
@@ -354,6 +357,7 @@ namespace fight_club
 
                 textlog.AppendText(str[0] + "\n");
                 textlog.AppendText(str[1] + "\n");
+                textlog.AppendText("----------------------------------------------------------------" + "\n");
                 btn_1st_endturn.Enabled = true;
                 btn_2nd_endturn.Enabled = true;
                 pnl_1st_block.Enabled = true;
@@ -365,6 +369,7 @@ namespace fight_club
 
 
 
-        //  /will be deleted-------------------------------------------------------------------------
+
+        //  -------------------------------------------------------------------------
     }
 }
