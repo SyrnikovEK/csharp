@@ -18,7 +18,7 @@ namespace fight_club
             player2 = new Player(2, "Ted", 2, 2, 4); //new NPC();  // плохо работает бот(бьет только по голове)
         }
 
-        public string[] EndTurn(BodyPart player1punch , BodyPart player1block , BodyPart player2punch , BodyPart player2block)
+        public string[] Turn(BodyPart player1punch , BodyPart player1block , BodyPart player2punch , BodyPart player2block)
         {
             string[] returnedString = {"" , ""};
             string firstturn = "";

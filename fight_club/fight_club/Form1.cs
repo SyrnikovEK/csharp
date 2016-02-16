@@ -12,7 +12,8 @@ namespace fight_club
 {
     public partial class frmGame : Form
     {
-        public GameControl game = new GameControl();
+        //public GameControl game = new GameControl();
+        public Presenter presenter = null;
         public BodyPart firstPlPunchChoosenPart;
         public BodyPart firstPlBlockChoosenPart;
         public BodyPart secondPlPunchChoosenPart;
@@ -20,19 +21,41 @@ namespace fight_club
         public frmGame()
         {
             InitializeComponent();
-            prbar_1st_hp.Maximum = game.player1.MaxHp;
-            prbar_1st_hp.Value = game.player1.Hp;
-            prbar_2nd_hp.Maximum = game.player2.MaxHp;
-            prbar_2nd_hp.Value = game.player2.Hp;
-            lbl_1st_hp.Text = game.player1.Hp + " / " + game.player1.MaxHp;
-            lbl_2nd_hp.Text = game.player2.Hp + " / " + game.player2.MaxHp;
-            lbl_1st_name.Text = game.player1.Name;
-            lbl_2nd_name.Text = game.player2.Name;
+            presenter = new Presenter(this);
+            //prbar_1st_hp.Maximum = game.player1.MaxHp;
+            //prbar_1st_hp.Value = game.player1.Hp;
+            //prbar_2nd_hp.Maximum = game.player2.MaxHp;
+            //prbar_2nd_hp.Value = game.player2.Hp;
+            //lbl_1st_hp.Text = game.player1.Hp + " / " + game.player1.MaxHp;
+            //lbl_2nd_hp.Text = game.player2.Hp + " / " + game.player2.MaxHp;
+            //lbl_1st_name.Text = game.player1.Name;
+            //lbl_2nd_name.Text = game.player2.Name;
+        }
+
+
+
+        public void DrawPlayersInfo(string player1name , int player1hp , int player1maxhp, string player2name, int player2hp, int player2maxhp)
+        {
+            lbl_1st_name.Text = player1name;
+            lbl_2nd_name.Text = player2name;
+            prbar_1st_hp.Maximum = player1maxhp;
+            prbar_1st_hp.Value = player1hp;
+            prbar_2nd_hp.Maximum = player2maxhp;
+            prbar_2nd_hp.Value = player2hp;
+            lbl_1st_hp.Text = player1hp + " / " + player1maxhp;
+            lbl_2nd_hp.Text = player2hp + " / " + player2maxhp;
+        }
+
+        public void DrawTextLog(string[] str)
+        {
+            textlog.AppendText(str[0] + "\n");
+            textlog.AppendText(str[1] + "\n");
+            textlog.AppendText("----------------------------------------------------------------" + "\n");
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            if (game.player2 is NPC)
+            if (presenter.GameType == "pve")
             {
                 pnl_2nd_player.Enabled = false;
             }
@@ -349,15 +372,15 @@ namespace fight_club
         {
             if ((!btn_1st_endturn.Enabled) && (!btn_2nd_endturn.Enabled))
             {
-                string[] str = game.EndTurn(firstPlPunchChoosenPart, firstPlBlockChoosenPart, secondPlPunchChoosenPart, secondPlBlockChoosenPart);
-                prbar_1st_hp.Value = game.player1.Hp;
-                prbar_2nd_hp.Value = game.player2.Hp;
-                lbl_1st_hp.Text = game.player1.Hp + " / " + (100 + (game.player1.Stamina - 1) * 5);
-                lbl_2nd_hp.Text = game.player2.Hp + " / " + (100 + (game.player2.Stamina - 1) * 5);
+                /*string[] str = */presenter.EndTurn((int)firstPlPunchChoosenPart, (int)firstPlBlockChoosenPart, (int)secondPlPunchChoosenPart, (int)secondPlBlockChoosenPart);
+                //prbar_1st_hp.Value = game.player1.Hp;
+                //prbar_2nd_hp.Value = game.player2.Hp;
+                //lbl_1st_hp.Text = game.player1.Hp + " / " + (100 + (game.player1.Stamina - 1) * 5);
+                //lbl_2nd_hp.Text = game.player2.Hp + " / " + (100 + (game.player2.Stamina - 1) * 5);
 
-                textlog.AppendText(str[0] + "\n");
-                textlog.AppendText(str[1] + "\n");
-                textlog.AppendText("----------------------------------------------------------------" + "\n");
+                //textlog.AppendText(str[0] + "\n");
+                //textlog.AppendText(str[1] + "\n");
+                //textlog.AppendText("----------------------------------------------------------------" + "\n");
                 btn_1st_endturn.Enabled = true;
                 btn_2nd_endturn.Enabled = true;
                 pnl_1st_block.Enabled = true;
