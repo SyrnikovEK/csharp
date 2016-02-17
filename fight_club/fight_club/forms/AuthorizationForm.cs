@@ -19,7 +19,9 @@ namespace fight_club
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            MenuForm frm = new MenuForm();
+            frm.Show();
+            this.Hide();
         }
 
         private void AuthorizationForm_Load(object sender, EventArgs e)
@@ -30,6 +32,13 @@ namespace fight_club
         private void AuthorizationForm_FormClosed(object sender, FormClosedEventArgs e)
         {
             Application.Exit();
+        }
+
+        private void CreationButton_Click(object sender, EventArgs e)
+        {
+            PlayerCreationForm frm = new PlayerCreationForm();
+            frm.Show();
+            this.Hide();
         }
     }
 }

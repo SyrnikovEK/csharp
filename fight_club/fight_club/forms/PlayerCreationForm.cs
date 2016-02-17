@@ -41,5 +41,19 @@ namespace fight_club
         {
             Application.Exit();
         }
+
+        private void ToMenuButton_Click(object sender, EventArgs e)
+        {
+            AuthorizationForm frm = new AuthorizationForm();
+            frm.Show();
+            this.Hide();
+        }
+
+        private void PlayerCreateButton_Click(object sender, EventArgs e)
+        {
+            MenuForm frm = new MenuForm();
+            frm.Show();
+            this.Hide();
+        }
     }
 }

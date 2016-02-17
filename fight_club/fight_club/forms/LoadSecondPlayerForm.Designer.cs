@@ -48,6 +48,7 @@
             this.LoginSecondPlayerButton.TabIndex = 5;
             this.LoginSecondPlayerButton.Text = "Login";
             this.LoginSecondPlayerButton.UseVisualStyleBackColor = true;
+            this.LoginSecondPlayerButton.Click += new System.EventHandler(this.LoginSecondPlayerButton_Click);
             // 
             // EnterNameLabel
             // 

@@ -21,5 +21,12 @@ namespace fight_club
         {
             Application.Exit();
         }
+
+        private void LoginSecondPlayerButton_Click(object sender, EventArgs e)
+        {
+            CombatForm frm = new CombatForm();
+            frm.Show();
+            this.Hide();
+        }
     }
 }

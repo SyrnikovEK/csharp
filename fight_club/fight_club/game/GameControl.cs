@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace fight_club
 {
+    public enum GameType { PvP, PvE, EvE }
     public class GameControl
     {
         public AbstractPlayer player1;
@@ -21,7 +22,19 @@ namespace fight_club
         public GameControl()
         {
             player1 = new Player(2 , "Jack" , 3 , 3 , 2);
-            player2 = new Player(2, "Ted", 2, 2, 4); //new NPC();  // плохо работает бот(бьет только по голове)
+            player2 = new Player(2, "Ted", 2, 2, 4); 
+        }
+
+        public void NewGame(AbstractPlayer player)
+        {
+            player1 = player;
+            player2 = new NPC();  
+        }
+
+        public void NewGame(AbstractPlayer player1 , AbstractPlayer player2)
+        {
+            this.player1 = player1;
+            this.player2 = player2;
         }
 
         public string[] Turn(BodyPart player1punch , BodyPart player1block , BodyPart player2punch , BodyPart player2block)

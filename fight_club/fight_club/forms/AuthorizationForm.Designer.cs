@@ -61,6 +61,7 @@
             this.CreationButton.TabIndex = 2;
             this.CreationButton.Text = "Create new";
             this.CreationButton.UseVisualStyleBackColor = true;
+            this.CreationButton.Click += new System.EventHandler(this.CreationButton_Click);
             // 
             // PlaerNameTextBox
             // 

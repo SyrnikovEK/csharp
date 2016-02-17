@@ -31,5 +31,33 @@ namespace fight_club
         {
             Application.Exit();
         }
+
+        private void PveEnterButton_Click(object sender, EventArgs e)
+        {
+            CombatForm frm = new CombatForm();
+            frm.Show();
+            this.Hide();
+        }
+
+        private void PvpEnterButton_Click(object sender, EventArgs e)
+        {
+            LoadSecondPlayerForm frm = new LoadSecondPlayerForm();
+            frm.Show();
+            this.Hide();
+        }
+
+        private void RecordTableButton_Click(object sender, EventArgs e)
+        {
+            RecordTableForm frm = new RecordTableForm();
+            frm.Show();
+            this.Hide();
+        }
+
+        private void ChangePlayerButton_Click(object sender, EventArgs e)
+        {
+            AuthorizationForm frm = new AuthorizationForm();
+            frm.Show();
+            this.Hide();
+        }
     }
 }

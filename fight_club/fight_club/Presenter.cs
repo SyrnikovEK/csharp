@@ -6,7 +6,6 @@ using System.Threading.Tasks;
 
 namespace fight_club
 {
-    public enum GameType {PvP , PvE , EvE }
     public class Presenter
     {
         CombatForm view = null;

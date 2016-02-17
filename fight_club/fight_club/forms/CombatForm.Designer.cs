@@ -573,6 +573,7 @@
             this.MaximumSize = new System.Drawing.Size(980, 570);
             this.MinimumSize = new System.Drawing.Size(980, 570);
             this.Name = "CombatForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Fight Club";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.CombatForm_FormClosed);
             this.Load += new System.EventHandler(this.Form1_Load);
