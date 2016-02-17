@@ -119,6 +119,7 @@ namespace fight_club
             }
             if (hp <= 0)
             {
+                hp = 0;
                 Death.Invoke(this , BodyPart.Head);
             }
             return damage;
