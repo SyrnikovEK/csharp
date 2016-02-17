@@ -39,23 +39,37 @@ namespace fight_club
             lbl_1st_name.Text = player1name;
             lbl_2nd_name.Text = player2name;
             prbar_1st_hp.Maximum = player1maxhp;
-            prbar_1st_hp.Value = player1hp;
+            if (player1hp >= 0)
+            {
+                prbar_1st_hp.Value = player1hp;
+            }
+            else
+            {
+                prbar_1st_hp.Value = 0;
+            }
             prbar_2nd_hp.Maximum = player2maxhp;
-            prbar_2nd_hp.Value = player2hp;
+            if (player2hp >= 0)
+            {
+                prbar_2nd_hp.Value = player2hp;
+            }
+            else
+            {
+                prbar_2nd_hp.Value = 0;
+            }
             lbl_1st_hp.Text = player1hp + " / " + player1maxhp;
             lbl_2nd_hp.Text = player2hp + " / " + player2maxhp;
         }
 
         public void DrawTextLog(string[] str)
         {
-            textlog.AppendText(str[0] + "\n");
-            textlog.AppendText(str[1] + "\n");
+            textlog.AppendText(str[0] + Environment.NewLine);
+            textlog.AppendText(str[1] + Environment.NewLine);
             textlog.AppendText("----------------------------------------------------------------" + "\n");
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            if (presenter.GameType == "pve")
+            if (presenter.gameType == GameType.PvE)
             {
                 pnl_2nd_player.Enabled = false;
             }

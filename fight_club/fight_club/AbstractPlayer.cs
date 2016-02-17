@@ -17,11 +17,11 @@ namespace fight_club
         protected int stamina;
         public BodyPart blockedPart;
 
-        public delegate string MyEvent(object sender, BodyPart e);
+        public delegate void MyEvent(object sender, BodyPart e);
 
-        public event MyEvent onBlock;
-        public event MyEvent onWound;
-        public event MyEvent onDeath;
+        public event MyEvent Block;
+        public event MyEvent Wound;
+        public event MyEvent Death;
 
         public int Level
         {
@@ -76,7 +76,7 @@ namespace fight_club
         public AbstractPlayer()
         {
             level = 1;
-            name = "PlayerName";
+            name = "Bot";
             straight = 3;
             agility = 2;
             stamina = 1;
@@ -101,7 +101,7 @@ namespace fight_club
             {
                 hp -= par.straight * 5;
                 damage = par.straight * 5;
-                onWound(this , part);
+                Wound.Invoke(this , part);
             }
             else
             {
@@ -109,17 +109,17 @@ namespace fight_club
                 {
                     hp -= par.straight * 5;
                     damage = par.straight * 5;
-                    onWound(this , part);
+                    Wound.Invoke(this , part);
                 }
                 else
                 {
                     damage = 0;
-                    onBlock(this , blockedPart);
+                    Block.Invoke(this , blockedPart);
                 }
             }
             if (hp <= 0)
             {
-                onDeath(this , BodyPart.Head);
+                Death.Invoke(this , BodyPart.Head);
             }
             return damage;
         }
