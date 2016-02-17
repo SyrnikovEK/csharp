@@ -58,6 +58,7 @@
             this.Controls.Add(this.label1);
             this.Name = "RecordTableForm";
             this.Text = "RecordTableForm";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.RecordTableForm_FormClosed);
             this.ResumeLayout(false);
             this.PerformLayout();
 

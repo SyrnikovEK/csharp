@@ -79,6 +79,12 @@
     <Compile Include="forms\PlayerCreationForm.Designer.cs">
       <DependentUpon>PlayerCreationForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="forms\LoadSecondPlayerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\LoadSecondPlayerForm.Designer.cs">
+      <DependentUpon>LoadSecondPlayerForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Presenter.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -102,6 +108,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="forms\RecordTableForm.resx">
       <DependentUpon>RecordTableForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\LoadSecondPlayerForm.resx">
+      <DependentUpon>LoadSecondPlayerForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

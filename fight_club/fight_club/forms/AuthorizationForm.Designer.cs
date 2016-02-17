@@ -28,20 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
+            this.EnterNameLabel = new System.Windows.Forms.Label();
             this.LoginButton = new System.Windows.Forms.Button();
             this.CreationButton = new System.Windows.Forms.Button();
             this.PlaerNameTextBox = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
-            // label1
+            // EnterNameLabel
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(23, 21);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(99, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Enter player\'s name";
+            this.EnterNameLabel.AutoSize = true;
+            this.EnterNameLabel.Location = new System.Drawing.Point(23, 21);
+            this.EnterNameLabel.Name = "EnterNameLabel";
+            this.EnterNameLabel.Size = new System.Drawing.Size(99, 13);
+            this.EnterNameLabel.TabIndex = 0;
+            this.EnterNameLabel.Text = "Enter player\'s name";
             // 
             // LoginButton
             // 
@@ -77,7 +77,7 @@
             this.Controls.Add(this.PlaerNameTextBox);
             this.Controls.Add(this.CreationButton);
             this.Controls.Add(this.LoginButton);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.EnterNameLabel);
             this.MaximumSize = new System.Drawing.Size(330, 175);
             this.MinimumSize = new System.Drawing.Size(330, 175);
             this.Name = "AuthorizationForm";
@@ -91,7 +91,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label EnterNameLabel;
         private System.Windows.Forms.Button LoginButton;
         private System.Windows.Forms.Button CreationButton;
         private System.Windows.Forms.TextBox PlaerNameTextBox;

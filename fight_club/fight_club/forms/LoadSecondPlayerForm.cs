@@ -10,14 +10,14 @@ using System.Windows.Forms;
 
 namespace fight_club
 {
-    public partial class RecordTableForm : Form
+    public partial class LoadSecondPlayerForm : Form
     {
-        public RecordTableForm()
+        public LoadSecondPlayerForm()
         {
             InitializeComponent();
         }
 
-        private void RecordTableForm_FormClosed(object sender, FormClosedEventArgs e)
+        private void LoadSecondPlayerForm_FormClosed(object sender, FormClosedEventArgs e)
         {
             Application.Exit();
         }

@@ -574,6 +574,7 @@
             this.MinimumSize = new System.Drawing.Size(980, 570);
             this.Name = "CombatForm";
             this.Text = "Fight Club";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.CombatForm_FormClosed);
             this.Load += new System.EventHandler(this.Form1_Load);
             this.pnl_1st_player.ResumeLayout(false);
             this.pnl_1st_player.PerformLayout();

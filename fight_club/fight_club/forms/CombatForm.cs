@@ -404,6 +404,12 @@ namespace fight_club
             }
         }
 
+        private void CombatForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            // mb add saving
+            Application.Exit();
+        }
+
 
 
 
