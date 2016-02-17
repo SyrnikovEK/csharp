@@ -6,7 +6,6 @@ using System.Threading.Tasks;
 
 namespace fight_club
 {
-    public enum GameType { PvP, PvE, EvE }
     public class GameControl
     {
         public AbstractPlayer player1;
@@ -111,7 +110,7 @@ namespace fight_club
             PunchString = e.ToString();
         }
 
-        public void DeathHandler(object sender, BodyPart e)
+        public void DeathHandler(object sender, BodyPart e)  // разобраться с этим
         {
             GameOver.Invoke(sender, player1);
         }
