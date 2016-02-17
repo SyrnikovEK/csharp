@@ -16,5 +16,20 @@ namespace fight_club
         {
             InitializeComponent();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void AuthorizationForm_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void AuthorizationForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

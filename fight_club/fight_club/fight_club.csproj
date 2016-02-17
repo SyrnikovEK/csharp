@@ -46,10 +46,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AuthorizationForm.cs">
+    <Compile Include="forms\AuthorizationForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AuthorizationForm.Designer.cs">
+    <Compile Include="forms\AuthorizationForm.Designer.cs">
       <DependentUpon>AuthorizationForm.cs</DependentUpon>
     </Compile>
     <Compile Include="game\AbstractPlayer.cs" />
@@ -57,45 +57,51 @@
     <Compile Include="game\Dice.cs" />
     <Compile Include="Extensions.cs" />
     <Compile Include="game\FightPapams.cs" />
-    <Compile Include="CombatForm.cs">
+    <Compile Include="forms\CombatForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CombatForm.Designer.cs">
+    <Compile Include="forms\CombatForm.Designer.cs">
       <DependentUpon>CombatForm.cs</DependentUpon>
     </Compile>
     <Compile Include="game\IPlayer.cs" />
     <Compile Include="game\NPC.cs" />
     <Compile Include="game\Player.cs" />
     <Compile Include="game\GameControl.cs" />
-    <Compile Include="MenuForm.cs">
+    <Compile Include="forms\MenuForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MenuForm.Designer.cs">
+    <Compile Include="forms\MenuForm.Designer.cs">
       <DependentUpon>MenuForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="PlayerCreationForm.cs">
+    <Compile Include="forms\PlayerCreationForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PlayerCreationForm.Designer.cs">
+    <Compile Include="forms\PlayerCreationForm.Designer.cs">
       <DependentUpon>PlayerCreationForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Presenter.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RecordTableForm.cs">
+    <Compile Include="forms\RecordTableForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="RecordTableForm.Designer.cs">
+    <Compile Include="forms\RecordTableForm.Designer.cs">
       <DependentUpon>RecordTableForm.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="AuthorizationForm.resx">
+    <EmbeddedResource Include="forms\AuthorizationForm.resx">
       <DependentUpon>AuthorizationForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CombatForm.resx">
+    <EmbeddedResource Include="forms\CombatForm.resx">
       <DependentUpon>CombatForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MenuForm.resx">
+    <EmbeddedResource Include="forms\MenuForm.resx">
       <DependentUpon>MenuForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\PlayerCreationForm.resx">
+      <DependentUpon>PlayerCreationForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\RecordTableForm.resx">
+      <DependentUpon>RecordTableForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -119,9 +125,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="forms\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

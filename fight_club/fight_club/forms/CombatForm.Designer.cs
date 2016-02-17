@@ -566,10 +566,12 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(964, 536);
+            this.ClientSize = new System.Drawing.Size(964, 532);
             this.Controls.Add(this.panel7);
             this.Controls.Add(this.pnl_2nd_player);
             this.Controls.Add(this.pnl_1st_player);
+            this.MaximumSize = new System.Drawing.Size(980, 570);
+            this.MinimumSize = new System.Drawing.Size(980, 570);
             this.Name = "CombatForm";
             this.Text = "Fight Club";
             this.Load += new System.EventHandler(this.Form1_Load);
