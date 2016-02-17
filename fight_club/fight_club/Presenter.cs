@@ -9,11 +9,11 @@ namespace fight_club
     public enum GameType {PvP , PvE , EvE }
     public class Presenter
     {
-        frmGame view = null;
+        CombatForm view = null;
         public GameControl game; // = new GameControl();
         public GameType gameType;
 
-        public Presenter(frmGame view)
+        public Presenter(CombatForm view)
         {
             game = new GameControl();
             this.view = view;

@@ -15,6 +15,7 @@ namespace fight_club
         protected int straight;
         protected int agility;
         protected int stamina;
+        protected int exp;
         public BodyPart blockedPart;
 
         public delegate void MyEvent(object sender, BodyPart e);
@@ -70,6 +71,13 @@ namespace fight_club
             get
             {
                 return (100 + ((stamina - 1) * 5));
+            }
+        }
+        public int Exp
+        {
+            get
+            {
+                return exp;
             }
         }
 

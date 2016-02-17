@@ -1,6 +1,6 @@
 ﻿namespace fight_club
 {
-    partial class frmGame
+    partial class CombatForm
     {
         /// <summary>
         /// Required designer variable.
@@ -562,7 +562,7 @@
             this.textlog.TabIndex = 0;
             this.textlog.Text = "";
             // 
-            // frmGame
+            // CombatForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -570,7 +570,7 @@
             this.Controls.Add(this.panel7);
             this.Controls.Add(this.pnl_2nd_player);
             this.Controls.Add(this.pnl_1st_player);
-            this.Name = "frmGame";
+            this.Name = "CombatForm";
             this.Text = "Fight Club";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.pnl_1st_player.ResumeLayout(false);

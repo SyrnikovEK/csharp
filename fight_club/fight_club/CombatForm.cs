@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace fight_club
 {
-    public partial class frmGame : Form
+    public partial class CombatForm : Form
     {
         //public GameControl game = new GameControl();
         public Presenter presenter = null;
@@ -18,7 +18,7 @@ namespace fight_club
         public BodyPart firstPlBlockChoosenPart;
         public BodyPart secondPlPunchChoosenPart;
         public BodyPart secondPlBlockChoosenPart;
-        public frmGame()
+        public CombatForm()
         {
             InitializeComponent();
             presenter = new Presenter(this);
