@@ -85,6 +85,7 @@
     <Compile Include="forms\LoadSecondPlayerForm.Designer.cs">
       <DependentUpon>LoadSecondPlayerForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="PlayersDB.cs" />
     <Compile Include="Presenter.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
