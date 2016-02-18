@@ -39,12 +39,21 @@ namespace fight_club
 
         public void Add(AbstractPlayer player)
         {
-
+            AbstractPlayer[] newarr = new AbstractPlayer[count+1];
+            Array.Copy(newarr, elements, elements.Length);
+            newarr[count + 1] = player;
+            count++;
+            elements = new AbstractPlayer[count];
+            Array.Copy(elements , newarr , count);
         }
 
         public void Remove(string name)
         {
+            //int i = 0;
+            //if (IsExist(name))
+            //{
 
+            //}
         }
 
         public AbstractPlayer Get(string name)
@@ -57,6 +66,19 @@ namespace fight_club
                 }
             }
             return null;
+        }
+
+        private int ReturnIndex(string name)
+        {
+            int index = -1;
+            for (int i = 0; i < count; i++)
+            {
+                if (elements[i].Name == name)
+                {
+                    index = i;
+                }
+            }
+            return index;
         }
     }
 }
