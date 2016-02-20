@@ -47,13 +47,18 @@ namespace fight_club
             Array.Copy(elements , newarr , count);
         }
 
-        public void Remove(string name)
+        private void Remove(string name)
         {
             //int i = 0;
             //if (IsExist(name))
             //{
 
             //}
+        }
+
+        public void Replace(string name , AbstractPlayer player)
+        {
+            elements[ReturnIndex(name)] = player;
         }
 
         public AbstractPlayer Get(string name)
