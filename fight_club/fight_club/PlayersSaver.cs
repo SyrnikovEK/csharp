@@ -10,7 +10,7 @@ namespace fight_club
 {
     public static class PlayersSaver
     {
-        public static string path = "Players.dat";
+        private static string path = "Players.dat";
         
         public static PlayersDB Load()
         {

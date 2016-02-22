@@ -45,9 +45,16 @@ namespace fight_club
 
         private void PlayerCreateButton_Click(object sender, EventArgs e)
         {
-            MenuForm frm = new MenuForm();
-            frm.Show();
-            this.Hide();
+            if (freestats == 0)
+            {
+                MenuForm frm = new MenuForm();
+                frm.Show();
+                this.Hide();
+            }
+            else
+            {
+                MessageBox.Show("Use all stats");
+            }
         }
 
         private void AgilityValue_ValueChanged(object sender, EventArgs e)
