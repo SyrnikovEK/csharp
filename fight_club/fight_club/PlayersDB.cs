@@ -7,6 +7,7 @@ using System.Collections;
 
 namespace fight_club
 {
+    [Serializable]
     public class PlayersDB : IEnumerable
     {
         private AbstractPlayer[] elements;

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace fight_club
 {
-    
+    [Serializable]
     public abstract class AbstractPlayer : IPlayer
     {
         protected int level;
