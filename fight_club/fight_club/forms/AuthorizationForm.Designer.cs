@@ -66,9 +66,11 @@
             // PlaerNameTextBox
             // 
             this.PlaerNameTextBox.Location = new System.Drawing.Point(26, 50);
+            this.PlaerNameTextBox.MaxLength = 10;
             this.PlaerNameTextBox.Name = "PlaerNameTextBox";
             this.PlaerNameTextBox.Size = new System.Drawing.Size(252, 20);
             this.PlaerNameTextBox.TabIndex = 3;
+            this.PlaerNameTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.PlaerNameTextBox_KeyPress);
             // 
             // AuthorizationForm
             // 

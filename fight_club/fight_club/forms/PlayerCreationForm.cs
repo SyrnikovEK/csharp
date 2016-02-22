@@ -99,5 +99,13 @@ namespace fight_club
         {
             LastStatsLabel.Text = freestats.ToString();
         }
+
+        private void NewPlayerTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((!Char.IsLetter(e.KeyChar)) && (e.KeyChar != 8))
+            {
+                e.Handled = true;
+            }
+        }
     }
 }

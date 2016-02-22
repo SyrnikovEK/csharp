@@ -16,8 +16,8 @@ namespace fight_club
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new CombatForm());
-            //Application.Run(new AuthorizationForm());
+            //Application.Run(new CombatForm());
+            Application.Run(new AuthorizationForm());
             //Application.Run(new RecordTableForm()); 
             //Application.Run(new MainForm());
         }

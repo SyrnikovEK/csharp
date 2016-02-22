@@ -65,9 +65,11 @@
             // NewPlayerTextBox
             // 
             this.NewPlayerTextBox.Location = new System.Drawing.Point(27, 49);
+            this.NewPlayerTextBox.MaxLength = 10;
             this.NewPlayerTextBox.Name = "NewPlayerTextBox";
             this.NewPlayerTextBox.Size = new System.Drawing.Size(196, 20);
             this.NewPlayerTextBox.TabIndex = 1;
+            this.NewPlayerTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NewPlayerTextBox_KeyPress);
             // 
             // LaodAvatarLabel
             // 

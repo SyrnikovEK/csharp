@@ -36,9 +36,11 @@
             // PlaerNameTextBox
             // 
             this.PlaerNameTextBox.Location = new System.Drawing.Point(34, 53);
+            this.PlaerNameTextBox.MaxLength = 10;
             this.PlaerNameTextBox.Name = "PlaerNameTextBox";
             this.PlaerNameTextBox.Size = new System.Drawing.Size(252, 20);
             this.PlaerNameTextBox.TabIndex = 7;
+            this.PlaerNameTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.PlaerNameTextBox_KeyPress);
             // 
             // LoginSecondPlayerButton
             // 
