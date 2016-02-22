@@ -44,9 +44,10 @@ namespace fight_club
             }
 
 
-            string[] returnedString = {"" , ""};
+            string[] returnedString = {"" , "" , ""};
             string firstturn = "";
             string secondturn = "";
+            string deathstring = "";
             int d1, d2;
 
 
@@ -82,19 +83,29 @@ namespace fight_club
             {
                 secondturn = player1.Name + " blocked punch " + player2.Name + " on " + Blockstring;         //как вызывать ревкцию события прямо тут?
             }
-            //firstturn = player1.GetHit(player2punch , new FightPapams(player2.Straight , player2.Agility)).ToString();
-            //secondturn = player2.GetHit(player1punch, new FightPapams(player1.Straight, player1.Agility)).ToString();
-            //if (player1.Hp <= 0)
-            //{
-            //    GameOver.Invoke(this, player1);  
-            //}
-            //if (player2.Hp <= 0)
-            //{
-            //    GameOver.Invoke(this, player2);
-            //}
+
+
+            if ((player1.Hp <= 0) && (player2.Hp > 0))
+            {
+                player2.AddExp(player1.Hp * ((player1.Straight + player1.Stamina + player1.Agility) / (player2.Straight + player2.Stamina + player2.Agility)));
+                deathstring = "Player " + player2.Name +  " win!";
+            }
+            if ((player2.Hp <= 0) && (player1.Hp > 0))
+            {
+                player1.AddExp(player2.Hp * ((player2.Straight + player2.Stamina + player2.Agility) / (player1.Straight + player1.Stamina + player1.Agility)));
+                deathstring = "Player " + player1.Name + " win!";
+            }
+            if ((player1.Hp <= 0) && (player2.Hp <= 0))
+            {
+                deathstring = "Draw";
+            }
 
             returnedString[0] = firstturn;
             returnedString[1] = secondturn;
+            if (deathstring != "")
+            {
+                returnedString[2] = deathstring;
+            }
             return returnedString;
         }
 
@@ -112,7 +123,7 @@ namespace fight_club
 
         public void DeathHandler(object sender, BodyPart e)  // разобраться с этим
         {
-            GameOver.Invoke(sender, player1);
+            //GameOver.Invoke(sender, player1);
         }
     }
 }

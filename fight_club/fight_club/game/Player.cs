@@ -8,7 +8,7 @@ namespace fight_club
 {
     public class Player : AbstractPlayer
     {
-        public Player(int level, string name, int straight, int agility, int stamina)
+        public Player(int level, string name, int straight, int agility, int stamina , int exp = 0)
         {
             base.level = level;
             base.name = name;
@@ -16,6 +16,7 @@ namespace fight_club
             base.straight = straight;
             base.agility = agility;
             base.stamina = stamina;
+            base.exp = exp;
         }
         public override void SetBlock(BodyPart part)
         {

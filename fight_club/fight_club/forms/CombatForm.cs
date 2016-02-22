@@ -64,6 +64,11 @@ namespace fight_club
         {
             textlog.AppendText(str[0] + Environment.NewLine);
             textlog.AppendText(str[1] + Environment.NewLine);
+            if (str[2] != "")
+            {
+                textlog.AppendText(str[2] + Environment.NewLine);
+                MessageBox.Show(str[2]);
+            }
             textlog.AppendText("----------------------------------------------------------------" + "\n");
         }
 

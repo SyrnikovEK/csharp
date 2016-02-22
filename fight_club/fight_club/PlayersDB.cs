@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Collections;
 
 namespace fight_club
 {
-    public class PlayersDB
+    public class PlayersDB : IEnumerable
     {
         private AbstractPlayer[] elements;
         private int count;
@@ -84,6 +85,11 @@ namespace fight_club
                 }
             }
             return index;
+        }
+
+        IEnumerator IEnumerable.GetEnumerator()
+        {
+            return elements.GetEnumerator();
         }
     }
 }

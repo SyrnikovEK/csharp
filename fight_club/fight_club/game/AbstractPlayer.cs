@@ -89,6 +89,7 @@ namespace fight_club
             agility = 2;
             stamina = 1;
             hp = 100 + ((stamina - 1) * 5);
+            exp = 0;
         }
 
         //public AbstractPlayer(int level , string name , int straight , int agility , int stamina)
@@ -133,7 +134,10 @@ namespace fight_club
             return damage;
         }
 
-
+        public void AddExp(int exp)
+        {
+            this.exp += exp;
+        }
         
     }
 }
