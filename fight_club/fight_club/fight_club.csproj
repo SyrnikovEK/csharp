@@ -53,7 +53,7 @@
       <DependentUpon>AuthorizationForm.cs</DependentUpon>
     </Compile>
     <Compile Include="game\AbstractPlayer.cs" />
-    <Compile Include="BodyPart.cs" />
+    <Compile Include="game\BodyPart.cs" />
     <Compile Include="game\Dice.cs" />
     <Compile Include="Extensions.cs" />
     <Compile Include="game\FightPapams.cs" />
@@ -85,12 +85,6 @@
     <Compile Include="forms\LoadSecondPlayerForm.Designer.cs">
       <DependentUpon>LoadSecondPlayerForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="MainControl.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="MainControl.Designer.cs">
-      <DependentUpon>MainControl.cs</DependentUpon>
-    </Compile>
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -107,6 +101,51 @@
     </Compile>
     <Compile Include="forms\RecordTableForm.Designer.cs">
       <DependentUpon>RecordTableForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\AutorizationScene\AutorizationPresenter.cs" />
+    <Compile Include="UI\AutorizationScene\AutorizationUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\AutorizationScene\AutorizationUserControl.Designer.cs">
+      <DependentUpon>AutorizationUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\BaseUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\CombatScene\CombatScenePresenter.cs" />
+    <Compile Include="UI\CombatScene\CombatUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\CombatScene\CombatUserControl.Designer.cs">
+      <DependentUpon>CombatUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\MenuScene\MenuPresenter.cs" />
+    <Compile Include="UI\MenuScene\MenuUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\MenuScene\MenuUserControl.Designer.cs">
+      <DependentUpon>MenuUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\PlayerCreationScene\PlayerCreationPresenter.cs" />
+    <Compile Include="UI\PlayerCreationScene\PlayerCreationUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\PlayerCreationScene\PlayerCreationUserControl.Designer.cs">
+      <DependentUpon>PlayerCreationUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\RecordTableScene\RecordTablePresenter.cs" />
+    <Compile Include="UI\RecordTableScene\RecordTableUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\RecordTableScene\RecordTableUserControl.Designer.cs">
+      <DependentUpon>RecordTableUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\SecondPlayerLoadScene\SecondPlayerLoadPresenter.cs" />
+    <Compile Include="UI\SecondPlayerLoadScene\SecondPlayerLoadUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\SecondPlayerLoadScene\SecondPlayerLoadUserControl.Designer.cs">
+      <DependentUpon>SecondPlayerLoadUserControl.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="forms\AuthorizationForm.resx">
       <DependentUpon>AuthorizationForm.cs</DependentUpon>
@@ -126,9 +165,6 @@
     <EmbeddedResource Include="forms\LoadSecondPlayerForm.resx">
       <DependentUpon>LoadSecondPlayerForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MainControl.resx">
-      <DependentUpon>MainControl.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -141,6 +177,28 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="UI\AutorizationScene\AutorizationUserControl.resx">
+      <DependentUpon>AutorizationUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\BaseUserControl.resx">
+      <DependentUpon>BaseUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\CombatScene\CombatUserControl.resx">
+      <DependentUpon>CombatUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\MenuScene\MenuUserControl.resx">
+      <DependentUpon>MenuUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\PlayerCreationScene\PlayerCreationUserControl.resx">
+      <DependentUpon>PlayerCreationUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\RecordTableScene\RecordTableUserControl.resx">
+      <DependentUpon>RecordTableUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\SecondPlayerLoadScene\SecondPlayerLoadUserControl.resx">
+      <DependentUpon>SecondPlayerLoadUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\DataSources\PlayersDB.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

@@ -28,45 +28,28 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
-            this.mainControl1 = new fight_club.MainControl();
-            this.mainControl2 = new fight_club.MainControl();
+            this.mainPanel = new System.Windows.Forms.Panel();
             this.SuspendLayout();
             // 
-            // button1
+            // mainPanel
             // 
-            this.button1.Location = new System.Drawing.Point(34, 27);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // mainControl1
-            // 
-            this.mainControl1.Location = new System.Drawing.Point(0, 0);
-            this.mainControl1.Name = "mainControl1";
-            this.mainControl1.Size = new System.Drawing.Size(720, 465);
-            this.mainControl1.TabIndex = 1;
-            // 
-            // mainControl2
-            // 
-            this.mainControl2.BackColor = System.Drawing.Color.Tomato;
-            this.mainControl2.Location = new System.Drawing.Point(0, 0);
-            this.mainControl2.Name = "mainControl2";
-            this.mainControl2.Size = new System.Drawing.Size(720, 465);
-            this.mainControl2.TabIndex = 2;
+            this.mainPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.mainPanel.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.mainPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.mainPanel.Location = new System.Drawing.Point(0, 0);
+            this.mainPanel.Name = "mainPanel";
+            this.mainPanel.Size = new System.Drawing.Size(1037, 531);
+            this.mainPanel.TabIndex = 0;
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(732, 477);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.mainControl1);
-            this.Controls.Add(this.mainControl2);
+            this.ClientSize = new System.Drawing.Size(1103, 595);
+            this.Controls.Add(this.mainPanel);
             this.Name = "MainForm";
             this.Text = "MainForm";
             this.Load += new System.EventHandler(this.MainForm_Load);
@@ -76,8 +59,6 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
-        private MainControl mainControl1;
-        private MainControl mainControl2;
+        private System.Windows.Forms.Panel mainPanel;
     }
 }
