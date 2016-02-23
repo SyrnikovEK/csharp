@@ -36,7 +36,7 @@
             // 
             // PlaerNameTextBox
             // 
-            this.PlaerNameTextBox.Location = new System.Drawing.Point(39, 71);
+            this.PlaerNameTextBox.Location = new System.Drawing.Point(39, 67);
             this.PlaerNameTextBox.MaxLength = 10;
             this.PlaerNameTextBox.Name = "PlaerNameTextBox";
             this.PlaerNameTextBox.Size = new System.Drawing.Size(252, 20);
@@ -45,7 +45,7 @@
             // 
             // CreationButton
             // 
-            this.CreationButton.Location = new System.Drawing.Point(39, 110);
+            this.CreationButton.Location = new System.Drawing.Point(39, 106);
             this.CreationButton.Name = "CreationButton";
             this.CreationButton.Size = new System.Drawing.Size(75, 23);
             this.CreationButton.TabIndex = 6;
@@ -55,7 +55,7 @@
             // 
             // LoginButton
             // 
-            this.LoginButton.Location = new System.Drawing.Point(216, 110);
+            this.LoginButton.Location = new System.Drawing.Point(216, 106);
             this.LoginButton.Name = "LoginButton";
             this.LoginButton.Size = new System.Drawing.Size(75, 23);
             this.LoginButton.TabIndex = 5;
@@ -66,7 +66,7 @@
             // EnterNameLabel
             // 
             this.EnterNameLabel.AutoSize = true;
-            this.EnterNameLabel.Location = new System.Drawing.Point(36, 42);
+            this.EnterNameLabel.Location = new System.Drawing.Point(36, 38);
             this.EnterNameLabel.Name = "EnterNameLabel";
             this.EnterNameLabel.Size = new System.Drawing.Size(99, 13);
             this.EnterNameLabel.TabIndex = 4;

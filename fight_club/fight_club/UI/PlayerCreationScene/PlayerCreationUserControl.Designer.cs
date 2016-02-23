@@ -281,7 +281,7 @@
             this.Controls.Add(this.NewPlayerTextBox);
             this.Controls.Add(this.EnterNameLabel);
             this.Name = "PlayerCreationUserControl";
-            this.Size = new System.Drawing.Size(456, 299);
+            this.Size = new System.Drawing.Size(456, 312);
             this.Load += new System.EventHandler(this.PlayerCreationUserControl_Load);
             ((System.ComponentModel.ISupportInitialize)(this.StaminaValue)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.AgilityValue)).EndInit();

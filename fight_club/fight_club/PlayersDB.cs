@@ -10,7 +10,7 @@ namespace fight_club
     [Serializable]
     public class PlayersDB : IEnumerable
     {
-        private AbstractPlayer[] elements;
+        public Player[] elements;
         private int count;
         public int Count
         {
@@ -22,30 +22,33 @@ namespace fight_club
 
         public PlayersDB()
         {
-            elements = new AbstractPlayer[0];
+            elements = new Player[0];
             count = 0;
         }
 
         public bool IsExist(string name)
         {
             bool exist = false;
-            for (int i = 0; i < count; i++)
+            if (count > 0)
             {
-                if (elements[i].Name == name)
+                for (int i = 0; i < count; i++)
                 {
-                    exist = true;
+                    if (elements[i].Name == name)
+                    {
+                        exist = true;
+                    }
                 }
             }
             return exist;
         }
 
-        public void Add(AbstractPlayer player)
+        public void Add(Player player)
         {
-            AbstractPlayer[] newarr = new AbstractPlayer[count+1];
+            Player[] newarr = new Player[count+1];
             Array.Copy(newarr, elements, elements.Length);
-            newarr[count + 1] = player;
+            newarr[count] = player;
             count++;
-            elements = new AbstractPlayer[count];
+            elements = new Player[count];
             Array.Copy(elements , newarr , count);
         }
 
@@ -58,21 +61,22 @@ namespace fight_club
             //}
         }
 
-        public void Replace(string name , AbstractPlayer player)
+        public void Replace(string name , Player player)
         {
             elements[ReturnIndex(name)] = player;
         }
 
-        public AbstractPlayer Get(string name)
+        public Player Get(string name)
         {
+            Player player = null;
             for (int i = 0; i < count; i++)
             {
-                if (elements[i].Name == name)
+                if (elements[i].Name == name)        // error, why?
                 {
-                    return elements[i];
+                    player = elements[i];
                 }
             }
-            return null;
+            return player;
         }
 
         private int ReturnIndex(string name)

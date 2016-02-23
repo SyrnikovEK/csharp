@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace fight_club
 {
-    public class Player : AbstractPlayer
+    [Serializable]
+    public class Player : AbstractPlayer , IPlayer
     {
         public Player(int level, string name, int straight, int agility, int stamina , int exp = 0)
         {

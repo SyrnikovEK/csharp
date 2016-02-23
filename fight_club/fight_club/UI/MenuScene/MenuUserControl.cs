@@ -15,6 +15,7 @@ namespace fight_club
         public MenuUserControl()
         {
             InitializeComponent();
+            
         }
 
         private void PveEnterButton_Click(object sender, EventArgs e)

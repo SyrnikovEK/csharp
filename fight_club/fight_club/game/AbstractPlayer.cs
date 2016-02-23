@@ -9,13 +9,13 @@ namespace fight_club
     [Serializable]
     public abstract class AbstractPlayer : IPlayer
     {
-        protected int level;
-        protected int hp;
-        protected string name;
-        protected int straight;
-        protected int agility;
-        protected int stamina;
-        protected int exp;
+        protected int level;          //
+        protected int hp;             //
+        protected string name;        //
+        protected int straight;       //   they are private and i cant serialize them!!!
+        protected int agility;        //
+        protected int stamina;        //
+        protected int exp;            //
         public BodyPart blockedPart;
 
         public delegate void MyEvent(object sender, BodyPart e);
