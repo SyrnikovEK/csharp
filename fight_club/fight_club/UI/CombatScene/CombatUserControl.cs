@@ -58,6 +58,7 @@ namespace fight_club
             {
                 textlog.AppendText(str[2] + Environment.NewLine);
                 MessageBox.Show(str[2]);
+                MainForm.playerRepository.Save();
                 SwitchScene(Scene.Menu);
             }
             textlog.AppendText("----------------------------------------------------------------" + "\n");
