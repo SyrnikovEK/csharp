@@ -15,6 +15,12 @@ namespace fight_club
         public RecordTableUserControl()
         {
             InitializeComponent();
+            RecordTable.DataSource = MainForm.playerRepository.GetAll();
+        }
+
+        private void RecordTableUserControl_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

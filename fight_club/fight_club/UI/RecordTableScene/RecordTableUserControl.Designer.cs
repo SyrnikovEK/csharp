@@ -32,7 +32,11 @@
             this.playersDBBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.label1 = new System.Windows.Forms.Label();
+            this.RecordTable = new System.Windows.Forms.DataGridView();
+            this.playerRepositoryBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.playersDBBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.RecordTable)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.playerRepositoryBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // playersDBBindingSource
@@ -41,7 +45,7 @@
             // 
             // progressBar1
             // 
-            this.progressBar1.Location = new System.Drawing.Point(26, 52);
+            this.progressBar1.Location = new System.Drawing.Point(336, 58);
             this.progressBar1.Name = "progressBar1";
             this.progressBar1.Size = new System.Drawing.Size(229, 23);
             this.progressBar1.TabIndex = 3;
@@ -50,21 +54,37 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(102, 19);
+            this.label1.Location = new System.Drawing.Point(412, 25);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(60, 13);
             this.label1.TabIndex = 2;
             this.label1.Text = "In Progress";
             // 
+            // RecordTable
+            // 
+            this.RecordTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.RecordTable.Location = new System.Drawing.Point(26, 124);
+            this.RecordTable.Name = "RecordTable";
+            this.RecordTable.Size = new System.Drawing.Size(835, 262);
+            this.RecordTable.TabIndex = 4;
+            // 
+            // playerRepositoryBindingSource
+            // 
+            this.playerRepositoryBindingSource.DataSource = typeof(fight_club.PlayerRepository);
+            // 
             // RecordTableUserControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.RecordTable);
             this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.label1);
             this.Name = "RecordTableUserControl";
-            this.Size = new System.Drawing.Size(290, 121);
+            this.Size = new System.Drawing.Size(887, 404);
+            this.Load += new System.EventHandler(this.RecordTableUserControl_Load);
             ((System.ComponentModel.ISupportInitialize)(this.playersDBBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.RecordTable)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.playerRepositoryBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -75,5 +95,7 @@
         private System.Windows.Forms.BindingSource playersDBBindingSource;
         private System.Windows.Forms.ProgressBar progressBar1;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.DataGridView RecordTable;
+        private System.Windows.Forms.BindingSource playerRepositoryBindingSource;
     }
 }
