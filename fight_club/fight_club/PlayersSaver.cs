@@ -19,13 +19,14 @@ namespace fight_club
             BinaryFormatter formatter = new BinaryFormatter();
             using (FileStream stream = new FileStream(path, FileMode.OpenOrCreate))
             {
-                if (true) // if File exist
+                if (new System.IO.FileInfo(path).Exists) // if File exist
                 {
                     newPlayersList = (List<Player>)formatter.Deserialize(stream);
                 }
                 else
                 {
-                    newPlayersList = null;
+                    newPlayersList.Add(new Player(0, "ZeroPlayer", 1, 1, 1));
+                    Save(newPlayersList);                    
                 }
             }
             return newPlayersList;
