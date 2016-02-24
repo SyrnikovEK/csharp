@@ -33,13 +33,31 @@ namespace fight_club
 
         private void PlayerCreateButton_Click(object sender, EventArgs e)
         {
-            if (freestats == 0)
+            if (NewPlayerTextBox.Text != "")
             {
-                SwitchScene(Scene.Menu);
+                if (freestats == 0)
+                {
+                    if (!MainForm.playerRepository.IsExist(NewPlayerTextBox.Text))
+                    {
+                        MainForm.playerRepository.Add(new Player(0, NewPlayerTextBox.Text, str, agi, stm));
+                        MainForm.playerRepository.Save();
+                        MainForm.FirstPlayer = MainForm.playerRepository.Get(NewPlayerTextBox.Text);
+                        // создание игрока и перенос его в меню
+                        SwitchScene(Scene.Menu);
+                    }
+                    else
+                    {
+                        MessageBox.Show("This name is already taken");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Use all stats");
+                }
             }
             else
             {
-                MessageBox.Show("Use all stats");
+                MessageBox.Show("Input name");
             }
         }
 

@@ -12,18 +12,25 @@ namespace fight_club
     {
         private static string path = "Players.dat";
         
-        public static PlayersDB Load()
+        public static List<Player> Load()
         {
-            PlayersDB newPlayersDB = null;
+            List<Player> newPlayersList = null;
 
             BinaryFormatter formatter = new BinaryFormatter();
             using (FileStream stream = new FileStream(path, FileMode.OpenOrCreate))
             {
-                newPlayersDB = (PlayersDB)formatter.Deserialize(stream);
+                if (true) // if File exist
+                {
+                    newPlayersList = (List<Player>)formatter.Deserialize(stream);
+                }
+                else
+                {
+                    newPlayersList = null;
+                }
             }
-            return newPlayersDB;
+            return newPlayersList;
         }
-        public static void Save(PlayersDB db)
+        public static void Save(List<Player> db)
         {
             BinaryFormatter formatter = new BinaryFormatter();
             using (FileStream stream = new FileStream(path, FileMode.OpenOrCreate))

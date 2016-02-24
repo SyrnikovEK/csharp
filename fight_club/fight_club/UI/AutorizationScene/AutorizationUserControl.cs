@@ -19,7 +19,23 @@ namespace fight_club
 
         private void LoginButton_Click(object sender, EventArgs e)
         {
-            SwitchScene(Scene.Menu);
+            if (PlaerNameTextBox.Text != "")
+            {
+                if (MainForm.playerRepository.IsExist(PlaerNameTextBox.Text))
+                {
+                    // подгрузка игрока в меню
+                    MainForm.FirstPlayer = MainForm.playerRepository.Get(PlaerNameTextBox.Text);
+                    SwitchScene(Scene.Menu);
+                }
+                else
+                {
+                    MessageBox.Show("Wrong Name");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Input name");
+            }
         }
 
         private void PlaerNameTextBox_KeyPress(object sender, KeyPressEventArgs e)

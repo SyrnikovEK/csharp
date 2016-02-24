@@ -19,7 +19,25 @@ namespace fight_club
 
         private void LoginSecondPlayerButton_Click(object sender, EventArgs e)
         {
-            SwitchScene(Scene.Combat);
+
+            if (PlaerNameTextBox.Text != "")
+            {
+                if (MainForm.playerRepository.IsExist(PlaerNameTextBox.Text))
+                {
+                    // подгрузка вторго игрока в бой , проверка если != первый игрок
+                    MainForm.SecondPlayer = MainForm.playerRepository.Get(PlaerNameTextBox.Text);
+                    // new Game
+                    SwitchScene(Scene.Combat);
+                }
+                else
+                {
+                    MessageBox.Show("Wrong Name");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Input name");
+            }            
         }
 
         private void PlaerNameTextBox_KeyPress(object sender, KeyPressEventArgs e)

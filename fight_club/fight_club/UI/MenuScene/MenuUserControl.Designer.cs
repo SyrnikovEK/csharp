@@ -173,6 +173,7 @@
             this.Controls.Add(this.PlayerInfoPanel);
             this.Name = "MenuUserControl";
             this.Size = new System.Drawing.Size(405, 563);
+            this.Load += new System.EventHandler(this.MenuUserControl_Load);
             this.PlayerAvatarPanel.ResumeLayout(false);
             this.PlayerAvatarPanel.PerformLayout();
             this.PlayerInfoPanel.ResumeLayout(false);

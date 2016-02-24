@@ -12,7 +12,7 @@ namespace fight_club
 {
     public partial class CombatUserControl : BaseUserControl
     {
-        private CombatScenePresenter presenter = null;  // продумать доступ
+        public CombatScenePresenter presenter = null;  // продумать доступ
         public BodyPart firstPlPunchChoosenPart;
         public BodyPart firstPlBlockChoosenPart;
         public BodyPart secondPlPunchChoosenPart;

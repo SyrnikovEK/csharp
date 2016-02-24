@@ -17,6 +17,14 @@ namespace fight_club
         {
             game = new GameControl();
             this.view = view;
+            if (MainForm.SecondPlayer != null)
+            {
+                game.NewGame(MainForm.FirstPlayer, MainForm.SecondPlayer);
+            }
+            else
+            {
+                game.NewGame(MainForm.FirstPlayer);
+            }
             if (game.player2 is NPC)
             {
                 gameType = GameType.PvE;
@@ -27,6 +35,18 @@ namespace fight_club
             }
             DrawPlayersInfo();
             game.GameOver += GameOverHandler;
+        }
+
+        public void NewGame()
+        {
+            if (MainForm.SecondPlayer != null)
+            {
+                game.NewGame(MainForm.FirstPlayer, MainForm.SecondPlayer);
+            }
+            else
+            {
+                game.NewGame(MainForm.FirstPlayer);
+            }
         }
 
         public void DrawPlayersInfo()

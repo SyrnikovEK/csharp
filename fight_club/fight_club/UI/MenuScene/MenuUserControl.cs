@@ -12,20 +12,29 @@ namespace fight_club
 {
     public partial class MenuUserControl : BaseUserControl
     {
+        Player MainPlayer;
         public MenuUserControl()
         {
             InitializeComponent();
-            
+            DrawPlayerInfo(MainForm.FirstPlayer);  // delete or change
+        }
+
+        void DrawPlayerInfo(Player player)
+        {
+            PlayerNameLabel.Text = player.Name;
+            PlayerExpLabel.Text = player.Exp.ToString();
         }
 
         private void PveEnterButton_Click(object sender, EventArgs e)
         {
+            // new Game
             SwitchScene(Scene.Combat);
         }
 
         private void PvpEnterButton_Click(object sender, EventArgs e)
         {
-            SwitchScene(Scene.Combat);
+            SwitchScene(Scene.SecondPlayerLoad);
+            //SwitchScene(Scene.Combat);
         }
 
         private void RecordTableButton_Click(object sender, EventArgs e)
@@ -41,6 +50,11 @@ namespace fight_club
         private void ExitButton_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void MenuUserControl_Load(object sender, EventArgs e)
+        {
+            DrawPlayerInfo(MainForm.FirstPlayer);
         }
     }
 }
