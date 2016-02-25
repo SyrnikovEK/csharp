@@ -58,7 +58,11 @@ namespace fight_club
             {
                 textlog.AppendText(str[2] + Environment.NewLine);
                 MessageBox.Show(str[2]);
-                MainForm.playerRepository.Save();
+                //MainForm.playerRepository.Save();
+                if (presenter.gameType == GameType.PvP)
+                {
+                    MainForm.SecondPlayer = null;
+                }
                 SwitchScene(Scene.Menu);
             }
             textlog.AppendText("----------------------------------------------------------------" + "\n");

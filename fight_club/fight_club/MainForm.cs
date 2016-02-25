@@ -98,14 +98,17 @@ namespace fight_club
             }
             if (ctrl != null)
             {
-                this.Height = ctrl.Height + 20;
-                this.Width = ctrl.Width + 15;
+                //this.Height = ctrl.Height + 20;
+                //this.Width = ctrl.Width + 15;
+                this.MinimumSize = new Size(ctrl.Width + 15, ctrl.Height + 20);
+                this.MaximumSize = new Size(ctrl.Width + 15, ctrl.Height + 20);
                 mainPanel.Height = ctrl.Height + 20;
                 mainPanel.Width = ctrl.Width + 15;
                 this.Location = new Point(Screen.PrimaryScreen.WorkingArea.Width / 2 - this.Width / 2, Screen.PrimaryScreen.WorkingArea.Height / 2 - this.Height / 2);
                 ctrl.Dock = DockStyle.Fill;                
                 mainPanel.Controls.Clear();
                 mainPanel.Controls.Add(ctrl);
+                
             }
         }
 

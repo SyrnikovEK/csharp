@@ -71,5 +71,15 @@ namespace fight_club
         {
             PlayersSaver.Save(elements);
         }
+
+        public List<PlayersRecordInfo> GetAllRecords()
+        {
+            List<PlayersRecordInfo> outputlist = new List<PlayersRecordInfo>();
+            foreach (var item in elements)
+            {
+                outputlist.Add(new PlayersRecordInfo(item));
+            }
+            return outputlist;
+        }
     }
 }

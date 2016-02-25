@@ -94,6 +94,7 @@
     </Compile>
     <Compile Include="PlayerRepository.cs" />
     <Compile Include="PlayersDB.cs" />
+    <Compile Include="PlayersRecordInfo.cs" />
     <Compile Include="PlayersSaver.cs" />
     <Compile Include="Presenter.cs" />
     <Compile Include="Program.cs" />

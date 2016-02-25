@@ -20,20 +20,36 @@ namespace fight_club
 
         public GameControl()
         {
-            player1 = new Player(2 , "Jack" , 3 , 3 , 2);
-            player2 = new Player(2, "Ted", 2, 2, 4); 
+            //player1 = new Player(2 , "Jack" , 3 , 3 , 2);
+            //player2 = new Player(2, "Ted", 2, 2, 4); 
+            if (MainForm.SecondPlayer == null)
+            {
+                Player player = MainForm.FirstPlayer;
+                player1 = new Player(player.Level, player.Name, player.Straight, player.Agility, player.Stamina, player.Exp);
+                player2 = new NPC();
+            }
+            else
+            {
+                Player plr1 = MainForm.FirstPlayer;
+                Player plr2 = MainForm.SecondPlayer;
+                player1 = new Player(plr1.Level, plr1.Name, plr1.Straight, plr1.Agility, plr1.Stamina, plr1.Exp);
+                player2 = new Player(plr2.Level, plr2.Name, plr2.Straight, plr2.Agility, plr2.Stamina, plr2.Exp);
+            }
         }
 
         public void NewGame(AbstractPlayer player)
         {
-            player1 = player;
+            //player1 = player;
+            player1 = new Player(player.Level, player.Name, player.Straight, player.Agility, player.Stamina, player.Exp);
             player2 = new NPC();  
         }
 
         public void NewGame(AbstractPlayer player1 , AbstractPlayer player2)
         {
-            this.player1 = player1;
-            this.player2 = player2;
+            player1 = new Player(player1.Level, player1.Name, player1.Straight, player1.Agility, player1.Stamina, player1.Exp);
+            player2 = new Player(player2.Level, player2.Name, player2.Straight, player2.Agility, player2.Stamina, player2.Exp);
+            //this.player1 = player1;
+            //this.player2 = player2;
         }
 
         public string[] Turn(BodyPart player1punch , BodyPart player1block , BodyPart player2punch , BodyPart player2block)
@@ -87,12 +103,16 @@ namespace fight_club
 
             if ((player1.Hp <= 0) && (player2.Hp > 0))
             {
-                player2.AddExp(player1.Hp * ((player1.Straight + player1.Stamina + player1.Agility) / (player2.Straight + player2.Stamina + player2.Agility)));
+                player2.AddExp((int)(player1.MaxHp * ((double)(player1.Straight + player1.Stamina + player1.Agility) / (double)(player2.Straight + player2.Stamina + player2.Agility))));
+                MainForm.playerRepository.Add((Player)player2);
                 deathstring = "Player " + player2.Name +  " win!";
             }
             if ((player2.Hp <= 0) && (player1.Hp > 0))
             {
-                player1.AddExp(player2.Hp * ((player2.Straight + player2.Stamina + player2.Agility) / (player1.Straight + player1.Stamina + player1.Agility)));
+                //int addingexp = 0;
+                //addingexp = (int)(player2.MaxHp * ((double)(player2.Straight + player2.Stamina + player2.Agility) / (double)(player1.Straight + player1.Stamina + player1.Agility)));
+                player1.AddExp((int)(player2.MaxHp * ((double)(player2.Straight + player2.Stamina + player2.Agility) / (double)(player1.Straight + player1.Stamina + player1.Agility))));
+                MainForm.playerRepository.Add((Player)player1);
                 deathstring = "Player " + player1.Name + " win!";
             }
             if ((player1.Hp <= 0) && (player2.Hp <= 0))
@@ -121,7 +141,7 @@ namespace fight_club
             PunchString = e.ToString();
         }
 
-        public void DeathHandler(object sender, BodyPart e)  // разобраться с этим
+        public void DeathHandler(object sender, BodyPart e)  //
         {
             //GameOver.Invoke(sender, player1);
         }

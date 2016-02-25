@@ -8,7 +8,7 @@ using System.Collections;
 namespace fight_club
 {
     [Serializable]
-    public class PlayersDB : IEnumerable
+    public class PlayersDB : IEnumerable   // not need
     {
         public Player[] elements;
         private int count;
@@ -71,7 +71,7 @@ namespace fight_club
             Player player = null;
             for (int i = 0; i < count; i++)
             {
-                if (elements[i].Name == name)        // error, why?
+                if (elements[i].Name == name)        
                 {
                     player = elements[i];
                 }
