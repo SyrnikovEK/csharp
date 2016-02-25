@@ -41,7 +41,6 @@
             // 
             // playersDBBindingSource
             // 
-            this.playersDBBindingSource.DataSource = typeof(fight_club.PlayersDB);
             // 
             // progressBar1
             // 

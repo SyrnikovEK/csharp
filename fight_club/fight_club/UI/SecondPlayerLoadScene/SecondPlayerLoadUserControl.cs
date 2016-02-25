@@ -24,10 +24,17 @@ namespace fight_club
             {
                 if (MainForm.playerRepository.IsExist(PlaerNameTextBox.Text))
                 {
-                    // подгрузка вторго игрока в бой , проверка если != первый игрок
-                    MainForm.SecondPlayer = MainForm.playerRepository.Get(PlaerNameTextBox.Text);
-                    // new Game
-                    SwitchScene(Scene.Combat);
+                    if (PlaerNameTextBox.Text != MainForm.FirstPlayer.Name)
+                    {
+                        // подгрузка вторго игрока в бой , проверка если != первый игрок
+                        MainForm.SecondPlayer = MainForm.playerRepository.Get(PlaerNameTextBox.Text);
+                        // new Game
+                        SwitchScene(Scene.Combat); 
+                    }
+                    else
+                    {
+                        MessageBox.Show("This player is already taken");
+                    }
                 }
                 else
                 {

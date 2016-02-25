@@ -26,7 +26,6 @@ namespace fight_club
     }
     public partial class MainForm : Form
     {
-        public PlayersDB allPlayers;
         Player jack;
         public static PlayerRepository playerRepository = null;
         public static Player FirstPlayer = null;

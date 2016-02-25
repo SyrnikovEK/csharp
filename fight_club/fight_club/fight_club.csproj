@@ -46,45 +46,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="forms\AuthorizationForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="forms\AuthorizationForm.Designer.cs">
-      <DependentUpon>AuthorizationForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="game\AbstractPlayer.cs" />
     <Compile Include="game\BodyPart.cs" />
     <Compile Include="game\Dice.cs" />
-    <Compile Include="Extensions.cs" />
+    <Compile Include="UI\Extensions.cs" />
     <Compile Include="game\FightPapams.cs" />
-    <Compile Include="forms\CombatForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="forms\CombatForm.Designer.cs">
-      <DependentUpon>CombatForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="game\IPlayer.cs" />
     <Compile Include="game\NPC.cs" />
     <Compile Include="game\Player.cs" />
     <Compile Include="game\GameControl.cs" />
-    <Compile Include="forms\MenuForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="forms\MenuForm.Designer.cs">
-      <DependentUpon>MenuForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="forms\PlayerCreationForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="forms\PlayerCreationForm.Designer.cs">
-      <DependentUpon>PlayerCreationForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="forms\LoadSecondPlayerForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="forms\LoadSecondPlayerForm.Designer.cs">
-      <DependentUpon>LoadSecondPlayerForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="IPlayerRepository.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
@@ -93,18 +63,10 @@
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
     <Compile Include="PlayerRepository.cs" />
-    <Compile Include="PlayersDB.cs" />
     <Compile Include="PlayersRecordInfo.cs" />
     <Compile Include="PlayersSaver.cs" />
-    <Compile Include="Presenter.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="forms\RecordTableForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="forms\RecordTableForm.Designer.cs">
-      <DependentUpon>RecordTableForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="UI\AutorizationScene\AutorizationPresenter.cs" />
     <Compile Include="UI\AutorizationScene\AutorizationUserControl.cs">
       <SubType>UserControl</SubType>
@@ -150,24 +112,6 @@
     <Compile Include="UI\SecondPlayerLoadScene\SecondPlayerLoadUserControl.Designer.cs">
       <DependentUpon>SecondPlayerLoadUserControl.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="forms\AuthorizationForm.resx">
-      <DependentUpon>AuthorizationForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="forms\CombatForm.resx">
-      <DependentUpon>CombatForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="forms\MenuForm.resx">
-      <DependentUpon>MenuForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="forms\PlayerCreationForm.resx">
-      <DependentUpon>PlayerCreationForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="forms\RecordTableForm.resx">
-      <DependentUpon>RecordTableForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="forms\LoadSecondPlayerForm.resx">
-      <DependentUpon>LoadSecondPlayerForm.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
