@@ -23,5 +23,10 @@ namespace fight_club
         {
 
         }
+
+        private void ToMenu_Click(object sender, EventArgs e)
+        {
+            SwitchScene(Scene.Menu);
+        }
     }
 }

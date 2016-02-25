@@ -34,13 +34,11 @@
             this.label1 = new System.Windows.Forms.Label();
             this.RecordTable = new System.Windows.Forms.DataGridView();
             this.playerRepositoryBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.ToMenu = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.playersDBBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.RecordTable)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.playerRepositoryBindingSource)).BeginInit();
             this.SuspendLayout();
-            // 
-            // playersDBBindingSource
-            // 
             // 
             // progressBar1
             // 
@@ -71,10 +69,21 @@
             // 
             this.playerRepositoryBindingSource.DataSource = typeof(fight_club.PlayerRepository);
             // 
+            // ToMenu
+            // 
+            this.ToMenu.Location = new System.Drawing.Point(26, 20);
+            this.ToMenu.Name = "ToMenu";
+            this.ToMenu.Size = new System.Drawing.Size(75, 23);
+            this.ToMenu.TabIndex = 5;
+            this.ToMenu.Text = "Back";
+            this.ToMenu.UseVisualStyleBackColor = true;
+            this.ToMenu.Click += new System.EventHandler(this.ToMenu_Click);
+            // 
             // RecordTableUserControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.ToMenu);
             this.Controls.Add(this.RecordTable);
             this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.label1);
@@ -96,5 +105,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView RecordTable;
         private System.Windows.Forms.BindingSource playerRepositoryBindingSource;
+        private System.Windows.Forms.Button ToMenu;
     }
 }

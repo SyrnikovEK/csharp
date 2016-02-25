@@ -26,7 +26,7 @@ namespace fight_club
             }
             else
             {
-                newPlayersList.Add(new Player(0, "ZeroPlayer", 1, 1, 1));
+                newPlayersList.Add(new Player(0, "PublicPlayer", 1, 1, 1));
                 Save(newPlayersList);
             }
 
