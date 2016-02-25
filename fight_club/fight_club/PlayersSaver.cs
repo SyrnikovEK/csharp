@@ -14,21 +14,22 @@ namespace fight_club
         
         public static List<Player> Load()
         {
-            List<Player> newPlayersList = null;
+            List<Player> newPlayersList = new List<Player>();
 
             BinaryFormatter formatter = new BinaryFormatter();
-            using (FileStream stream = new FileStream(path, FileMode.OpenOrCreate))
+            if (new System.IO.FileInfo(path).Exists)
             {
-                if (new System.IO.FileInfo(path).Exists) // if File exist
+                using (FileStream stream = new FileStream(path, FileMode.OpenOrCreate))
                 {
                     newPlayersList = (List<Player>)formatter.Deserialize(stream);
                 }
-                else
-                {
-                    newPlayersList.Add(new Player(0, "ZeroPlayer", 1, 1, 1));
-                    Save(newPlayersList);                    
-                }
             }
+            else
+            {
+                newPlayersList.Add(new Player(0, "ZeroPlayer", 1, 1, 1));
+                Save(newPlayersList);
+            }
+
             return newPlayersList;
         }
         public static void Save(List<Player> db)

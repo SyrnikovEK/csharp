@@ -13,7 +13,7 @@ namespace fight_club
         {
             base.level = level;
             base.name = name;
-            base.hp = 100 + ((stamina - 1) * 5);
+            base.hp = 100 + ((stamina - 1) * 10);
             base.straight = straight;
             base.agility = agility;
             base.stamina = stamina;

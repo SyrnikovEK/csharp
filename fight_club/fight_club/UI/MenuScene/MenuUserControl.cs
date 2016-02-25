@@ -12,7 +12,7 @@ namespace fight_club
 {
     public partial class MenuUserControl : BaseUserControl
     {
-        Player MainPlayer;
+        //Player MainPlayer;
         public MenuUserControl()
         {
             InitializeComponent();
@@ -44,6 +44,7 @@ namespace fight_club
 
         private void ChangePlayerButton_Click(object sender, EventArgs e)
         {
+            MainForm.FirstPlayer = null;
             SwitchScene(Scene.Autorization);
         }
 

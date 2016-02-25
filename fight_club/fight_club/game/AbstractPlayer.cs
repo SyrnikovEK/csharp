@@ -70,7 +70,7 @@ namespace fight_club
         {
             get
             {
-                return (100 + ((stamina - 1) * 5));
+                return (100 + ((stamina - 1) * 10));
             }
         }
         public int Exp
@@ -88,7 +88,7 @@ namespace fight_club
             straight = 3;
             agility = 2;
             stamina = 1;
-            hp = 100 + ((stamina - 1) * 5);
+            hp = 100 + ((stamina - 1) * 10);
             exp = 0;
         }
 

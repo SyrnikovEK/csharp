@@ -104,7 +104,10 @@ namespace fight_club
             if ((player1.Hp <= 0) && (player2.Hp > 0))
             {
                 player2.AddExp((int)(player1.MaxHp * ((double)(player1.Straight + player1.Stamina + player1.Agility) / (double)(player2.Straight + player2.Stamina + player2.Agility))));
-                MainForm.playerRepository.Add((Player)player2);
+                if (!(player2 is NPC))
+                {
+                    MainForm.playerRepository.Add((Player)player2);
+                }                
                 deathstring = "Player " + player2.Name +  " win!";
             }
             if ((player2.Hp <= 0) && (player1.Hp > 0))
