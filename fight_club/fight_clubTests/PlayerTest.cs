@@ -37,6 +37,7 @@ namespace fight_clubTests
             Assert.AreEqual(100, player.Exp);
         }
 
+        // добавить подписку на обработку событий
         //[Test]
         //public void GetHitIfHit()
         //{

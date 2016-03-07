@@ -9,6 +9,7 @@ namespace fight_club
     [Serializable]
     public class Player : AbstractPlayer , IPlayer
     {
+        // добавить проверку на отрицательные параметры
         public Player(int level, string name, int straight, int agility, int stamina , int exp = 0)
         {
             base.level = level;
