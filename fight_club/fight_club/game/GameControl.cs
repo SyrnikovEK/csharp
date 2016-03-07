@@ -46,6 +46,8 @@ namespace fight_club
             player2 = new Player(player2.Level, player2.Name, player2.Straight, player2.Agility, player2.Stamina, player2.Exp);
         }
 
+
+        // упростить п*дец
         public string[] Turn(BodyPart player1punch , BodyPart player1block , BodyPart player2punch , BodyPart player2block)
         {
             if (player2 is NPC)   // remove to bots behaviour
