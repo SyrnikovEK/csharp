@@ -383,18 +383,66 @@ namespace fight_club
 
         private void btn_1st_endturn_Click(object sender, EventArgs e)
         {
-            btn_1st_endturn.Enabled = false;
-            pnl_1st_block.Enabled = false;
-            pnl_1st_punch.Enabled = false;
-            EndTurn();
+            bool punchischecked = false;
+            bool blockischecked = false;
+            foreach (Control item in pnl_1st_punch.Controls)
+            {
+                if (item.BackColor == Color.Gray)
+                {
+                    punchischecked = true;
+                }
+            }
+            foreach (Control item in pnl_1st_block.Controls)
+            {
+                if (item.BackColor == Color.Gray)
+                {
+                    blockischecked = true;
+                }
+            }
+
+            if (punchischecked && blockischecked)
+            {
+                btn_1st_endturn.Enabled = false;
+                pnl_1st_block.Enabled = false;
+                pnl_1st_punch.Enabled = false;
+                EndTurn();
+            }
+            else
+            {
+                MessageBox.Show("Choose part");
+            }
         }
 
         private void btn_2nd_endturn_Click(object sender, EventArgs e)
         {
-            btn_2nd_endturn.Enabled = false;
-            pnl_2nd_block.Enabled = false;
-            pnl_2nd_punch.Enabled = false;
-            EndTurn();
+            bool punchischecked = false;
+            bool blockischecked = false;
+            foreach (Control item in pnl_2nd_punch.Controls)
+            {
+                if (item.BackColor == Color.Gray)
+                {
+                    punchischecked = true;
+                }
+            }
+            foreach (Control item in pnl_2nd_block.Controls)
+            {
+                if (item.BackColor == Color.Gray)
+                {
+                    blockischecked = true;
+                }
+            }
+
+            if (punchischecked && blockischecked)
+            {
+                btn_2nd_endturn.Enabled = false;
+                pnl_2nd_block.Enabled = false;
+                pnl_2nd_punch.Enabled = false;
+                EndTurn();
+            }
+            else
+            {
+                MessageBox.Show("Choose part");
+            }
         }
 
         public void EndTurn()

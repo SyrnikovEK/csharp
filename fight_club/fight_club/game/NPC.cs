@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace fight_club
 {
-    public class NPC : AbstractPlayer
+    public class NPC : AbstractPlayer , IPlayer
     {
         public override void SetBlock(BodyPart part = BodyPart.Head)
         {
