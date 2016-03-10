@@ -15,6 +15,11 @@ namespace fight_club
             elements = PlayersSaver.Load();
         }
 
+        public PlayerRepository(IPlayersContainer container)
+        {
+            elements = container.GetAll();
+        }
+
         public void Add(Player player)
         {
             if (IsExist(player.Name))
