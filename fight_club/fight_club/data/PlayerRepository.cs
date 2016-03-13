@@ -9,7 +9,11 @@ namespace fight_club
     [Serializable]
     public class PlayerRepository : IPlayerRepository
     {
+        #region Fields
         List<Player> elements = null;
+        #endregion
+
+        #region Constructors
         public PlayerRepository()
         {
             elements = PlayersSaver.Load();
@@ -19,7 +23,9 @@ namespace fight_club
         {
             elements = container.GetAll();
         }
+        #endregion
 
+        #region Methods
         public void Add(Player player)
         {
             if (IsExist(player.Name))
@@ -85,6 +91,7 @@ namespace fight_club
                 outputlist.Add(new PlayersRecordInfo(item));
             }
             return outputlist;
-        }
+        } 
+        #endregion
     }
 }

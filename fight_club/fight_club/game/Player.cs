@@ -7,9 +7,10 @@ using System.Threading.Tasks;
 namespace fight_club
 {
     [Serializable]
-    public class Player : AbstractPlayer , IPlayer
+    public class Player : AbstractPlayer , IPlayer  // add LevelUp and bonus stats
     {
-        public Player(int level, string name, int straight, int agility, int stamina , int exp = 0)
+        #region Constructors
+        public Player(int level, string name, int straight, int agility, int stamina, int exp = 0)
         {
             if (level <= 0)
             {
@@ -37,16 +38,20 @@ namespace fight_club
             }
 
             base.level = level;
-            base.name = name;            
-            base.hp = 100 + ((stamina - 1) * 10);
+            base.name = name;
             base.straight = straight;
             base.agility = agility;
             base.stamina = stamina;
+            base.hp = base.CalculateHp();  //100 + ((stamina - 1) * 10);
             base.exp = exp;
         }
+        #endregion
+
+        #region Methods
         public override void SetBlock(BodyPart part)
         {
             base.blockedPart = part;
-        }       
+        }      
+        #endregion
     }
 }
