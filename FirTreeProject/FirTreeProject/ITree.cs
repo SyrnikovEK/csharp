@@ -35,5 +35,6 @@ namespace FirTreeProject
 
         void GrowUp();
         void GrowUp(double delta);
+        void ChangeColor(Season season);
     }
 }

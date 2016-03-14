@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AbstractTree.cs" />
     <Compile Include="FirTree.cs" />
     <Compile Include="Forest.cs" />
     <Compile Include="IForest.cs" />

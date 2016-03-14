@@ -6,55 +6,8 @@ using System.Threading.Tasks;
 
 namespace FirTreeProject
 {
-    public class FirTree : ITree
+    public class FirTree : AbstractTree , ITree
     {
-        private double height;
-        private double growingSpeed;
-        private TreeColor color;
-        private TreeType type;
-        private TreeShape shape;
-
-
-        public double Height
-        {
-            get
-            {
-                return height;
-            }
-        }
-        public double GrowingSpeed
-        {
-            get
-            {
-                return growingSpeed;
-            }
-            set
-            {
-                growingSpeed = value;
-            }
-        }
-        public TreeColor Color
-        {
-            get
-            {
-                return color;
-            }
-        }
-        public TreeType Type
-        {
-            get
-            {
-                return type;
-            }
-        }
-        public TreeShape Shape
-        {
-            get
-            {
-                return shape;
-            }
-        }
-
         public FirTree()
         {
             height = 0;
@@ -63,14 +16,9 @@ namespace FirTreeProject
             shape = TreeShape.Shapely;
         }
 
-        public void GrowUp(double delta)
+        public override void ChangeColor(Season season)
         {
-            height += delta;
-        }
-
-        public void GrowUp()
-        {
-            height += growingSpeed;
+            color = TreeColor.Green;
         }
     }
 }

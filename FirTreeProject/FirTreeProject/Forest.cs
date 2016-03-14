@@ -64,6 +64,7 @@ namespace FirTreeProject
             foreach (var item in trees)
             {
                 item.GrowUp();
+                item.ChangeColor(currentSeason);
             }
         }
     }
