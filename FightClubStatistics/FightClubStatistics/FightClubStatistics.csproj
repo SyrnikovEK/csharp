@@ -79,6 +79,54 @@
     <Compile Include="Data\User.cs" />
     <Compile Include="Repository\UserRepository.cs" />
     <Compile Include="Repository\TransactionRepository.cs" />
+    <Compile Include="UI\BaseUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\BaseUserControl.Designer.cs">
+      <DependentUpon>BaseUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\CombatLogScene\CombatLogPresenter.cs" />
+    <Compile Include="UI\CombatLogScene\CombatLogUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\CombatLogScene\CombatLogUserControl.Designer.cs">
+      <DependentUpon>CombatLogUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\EditScene\EditPresenter.cs" />
+    <Compile Include="UI\EditScene\EditUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\EditScene\EditUserControl.Designer.cs">
+      <DependentUpon>EditUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\HitLogScene\HitLogPresenter.cs" />
+    <Compile Include="UI\HitLogScene\HitLogUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\HitLogScene\HitLogUserControl.Designer.cs">
+      <DependentUpon>HitLogUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\MenuScene\MenuPresenter.cs" />
+    <Compile Include="UI\MenuScene\MenuUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\MenuScene\MenuUserControl.Designer.cs">
+      <DependentUpon>MenuUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\TransactionScene\TransactionPresenter.cs" />
+    <Compile Include="UI\TransactionScene\TransactionUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\TransactionScene\TransactionUserControl.Designer.cs">
+      <DependentUpon>TransactionUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\UserScene\UserPresenter.cs" />
+    <Compile Include="UI\UserScene\UserUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\UserScene\UserUserControl.Designer.cs">
+      <DependentUpon>UserUserControl.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
