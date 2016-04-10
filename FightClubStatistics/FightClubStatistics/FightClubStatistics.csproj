@@ -120,6 +120,12 @@
     <Compile Include="UI\TransactionScene\TransactionUserControl.Designer.cs">
       <DependentUpon>TransactionUserControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\UserScene\EditUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\UserScene\EditUserControl.Designer.cs">
+      <DependentUpon>EditUserControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\UserScene\UserPresenter.cs" />
     <Compile Include="UI\UserScene\UserUserControl.cs">
       <SubType>UserControl</SubType>
@@ -139,6 +145,12 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="UI\UserScene\EditUserControl.resx">
+      <DependentUpon>EditUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\UserScene\UserUserControl.resx">
+      <DependentUpon>UserUserControl.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace FightClubStatistics.UI.TransactionScene
 {
-    public partial class TransactionUserControl : UserControl
+    public partial class TransactionUserControl : BaseUserControl
     {
         public TransactionUserControl()
         {

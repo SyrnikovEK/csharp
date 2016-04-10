@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace FightClubStatistics.UI.EditScene
 {
-    public partial class EditUserControl : UserControl
+    public partial class EditUserControl : BaseUserControl
     {
         public EditUserControl()
         {

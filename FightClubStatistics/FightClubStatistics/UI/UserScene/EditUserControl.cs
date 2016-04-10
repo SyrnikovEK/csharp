@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace FightClubStatistics.UI.HitLogScene
+namespace FightClubStatistics.UI.UserScene
 {
-    public partial class HitLogUserControl : BaseUserControl
+    public partial class EditUserControl : UserControl
     {
-        public HitLogUserControl()
+        public EditUserControl()
         {
             InitializeComponent();
         }

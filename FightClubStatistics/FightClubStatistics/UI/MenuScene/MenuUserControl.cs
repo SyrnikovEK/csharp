@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace FightClubStatistics.UI.MenuScene
 {
-    public partial class MenuUserControl : UserControl
+    public partial class MenuUserControl : BaseUserControl
     {
         public MenuUserControl()
         {

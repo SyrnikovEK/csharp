@@ -13,6 +13,7 @@ namespace FightClubStatistics
     public enum Scene
     {
         Autorization,
+        UserScene
     }
     public partial class BaseUserControl : UserControl
     {
