@@ -55,6 +55,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Context\MyContextInitializer.cs" />
     <Compile Include="Repository\HitLogRepository.cs" />
     <Compile Include="Repository\CombatLogRepository.cs" />
     <Compile Include="Repository\AbstractRepository.cs" />
