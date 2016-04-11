@@ -8,6 +8,11 @@ namespace FightClubStatistics
 {
     class UserRepository : AbstractRepository, IRepository<User>
     {
+        public UserRepository(IContext context)
+        {
+            this.context = context;
+        }
+
         public void Add(User item)
         {
             context.Users.Add(item);
@@ -34,7 +39,8 @@ namespace FightClubStatistics
 
         public void Update(User item)
         {
-            //context.
+            // how to update exist user?
+            //context.Users.
         }
 
         public IEnumerable<User> FindRegisteredUsersByDate(DateTime date)

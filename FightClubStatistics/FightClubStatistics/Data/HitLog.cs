@@ -8,6 +8,7 @@ namespace FightClubStatistics
 {
     public class HitLog
     {
+        public int HitLogId { get; set; }
         public int FirstPalyerHitValue { get; set; }
         public BodyPart FirstPalyerPart { get; set; }
         public GameResult FirstPalyerResult { get; set; }

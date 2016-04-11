@@ -21,7 +21,7 @@ namespace FightClubStatistics.UI.UserScene
         
 
         public UserUserControl()
-        {
+        {            
             InitializeComponent();
             presenter = new UserPresenter(this);
         }
@@ -34,6 +34,23 @@ namespace FightClubStatistics.UI.UserScene
         public void DrawUsersTable(List<User> userList)
         {
             usersDataGrid.DataSource = userList;
+        }
+
+        private void addUserButton_Click(object sender, EventArgs e)
+        {
+            presenter.AddUser();
+        }
+
+        private void editUserButton_Click(object sender, EventArgs e)
+        {
+            int userId = Int32.Parse(usersDataGrid.CurrentRow.Cells[0].Value.ToString());
+            presenter.EditUser(userId);
+        }
+
+        private void deleteUserButton_Click(object sender, EventArgs e)
+        {
+            presenter.DeleteUser(Int32.Parse(usersDataGrid.CurrentRow.Cells[0].Value.ToString()));
+            usersDataGrid.Update();
         }
     }
 }

@@ -8,6 +8,7 @@ namespace FightClubStatistics
 {
     public class CombatLog
     {
+        public int CombatLogId { get; set; }
         public GameType GameType { get; set; }
         public Player FirstPlayer { get; set; }
         public Player SecondPlayer { get; set; }

@@ -13,7 +13,8 @@ namespace FightClubStatistics
     public enum Scene
     {
         Autorization,
-        UserScene
+        UserScene,
+        EditUserScene
     }
     public partial class BaseUserControl : UserControl
     {
@@ -21,6 +22,12 @@ namespace FightClubStatistics
         {
             var form = this.FindForm() as MainForm;
             form.SwitchScene(targetScene);
+        }
+
+        public void SwitchScene(Scene targetScene , Object param)
+        {
+            var form = this.FindForm() as MainForm;
+            form.SwitchScene(targetScene , param);
         }
     }
 }

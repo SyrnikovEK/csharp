@@ -38,9 +38,16 @@
             // 
             // usersDataGrid
             // 
+            this.usersDataGrid.AllowUserToAddRows = false;
+            this.usersDataGrid.AllowUserToDeleteRows = false;
+            this.usersDataGrid.AllowUserToOrderColumns = true;
+            this.usersDataGrid.AllowUserToResizeRows = false;
             this.usersDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.usersDataGrid.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.usersDataGrid.Location = new System.Drawing.Point(227, 20);
+            this.usersDataGrid.MultiSelect = false;
             this.usersDataGrid.Name = "usersDataGrid";
+            this.usersDataGrid.ReadOnly = true;
             this.usersDataGrid.Size = new System.Drawing.Size(764, 399);
             this.usersDataGrid.TabIndex = 0;
             // 
@@ -52,6 +59,7 @@
             this.addUserButton.TabIndex = 1;
             this.addUserButton.Text = "Add User";
             this.addUserButton.UseVisualStyleBackColor = true;
+            this.addUserButton.Click += new System.EventHandler(this.addUserButton_Click);
             // 
             // editUserButton
             // 
@@ -61,6 +69,7 @@
             this.editUserButton.TabIndex = 2;
             this.editUserButton.Text = "Edit User";
             this.editUserButton.UseVisualStyleBackColor = true;
+            this.editUserButton.Click += new System.EventHandler(this.editUserButton_Click);
             // 
             // deleteUserButton
             // 
@@ -70,6 +79,7 @@
             this.deleteUserButton.TabIndex = 3;
             this.deleteUserButton.Text = "DeleteUser";
             this.deleteUserButton.UseVisualStyleBackColor = true;
+            this.deleteUserButton.Click += new System.EventHandler(this.deleteUserButton_Click);
             // 
             // toMenuButton
             // 
