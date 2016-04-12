@@ -61,7 +61,11 @@
     <Compile Include="Repository\AbstractRepository.cs" />
     <Compile Include="Context\IContext.cs" />
     <Compile Include="Context\MyContext.cs" />
+    <Compile Include="Repository\Interfaces\ICombatLogRepository.cs" />
+    <Compile Include="Repository\Interfaces\IHitLogRepository.cs" />
+    <Compile Include="Repository\Interfaces\ITransactionRepository.cs" />
     <Compile Include="Repository\IRepository.cs" />
+    <Compile Include="Repository\Interfaces\IUserRepository.cs" />
     <Compile Include="Stubs\BodyPart.cs" />
     <Compile Include="Data\CombatLog.cs" />
     <Compile Include="Stubs\GameResult.cs" />
@@ -107,6 +111,7 @@
     <Compile Include="UI\HitLogScene\HitLogUserControl.Designer.cs">
       <DependentUpon>HitLogUserControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\IUserControl.cs" />
     <Compile Include="UI\MenuScene\MenuPresenter.cs" />
     <Compile Include="UI\MenuScene\MenuUserControl.cs">
       <SubType>UserControl</SubType>
@@ -127,6 +132,7 @@
     <Compile Include="UI\UserScene\EditUserControl.Designer.cs">
       <DependentUpon>EditUserControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\UserScene\IUserUserControl.cs" />
     <Compile Include="UI\UserScene\UserPresenter.cs" />
     <Compile Include="UI\UserScene\UserUserControl.cs">
       <SubType>UserControl</SubType>

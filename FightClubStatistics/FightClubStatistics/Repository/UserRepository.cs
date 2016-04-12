@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FightClubStatistics.Repository.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace FightClubStatistics
 {
-    class UserRepository : AbstractRepository, IRepository<User>
+    class UserRepository : AbstractRepository, IRepository<User> , IUserRepository
     {
         public UserRepository(IContext context)
         {
@@ -39,8 +40,10 @@ namespace FightClubStatistics
 
         public void Update(User item)
         {
-            // how to update exist user?
-            //context.Users.
+            User olditem;
+            olditem = context.Users.Where(x => x.UserId == item.UserId).FirstOrDefault();
+            olditem = item;
+            context.SaveChanges();
         }
 
         public IEnumerable<User> FindRegisteredUsersByDate(DateTime date)

@@ -12,7 +12,7 @@ namespace FightClubStatistics
         public string Login { get; set; }
         public string Password { get; set; }
         public string EMail { get; set; }
-        public Player PlayerData { get; set; }
+        public virtual Player PlayerData { get; set; }
         public bool IsEmailValid { get; set; }
         public DateTime CreationDate { get; set; }
     }

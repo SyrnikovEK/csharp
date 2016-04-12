@@ -16,7 +16,7 @@ namespace FightClubStatistics
         UserScene,
         EditUserScene
     }
-    public partial class BaseUserControl : UserControl
+    public partial class BaseUserControl : UserControl , IUserControl
     {
         public void SwitchScene(Scene targetScene)
         {

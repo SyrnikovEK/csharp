@@ -10,10 +10,10 @@ namespace FightClubStatistics
     {
         public int CombatLogId { get; set; }
         public GameType GameType { get; set; }
-        public Player FirstPlayer { get; set; }
-        public Player SecondPlayer { get; set; }
-        public List<HitLog> CombatHitLog { get; set; }
-        public Player Winner { get; set; }
+        public virtual Player FirstPlayer { get; set; }
+        public virtual Player SecondPlayer { get; set; }
+        public virtual List<HitLog> CombatHitLog { get; set; }
+        public virtual Player Winner { get; set; }
         public int Exp { get; set; }
         public DateTime CombatTime { get; set; }
     }

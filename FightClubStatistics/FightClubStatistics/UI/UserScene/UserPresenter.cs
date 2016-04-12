@@ -30,7 +30,15 @@ namespace FightClubStatistics.UI.UserScene
 
         public void EditUser(int id)
         {
-            (view as UserUserControl).SwitchScene(Scene.EditUserScene, usersRepository.Get(id));
+            view.SwitchScene(Scene.EditUserScene, usersRepository.Get(id));
+        }
+
+        public void EditUser(User user)
+        {
+            usersRepository.Update(user);
+            //usersRepository.Save();
+            usersList = usersRepository.GetAll().ToList();
+            view.DrawUsersTable(usersList);
         }
 
         public void DeleteUser(int id)
@@ -43,7 +51,7 @@ namespace FightClubStatistics.UI.UserScene
 
         public void AddUser()
         {
-            (view as UserUserControl).SwitchScene(Scene.EditUserScene);
+            view.SwitchScene(Scene.EditUserScene);
         }
 
         public void AddUser(User newUser)

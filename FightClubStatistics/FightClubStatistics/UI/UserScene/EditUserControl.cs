@@ -10,10 +10,11 @@ using System.Windows.Forms;
 
 namespace FightClubStatistics.UI.UserScene
 {
-    public partial class EditUserControl : BaseUserControl
+    public partial class EditUserControl : BaseUserControl , IUserControl
     {
         private bool editMode = false;
         private UserPresenter presenter = null;
+        private User editUser = null;
 
         public EditUserControl()
         {
@@ -27,12 +28,13 @@ namespace FightClubStatistics.UI.UserScene
             InitializeComponent();
             editMode = true;
 
-            User editUser = param as User;
+            editUser = param as User;
             userLoginTextBox.Text = editUser.Login;
             userPasswordTextBox.Text = editUser.Password;
             userEMailTextBox.Text = editUser.EMail;
             playerNameTextBox.Text = editUser.PlayerData.Name;
             playerExpTextBox.Text = editUser.PlayerData.Exp.ToString();
+            presenter = new UserPresenter(new UserUserControl());
         }
 
         private void cancelButton_Click(object sender, EventArgs e)
@@ -44,7 +46,13 @@ namespace FightClubStatistics.UI.UserScene
         {
             if (editMode)
             {
-
+                editUser.Login = userLoginTextBox.Text;
+                editUser.Password = userPasswordTextBox.Text;
+                editUser.EMail = userEMailTextBox.Text;
+                editUser.PlayerData.Name = playerNameTextBox.Text;
+                editUser.PlayerData.Exp = int.Parse(playerExpTextBox.Text);
+                presenter.EditUser(editUser);
+                SwitchScene(Scene.UserScene);
             }
             else
             {
@@ -58,7 +66,7 @@ namespace FightClubStatistics.UI.UserScene
                     PlayerData = new Player
                     {
                         Name = playerNameTextBox.Text,
-                        Exp = Int32.Parse(playerExpTextBox.Text)
+                        Exp = int.Parse(playerExpTextBox.Text)
                     }
                 });
                 SwitchScene(Scene.UserScene);

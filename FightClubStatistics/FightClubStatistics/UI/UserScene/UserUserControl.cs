@@ -11,10 +11,6 @@ using FightClubStatistics;
 
 namespace FightClubStatistics.UI.UserScene
 {
-    public interface IUserUserControl
-    {
-        void DrawUsersTable(List<User> userList);
-    }
     public partial class UserUserControl : BaseUserControl , IUserUserControl
     {
         private UserPresenter presenter = null;
@@ -33,6 +29,7 @@ namespace FightClubStatistics.UI.UserScene
 
         public void DrawUsersTable(List<User> userList)
         {
+            usersDataGrid.Update();
             usersDataGrid.DataSource = userList;
         }
 
@@ -43,14 +40,21 @@ namespace FightClubStatistics.UI.UserScene
 
         private void editUserButton_Click(object sender, EventArgs e)
         {
-            int userId = Int32.Parse(usersDataGrid.CurrentRow.Cells[0].Value.ToString());
+            int userId = int.Parse(usersDataGrid.CurrentRow.Cells[0].Value.ToString());
             presenter.EditUser(userId);
         }
 
         private void deleteUserButton_Click(object sender, EventArgs e)
         {
-            presenter.DeleteUser(Int32.Parse(usersDataGrid.CurrentRow.Cells[0].Value.ToString()));
-            usersDataGrid.Update();
+            if (MessageBox.Show("Please, confirm deletion", "Confirm deletion", MessageBoxButtons.OKCancel) == DialogResult.OK)
+            {
+                presenter.DeleteUser(int.Parse(usersDataGrid.CurrentRow.Cells[0].Value.ToString()));
+                usersDataGrid.Update();
+            }
+            else
+            {
+
+            }
         }
     }
 }

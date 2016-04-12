@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FightClubStatistics.Repository.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace FightClubStatistics
 {
-    class HitLogRepository : AbstractRepository, IRepository<HitLog>
+    class HitLogRepository : AbstractRepository, IRepository<HitLog> , IHitLogRepository
     {
         public void Add(HitLog item)
         {
