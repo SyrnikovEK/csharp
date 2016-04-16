@@ -62,5 +62,15 @@ namespace FightClubStatistics
         {
             return GetAll().Where(user => user.IsEmailValid).ToList();
         }
+
+        public IEnumerable<User> GetAllWithValidEmail()
+        {
+            return context.Users.Where(x => x.IsEmailValid);
+        }
+
+        public IEnumerable<User> GetAllWithoutValidEmail()
+        {
+            return context.Users.Where(x => !x.IsEmailValid);
+        }
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FightClubStatistics.Repository.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,7 +11,8 @@ namespace FightClubStatistics.UI.UserScene
     {
         private IUserUserControl view;
         private List<User> usersList;
-        private IRepository<User> usersRepository;
+        private IUserRepository usersRepository;
+        private int showingCount;
 
         public UserPresenter(IUserUserControl ctrl)
         {
@@ -18,6 +20,7 @@ namespace FightClubStatistics.UI.UserScene
             usersRepository = new UserRepository(new MyContext());
             usersList = new List<User>();
             usersList = usersRepository.GetAll().ToList();
+            showingCount = usersList.Count;
 
             view.DrawUsersTable(usersList);
         }
@@ -53,6 +56,36 @@ namespace FightClubStatistics.UI.UserScene
         private void UpdateUsersList()
         {
             usersList = usersRepository.GetAll().ToList();
+            view.DrawUsersTable(usersList);
+        }
+
+        public void ChangeUsersShowingCount(int count)
+        {
+            showingCount = count;
+            if (showingCount <= usersRepository.GetAll().Count())
+            {
+                view.DrawUsersTable(usersList.Take(showingCount).ToList());
+            }
+            else
+            {
+                
+            }
+        }
+
+        public void ShowAllUsers()
+        {
+            UpdateUsersList();
+        }
+
+        public void ShowUsersWithValidEmails()
+        {
+            usersList = usersRepository.GetAllWithValidEmail().ToList();
+            view.DrawUsersTable(usersList);
+        }
+
+        public void ShowUsersWithoutValidEmails()
+        {
+            usersList = usersRepository.GetAllWithoutValidEmail().ToList();
             view.DrawUsersTable(usersList);
         }
     }

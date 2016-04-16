@@ -31,6 +31,7 @@ namespace FightClubStatistics.UI.UserScene
         {
             usersDataGrid.Update();
             usersDataGrid.DataSource = userList;
+            usersDataTableCounter.Value = usersDataGrid.RowCount;
         }
 
         private void addUserButton_Click(object sender, EventArgs e)
@@ -68,9 +69,48 @@ namespace FightClubStatistics.UI.UserScene
             
         }
 
-        private void toMenuButton_Click(object sender, EventArgs e)
+        private void usersDataTableCounter_ValueChanged(object sender, EventArgs e)
         {
+            if (presenter == null)
+            {
+                usersDataTableCounter.Value = usersDataGrid.RowCount;
+            }
+            else
+            {
+                int showingCount = int.Parse(usersDataTableCounter.Value.ToString());
+                presenter.ChangeUsersShowingCount(showingCount);
+                usersDataTableCounter.Value = usersDataGrid.RowCount;
+            }
             
+        }
+
+        public void ChangeCounter(int count)
+        {
+            usersDataTableCounter.Value = count;
+        }
+
+        private void choseAllRadioButton_CheckedChanged(object sender, EventArgs e)
+        {
+            if (choseAllRadioButton.Checked)
+            {
+                presenter.ShowAllUsers();
+            }
+        }
+
+        private void choseValidEmailsRadioButton_CheckedChanged(object sender, EventArgs e)
+        {
+            if (choseValidEmailsRadioButton.Checked)
+            {
+                presenter.ShowUsersWithValidEmails();
+            }
+        }
+
+        private void choseNonValidEmailsRadioButton_CheckedChanged(object sender, EventArgs e)
+        {
+            if (choseNonValidEmailsRadioButton.Checked)
+            {
+                presenter.ShowUsersWithoutValidEmails();
+            }
         }
     }
 }

@@ -102,6 +102,7 @@ namespace FightClubStatistics.UI.UserScene
             isDataValid &= regexName.IsMatch(userLoginTextBox.Text);
             isDataValid &= regexName.IsMatch(userPasswordTextBox.Text);
             isDataValid &= regexName.IsMatch(playerNameTextBox.Text);
+            isDataValid &= (playerExpTextBox.Text != "");
             int testnum;
             isDataValid &= !(int.TryParse(playerExpTextBox.ToString() , out testnum));
 
