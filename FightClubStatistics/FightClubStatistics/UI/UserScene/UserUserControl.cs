@@ -35,26 +35,42 @@ namespace FightClubStatistics.UI.UserScene
 
         private void addUserButton_Click(object sender, EventArgs e)
         {
-            presenter.AddUser();
+            presenter.TurnAddUserControl();
         }
 
         private void editUserButton_Click(object sender, EventArgs e)
         {
-            int userId = int.Parse(usersDataGrid.CurrentRow.Cells[0].Value.ToString());
-            presenter.EditUser(userId);
+            if (usersDataGrid.RowCount > 0)
+            {
+                int userId = int.Parse(usersDataGrid.CurrentRow.Cells[0].Value.ToString());
+                presenter.TurnEditUserControl(userId);
+            }           
         }
 
         private void deleteUserButton_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Please, confirm deletion", "Confirm deletion", MessageBoxButtons.OKCancel) == DialogResult.OK)
+            if (usersDataGrid.RowCount > 0)
             {
-                presenter.DeleteUser(int.Parse(usersDataGrid.CurrentRow.Cells[0].Value.ToString()));
-                usersDataGrid.Update();
+                if (MessageBox.Show("Please, confirm deletion", "Confirm deletion", MessageBoxButtons.OKCancel) == DialogResult.OK)
+                {
+                    presenter.DeleteUser(int.Parse(usersDataGrid.CurrentRow.Cells[0].Value.ToString()));
+                    usersDataGrid.Update();
+                }
+                else
+                {
+
+                }
             }
             else
             {
 
             }
+            
+        }
+
+        private void toMenuButton_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }

@@ -8,27 +8,21 @@ namespace FightClubStatistics.UI.UserScene
 {
     class UserPresenter
     {
-        private IUserUserControl view = null;
-        private List<User> usersList = null;
-        private IRepository<User> usersRepository = null;
+        private IUserUserControl view;
+        private List<User> usersList;
+        private IRepository<User> usersRepository;
 
         public UserPresenter(IUserUserControl ctrl)
         {
             view = ctrl;
             usersRepository = new UserRepository(new MyContext());
-            //usersList = usersRepository.GetAll().ToList();
-
             usersList = new List<User>();
-            //User firstUser = new User { Login = "User4", EMail = "User4@mail.ru", CreationDate = DateTime.Now, IsEmailValid = true, Password = "987654", PlayerData = new Player { Name = "player4" , Exp = 400} };
-            //usersRepository.Add(firstUser);
-            //usersRepository.Save();
-
             usersList = usersRepository.GetAll().ToList();
 
             view.DrawUsersTable(usersList);
         }
 
-        public void EditUser(int id)
+        public void TurnEditUserControl(int id)
         {
             view.SwitchScene(Scene.EditUserScene, usersRepository.Get(id));
         }
@@ -36,20 +30,16 @@ namespace FightClubStatistics.UI.UserScene
         public void EditUser(User user)
         {
             usersRepository.Update(user);
-            //usersRepository.Save();
-            usersList = usersRepository.GetAll().ToList();
-            view.DrawUsersTable(usersList);
+            UpdateUsersList();
         }
 
         public void DeleteUser(int id)
         {
             usersRepository.Delete(id);
-            usersRepository.Save();
-            usersList = usersRepository.GetAll().ToList();
-            view.DrawUsersTable(usersList);
+            UpdateUsersList();
         }
 
-        public void AddUser()
+        public void TurnAddUserControl()
         {
             view.SwitchScene(Scene.EditUserScene);
         }
@@ -57,7 +47,11 @@ namespace FightClubStatistics.UI.UserScene
         public void AddUser(User newUser)
         {
             usersRepository.Add(newUser);
-            usersRepository.Save();
+            UpdateUsersList();
+        }
+        
+        private void UpdateUsersList()
+        {
             usersList = usersRepository.GetAll().ToList();
             view.DrawUsersTable(usersList);
         }

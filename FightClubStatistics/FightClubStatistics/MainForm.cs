@@ -51,6 +51,7 @@ namespace FightClubStatistics
                 this.MaximumSize = new Size(ctrl.Width + 15, ctrl.Height + 20);
                 mainPanel.Height = ctrl.Height + 20;
                 mainPanel.Width = ctrl.Width + 15;
+                this.Text = ctrl.Name.ToString();
                 this.Location = new Point(Screen.PrimaryScreen.WorkingArea.Width / 2 - this.Width / 2, Screen.PrimaryScreen.WorkingArea.Height / 2 - this.Height / 2);
                 ctrl.Dock = DockStyle.Fill;
                 mainPanel.Controls.Clear();
@@ -91,6 +92,7 @@ namespace FightClubStatistics
                 this.MaximumSize = new Size(ctrl.Width + 15, ctrl.Height + 20);
                 mainPanel.Height = ctrl.Height + 20;
                 mainPanel.Width = ctrl.Width + 15;
+                this.Text = ctrl.Name.ToString();
                 this.Location = new Point(Screen.PrimaryScreen.WorkingArea.Width / 2 - this.Width / 2, Screen.PrimaryScreen.WorkingArea.Height / 2 - this.Height / 2);
                 ctrl.Dock = DockStyle.Fill;
                 mainPanel.Controls.Clear();

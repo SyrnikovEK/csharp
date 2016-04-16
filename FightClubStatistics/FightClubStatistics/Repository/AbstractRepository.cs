@@ -9,12 +9,12 @@ namespace FightClubStatistics
 {
     public abstract class AbstractRepository//<T> : IRepository<T> where T : class
     {
-        protected IContext context;
+        protected MyContext context;
         public AbstractRepository()
         {
             context = new MyContext();
         }
-        public AbstractRepository(IContext context)
+        public AbstractRepository(MyContext context)
         {
             this.context = context;
         }

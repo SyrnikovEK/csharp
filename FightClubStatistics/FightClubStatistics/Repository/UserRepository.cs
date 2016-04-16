@@ -9,7 +9,7 @@ namespace FightClubStatistics
 {
     class UserRepository : AbstractRepository, IRepository<User> , IUserRepository
     {
-        public UserRepository(IContext context)
+        public UserRepository(MyContext context)
         {
             this.context = context;
         }
@@ -17,6 +17,7 @@ namespace FightClubStatistics
         public void Add(User item)
         {
             context.Users.Add(item);
+            context.SaveChanges();
         }
 
         public void Delete(int id)
@@ -26,6 +27,7 @@ namespace FightClubStatistics
             {
                 context.Users.Remove(user);
             }
+            context.SaveChanges();
         }
 
         public User Get(int id)
@@ -40,9 +42,14 @@ namespace FightClubStatistics
 
         public void Update(User item)
         {
-            User olditem;
-            olditem = context.Users.Where(x => x.UserId == item.UserId).FirstOrDefault();
-            olditem = item;
+            User oldUser;
+            oldUser = context.Users.Where(x => x.UserId == item.UserId).FirstOrDefault();
+            oldUser.Login = item.Login;
+            oldUser.Password = item.Password;
+            oldUser.EMail = item.EMail;
+            oldUser.IsEmailValid = item.IsEmailValid;
+            oldUser.PlayerData.Name = item.PlayerData.Name;
+            oldUser.PlayerData.Exp = item.PlayerData.Exp;
             context.SaveChanges();
         }
 
