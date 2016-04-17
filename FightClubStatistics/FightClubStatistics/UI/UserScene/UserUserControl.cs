@@ -112,5 +112,10 @@ namespace FightClubStatistics.UI.UserScene
                 presenter.ShowUsersWithoutValidEmails();
             }
         }
+
+        private void toMenuButton_Click(object sender, EventArgs e)
+        {
+            SwitchScene(Scene.MenuScene);
+        }
     }
 }

@@ -95,6 +95,7 @@
             this.toMenuButton.TabIndex = 4;
             this.toMenuButton.Text = "Back to Menu";
             this.toMenuButton.UseVisualStyleBackColor = true;
+            this.toMenuButton.Click += new System.EventHandler(this.toMenuButton_Click);
             // 
             // usersDataTableCounter
             // 

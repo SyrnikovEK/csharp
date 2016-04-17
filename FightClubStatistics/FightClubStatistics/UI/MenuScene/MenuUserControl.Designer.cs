@@ -28,26 +28,45 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.toUsersControl = new System.Windows.Forms.Button();
-            this.toTransactionsControl = new System.Windows.Forms.Button();
-            this.toCombatLogControl = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
             this.exitButton = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.toCombatLogControl = new System.Windows.Forms.Button();
+            this.toTransactionsControl = new System.Windows.Forms.Button();
+            this.toUsersControl = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // toUsersControl
+            // exitButton
             // 
-            this.toUsersControl.Location = new System.Drawing.Point(48, 31);
-            this.toUsersControl.Name = "toUsersControl";
-            this.toUsersControl.Size = new System.Drawing.Size(269, 59);
-            this.toUsersControl.TabIndex = 0;
-            this.toUsersControl.Text = "Users";
-            this.toUsersControl.UseVisualStyleBackColor = true;
-            this.toUsersControl.Click += new System.EventHandler(this.toUsersControl_Click);
+            this.exitButton.Location = new System.Drawing.Point(16, 433);
+            this.exitButton.Name = "exitButton";
+            this.exitButton.Size = new System.Drawing.Size(269, 59);
+            this.exitButton.TabIndex = 4;
+            this.exitButton.Text = "Exit";
+            this.exitButton.UseVisualStyleBackColor = true;
+            this.exitButton.Click += new System.EventHandler(this.exitButton_Click);
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(16, 282);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(269, 59);
+            this.button4.TabIndex = 3;
+            this.button4.Text = "button4";
+            this.button4.UseVisualStyleBackColor = true;
+            // 
+            // toCombatLogControl
+            // 
+            this.toCombatLogControl.Location = new System.Drawing.Point(16, 196);
+            this.toCombatLogControl.Name = "toCombatLogControl";
+            this.toCombatLogControl.Size = new System.Drawing.Size(269, 59);
+            this.toCombatLogControl.TabIndex = 2;
+            this.toCombatLogControl.Text = "Combat logs";
+            this.toCombatLogControl.UseVisualStyleBackColor = true;
+            this.toCombatLogControl.Click += new System.EventHandler(this.toCombatLogControl_Click);
             // 
             // toTransactionsControl
             // 
-            this.toTransactionsControl.Location = new System.Drawing.Point(48, 119);
+            this.toTransactionsControl.Location = new System.Drawing.Point(16, 105);
             this.toTransactionsControl.Name = "toTransactionsControl";
             this.toTransactionsControl.Size = new System.Drawing.Size(269, 59);
             this.toTransactionsControl.TabIndex = 1;
@@ -55,33 +74,15 @@
             this.toTransactionsControl.UseVisualStyleBackColor = true;
             this.toTransactionsControl.Click += new System.EventHandler(this.toTransactionsControl_Click);
             // 
-            // toCombatLogControl
+            // toUsersControl
             // 
-            this.toCombatLogControl.Location = new System.Drawing.Point(48, 210);
-            this.toCombatLogControl.Name = "toCombatLogControl";
-            this.toCombatLogControl.Size = new System.Drawing.Size(269, 59);
-            this.toCombatLogControl.TabIndex = 2;
-            this.toCombatLogControl.Text = "Combat logs";
-            this.toCombatLogControl.UseVisualStyleBackColor = true;
-            // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(48, 296);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(269, 59);
-            this.button4.TabIndex = 3;
-            this.button4.Text = "button4";
-            this.button4.UseVisualStyleBackColor = true;
-            // 
-            // exitButton
-            // 
-            this.exitButton.Location = new System.Drawing.Point(48, 447);
-            this.exitButton.Name = "exitButton";
-            this.exitButton.Size = new System.Drawing.Size(269, 59);
-            this.exitButton.TabIndex = 4;
-            this.exitButton.Text = "Exit";
-            this.exitButton.UseVisualStyleBackColor = true;
-            this.exitButton.Click += new System.EventHandler(this.exitButton_Click);
+            this.toUsersControl.Location = new System.Drawing.Point(16, 17);
+            this.toUsersControl.Name = "toUsersControl";
+            this.toUsersControl.Size = new System.Drawing.Size(269, 59);
+            this.toUsersControl.TabIndex = 0;
+            this.toUsersControl.Text = "Users";
+            this.toUsersControl.UseVisualStyleBackColor = true;
+            this.toUsersControl.Click += new System.EventHandler(this.toUsersControl_Click);
             // 
             // MenuUserControl
             // 
@@ -93,7 +94,7 @@
             this.Controls.Add(this.toTransactionsControl);
             this.Controls.Add(this.toUsersControl);
             this.Name = "MenuUserControl";
-            this.Size = new System.Drawing.Size(365, 568);
+            this.Size = new System.Drawing.Size(322, 551);
             this.ResumeLayout(false);
 
         }

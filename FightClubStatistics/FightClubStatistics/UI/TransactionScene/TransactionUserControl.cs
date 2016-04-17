@@ -79,5 +79,10 @@ namespace FightClubStatistics.UI.TransactionScene
                 transactionsDataTableCounter.Value = transactionsDataGrid.RowCount;
             }
         }
+
+        private void toMenuButton_Click(object sender, EventArgs e)
+        {
+            SwitchScene(Scene.MenuScene);
+        }
     }
 }

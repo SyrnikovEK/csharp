@@ -31,5 +31,10 @@ namespace FightClubStatistics.UI.MenuScene
         {
             Application.Exit();
         }
+
+        private void toCombatLogControl_Click(object sender, EventArgs e)
+        {
+            
+        }
     }
 }
