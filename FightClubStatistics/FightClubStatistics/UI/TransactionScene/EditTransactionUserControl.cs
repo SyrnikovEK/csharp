@@ -52,12 +52,21 @@ namespace FightClubStatistics.UI.TransactionScene
             {
                 if (editMode)
                 {
-
+                    editTransaction.User = presenter.usersList.Where(x => x.Login == transactonUserComboBox.Text).FirstOrDefault();
+                    editTransaction.Sum = int.Parse(transactionSumTextBox.Text);
+                    editTransaction.Date = DateTime.Parse(transactionDateTimePicker.Text);
+                    presenter.EditTransaction(editTransaction);
                 }
                 else
                 {
-
+                    presenter.AddTransaction(new Transaction
+                    {
+                        User = presenter.usersList.Where(x => x.Login == transactonUserComboBox.Text).FirstOrDefault(),
+                        Sum = int.Parse(transactionSumTextBox.Text),
+                        Date = DateTime.Parse(transactionDateTimePicker.Text)
+                    });
                 }
+                SwitchScene(Scene.TransactionScene);
             }
             else
             {
