@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace FightClubStatistics.UI.CombatLogScene
 {
-    public partial class CombatLogUserControl : BaseUserControl
+    public partial class CombatLogUserControl : BaseUserControl , ICombatLogUserControl
     {
         public CombatLogUserControl()
         {

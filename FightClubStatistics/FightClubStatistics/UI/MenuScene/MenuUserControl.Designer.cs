@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.exitButton = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
             this.toCombatLogControl = new System.Windows.Forms.Button();
             this.toTransactionsControl = new System.Windows.Forms.Button();
             this.toUsersControl = new System.Windows.Forms.Button();
@@ -44,15 +43,6 @@
             this.exitButton.Text = "Exit";
             this.exitButton.UseVisualStyleBackColor = true;
             this.exitButton.Click += new System.EventHandler(this.exitButton_Click);
-            // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(16, 282);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(269, 59);
-            this.button4.TabIndex = 3;
-            this.button4.Text = "button4";
-            this.button4.UseVisualStyleBackColor = true;
             // 
             // toCombatLogControl
             // 
@@ -89,7 +79,6 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.exitButton);
-            this.Controls.Add(this.button4);
             this.Controls.Add(this.toCombatLogControl);
             this.Controls.Add(this.toTransactionsControl);
             this.Controls.Add(this.toUsersControl);
@@ -104,7 +93,6 @@
         private System.Windows.Forms.Button toUsersControl;
         private System.Windows.Forms.Button toTransactionsControl;
         private System.Windows.Forms.Button toCombatLogControl;
-        private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button exitButton;
     }
 }

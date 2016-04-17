@@ -84,6 +84,7 @@
     <Compile Include="Data\User.cs" />
     <Compile Include="Repository\UserRepository.cs" />
     <Compile Include="Repository\TransactionRepository.cs" />
+    <Compile Include="Stubs\TurnResult.cs" />
     <Compile Include="UI\BaseUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -97,13 +98,7 @@
     <Compile Include="UI\CombatLogScene\CombatLogUserControl.Designer.cs">
       <DependentUpon>CombatLogUserControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\EditScene\EditPresenter.cs" />
-    <Compile Include="UI\EditScene\EditUserControl.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UI\EditScene\EditUserControl.Designer.cs">
-      <DependentUpon>EditUserControl.cs</DependentUpon>
-    </Compile>
+    <Compile Include="UI\CombatLogScene\ICombatLogUserControl.cs" />
     <Compile Include="UI\HitLogScene\HitLogPresenter.cs" />
     <Compile Include="UI\HitLogScene\HitLogUserControl.cs">
       <SubType>UserControl</SubType>
@@ -159,6 +154,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="UI\CombatLogScene\CombatLogUserControl.resx">
+      <DependentUpon>CombatLogUserControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\MenuScene\MenuUserControl.resx">
       <DependentUpon>MenuUserControl.cs</DependentUpon>
     </EmbeddedResource>

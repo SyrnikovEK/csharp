@@ -2,5 +2,7 @@
 {
     public enum GameType
     {
+        PvP,
+        Pvp
     }
 }

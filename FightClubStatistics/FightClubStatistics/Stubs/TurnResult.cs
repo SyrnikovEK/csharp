@@ -4,9 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FightClubStatistics.UI.EditScene
+namespace FightClubStatistics.Stubs
 {
-    class EditPresenter
+    public enum TurnResult
     {
+        Wound,
+        Miss
     }
 }
