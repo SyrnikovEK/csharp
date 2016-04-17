@@ -159,6 +159,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="UI\MenuScene\MenuUserControl.resx">
+      <DependentUpon>MenuUserControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\TransactionScene\EditTransactionUserControl.resx">
       <DependentUpon>EditTransactionUserControl.cs</DependentUpon>
     </EmbeddedResource>

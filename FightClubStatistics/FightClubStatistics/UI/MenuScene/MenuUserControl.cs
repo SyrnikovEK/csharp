@@ -16,5 +16,20 @@ namespace FightClubStatistics.UI.MenuScene
         {
             InitializeComponent();
         }
+
+        private void toUsersControl_Click(object sender, EventArgs e)
+        {
+            SwitchScene(Scene.UserScene);
+        }
+
+        private void toTransactionsControl_Click(object sender, EventArgs e)
+        {
+            SwitchScene(Scene.TransactionScene);
+        }
+
+        private void exitButton_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

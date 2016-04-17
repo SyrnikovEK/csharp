@@ -13,6 +13,7 @@ namespace FightClubStatistics
     public enum Scene
     {
         Autorization,
+        MenuScene,
         UserScene,
         EditUserScene,
         TransactionScene,

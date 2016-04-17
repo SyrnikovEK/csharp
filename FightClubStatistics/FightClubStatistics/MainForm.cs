@@ -1,4 +1,5 @@
-﻿using FightClubStatistics.UI.TransactionScene;
+﻿using FightClubStatistics.UI.MenuScene;
+using FightClubStatistics.UI.TransactionScene;
 using FightClubStatistics.UI.UserScene;
 using System;
 using System.Collections.Generic;
@@ -17,7 +18,7 @@ namespace FightClubStatistics
         public MainForm()
         {
             InitializeComponent();
-            SwitchScene(Scene.TransactionScene);
+            SwitchScene(Scene.MenuScene);
         }
 
         public void SwitchScene(Scene scene)
@@ -27,6 +28,11 @@ namespace FightClubStatistics
             {
                 case Scene.Autorization:
                     {
+                        break;
+                    }
+                case Scene.MenuScene:
+                    {
+                        ctrl = new MenuUserControl();
                         break;
                     }
                 case Scene.UserScene:
