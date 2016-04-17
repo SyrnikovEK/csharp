@@ -8,9 +8,9 @@ namespace FightClubStatistics
 {
     public class Transaction
     {
-        public int TransactionId { get; set; }
-        public DateTime Date { get; set; }
+        public int TransactionId { get; set; }   
         public virtual User User { get; set; }
         public decimal Sum { get; set; }
+        public DateTime Date { get; set; }
     }
 }

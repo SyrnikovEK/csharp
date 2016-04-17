@@ -12,6 +12,7 @@ namespace FightClubStatistics
         public void Add(Transaction item)
         {
             context.Transactions.Add(item);
+            context.SaveChanges();
         }
 
         public void Delete(int id)
@@ -20,6 +21,7 @@ namespace FightClubStatistics
             if (transaction != null)
             {
                 context.Transactions.Remove(transaction);
+                context.SaveChanges();
             }
         }
 
@@ -35,7 +37,25 @@ namespace FightClubStatistics
 
         public void Update(Transaction item)
         {
-            throw new NotImplementedException();
+            Transaction oldTranasction;
+            oldTranasction = context.Transactions.Where(x => x.TransactionId == item.TransactionId).FirstOrDefault();
+            oldTranasction.User = new User
+            {
+                Login = item.User.Login,
+                Password = item.User.Password,
+                EMail = item.User.EMail,
+                IsEmailValid = item.User.IsEmailValid,
+                CreationDate = item.User.CreationDate,
+                PlayerData = new Player
+                {
+                    Name = item.User.PlayerData.Name,
+                    Exp = item.User.PlayerData.Exp
+                }
+            };
+            oldTranasction.Sum = item.Sum;
+            oldTranasction.Date = item.Date;
+
+            context.SaveChanges();
         }
     }
 }

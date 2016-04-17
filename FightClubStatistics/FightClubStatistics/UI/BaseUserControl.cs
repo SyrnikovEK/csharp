@@ -14,7 +14,9 @@ namespace FightClubStatistics
     {
         Autorization,
         UserScene,
-        EditUserScene
+        EditUserScene,
+        TransactionScene,
+        EditTransactionScene
     }
     public partial class BaseUserControl : UserControl , IUserControl
     {

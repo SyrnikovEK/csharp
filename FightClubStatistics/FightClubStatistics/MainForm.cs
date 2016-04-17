@@ -1,4 +1,5 @@
-﻿using FightClubStatistics.UI.UserScene;
+﻿using FightClubStatistics.UI.TransactionScene;
+using FightClubStatistics.UI.UserScene;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,7 +17,7 @@ namespace FightClubStatistics
         public MainForm()
         {
             InitializeComponent();
-            SwitchScene(Scene.UserScene);
+            SwitchScene(Scene.TransactionScene);
         }
 
         public void SwitchScene(Scene scene)
@@ -36,6 +37,16 @@ namespace FightClubStatistics
                 case Scene.EditUserScene:
                     {
                         ctrl = new EditUserControl();
+                        break;
+                    }
+                case Scene.TransactionScene:
+                    {
+                        ctrl = new TransactionUserControl();
+                        break;
+                    }
+                case Scene.EditTransactionScene:
+                    {
+                        ctrl = new EditTransactionUserControl();
                         break;
                     }
                 default:
@@ -77,6 +88,16 @@ namespace FightClubStatistics
                 case Scene.EditUserScene:
                     {
                         ctrl = new EditUserControl(param);
+                        break;
+                    }
+                case Scene.TransactionScene:
+                    {
+                        ctrl = new TransactionUserControl();
+                        break;
+                    }
+                case Scene.EditTransactionScene:
+                    {
+                        ctrl = new EditTransactionUserControl(param);
                         break;
                     }
                 default:

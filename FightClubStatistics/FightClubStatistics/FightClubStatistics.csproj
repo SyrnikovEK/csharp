@@ -119,6 +119,13 @@
     <Compile Include="UI\MenuScene\MenuUserControl.Designer.cs">
       <DependentUpon>MenuUserControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\TransactionScene\EditTransactionUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\TransactionScene\EditTransactionUserControl.Designer.cs">
+      <DependentUpon>EditTransactionUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\TransactionScene\ITransactionUserControl.cs" />
     <Compile Include="UI\TransactionScene\TransactionPresenter.cs" />
     <Compile Include="UI\TransactionScene\TransactionUserControl.cs">
       <SubType>UserControl</SubType>
@@ -152,6 +159,12 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="UI\TransactionScene\EditTransactionUserControl.resx">
+      <DependentUpon>EditTransactionUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\TransactionScene\TransactionUserControl.resx">
+      <DependentUpon>TransactionUserControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\UserScene\EditUserControl.resx">
       <DependentUpon>EditUserControl.cs</DependentUpon>
     </EmbeddedResource>
@@ -159,6 +172,7 @@
       <DependentUpon>UserUserControl.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\FightClubStatistics.UI.TransactionScene.ITransactionUserControl.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

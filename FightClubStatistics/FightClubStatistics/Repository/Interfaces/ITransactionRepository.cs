@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace FightClubStatistics.Repository.Interfaces
 {
-    public interface ITransactionRepository
+    public interface ITransactionRepository : IRepository<Transaction>
     {
     }
 }
