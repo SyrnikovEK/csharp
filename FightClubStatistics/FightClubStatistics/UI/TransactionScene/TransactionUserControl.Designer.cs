@@ -75,7 +75,7 @@
             this.deleteTransactionButton.Name = "deleteTransactionButton";
             this.deleteTransactionButton.Size = new System.Drawing.Size(216, 40);
             this.deleteTransactionButton.TabIndex = 11;
-            this.deleteTransactionButton.Text = "DeleteUser";
+            this.deleteTransactionButton.Text = "Delete Transaction";
             this.deleteTransactionButton.UseVisualStyleBackColor = true;
             this.deleteTransactionButton.Click += new System.EventHandler(this.deleteTransactionButton_Click);
             // 
@@ -85,7 +85,7 @@
             this.editTransactionButton.Name = "editTransactionButton";
             this.editTransactionButton.Size = new System.Drawing.Size(216, 40);
             this.editTransactionButton.TabIndex = 10;
-            this.editTransactionButton.Text = "Edit User";
+            this.editTransactionButton.Text = "Edit Transaction";
             this.editTransactionButton.UseVisualStyleBackColor = true;
             this.editTransactionButton.Click += new System.EventHandler(this.editTransactionButton_Click);
             // 
@@ -95,7 +95,7 @@
             this.addTransactionButton.Name = "addTransactionButton";
             this.addTransactionButton.Size = new System.Drawing.Size(216, 40);
             this.addTransactionButton.TabIndex = 9;
-            this.addTransactionButton.Text = "Add User";
+            this.addTransactionButton.Text = "Add Transaction";
             this.addTransactionButton.UseVisualStyleBackColor = true;
             this.addTransactionButton.Click += new System.EventHandler(this.addTransactionButton_Click);
             // 
