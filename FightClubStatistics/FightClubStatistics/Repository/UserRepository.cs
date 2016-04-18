@@ -1,4 +1,5 @@
-﻿using FightClubStatistics.Repository.Interfaces;
+﻿using FightClubStatistics;
+using FightClubStatistics.Repository.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,40 +8,14 @@ using System.Threading.Tasks;
 
 namespace FightClubStatistics
 {
-    class UserRepository : AbstractRepository, IRepository<User> , IUserRepository
+    class UserRepository : AbstractRepository<User>, IUserRepository
     {
         public UserRepository(MyContext context)
         {
             this.context = context;
         }
 
-        public void Add(User item)
-        {
-            context.Users.Add(item);
-            context.SaveChanges();
-        }
-
-        public void Delete(int id)
-        {
-            User user = context.Users.Find(id);
-            if (user != null)
-            {
-                context.Users.Remove(user);
-            }
-            context.SaveChanges();
-        }
-
-        public User Get(int id)
-        {
-            return context.Users.Find(id);
-        }
-
-        public IEnumerable<User> GetAll()
-        {
-            return context.Users;
-        }
-
-        public void Update(User item)
+        public override void Update(User item)
         {
             User oldUser;
             oldUser = context.Users.Where(x => x.UserId == item.UserId).FirstOrDefault();

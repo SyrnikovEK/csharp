@@ -7,35 +7,14 @@ using System.Threading.Tasks;
 
 namespace FightClubStatistics
 {
-    class TransactionRepository : AbstractRepository, IRepository<Transaction> , ITransactionRepository
+    class TransactionRepository : AbstractRepository<Transaction>, ITransactionRepository
     {
-        public void Add(Transaction item)
+        public TransactionRepository()
         {
-            context.Transactions.Add(item);
-            context.SaveChanges();
+            MyContext context = new MyContext();
         }
-
-        public void Delete(int id)
-        {
-            Transaction transaction = context.Transactions.Find(id);
-            if (transaction != null)
-            {
-                context.Transactions.Remove(transaction);
-                context.SaveChanges();
-            }
-        }
-
-        public Transaction Get(int id)
-        {
-            return context.Transactions.Find(id);
-        }
-
-        public IEnumerable<Transaction> GetAll()
-        {
-            return context.Transactions;
-        }
-
-        public void Update(Transaction item)
+        
+        public override void Update(Transaction item)
         {
             Transaction oldTranasction;
             oldTranasction = context.Transactions.Where(x => x.TransactionId == item.TransactionId).FirstOrDefault();

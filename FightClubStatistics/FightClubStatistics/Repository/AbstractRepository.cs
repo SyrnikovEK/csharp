@@ -8,7 +8,7 @@ using FightClubStatistics;
 
 namespace FightClubStatistics
 {
-    public abstract class AbstractRepository//<T> : IRepository<T> where T : class
+    public abstract class AbstractRepository<T> : IRepository<T> where T : class
     {
         protected MyContext context;
         public AbstractRepository()
@@ -20,35 +20,40 @@ namespace FightClubStatistics
             this.context = context;
         }
 
-        //public void Add(T item)
-        //{
-        //    context.Set<T>().Add(item);
-        //    //db.Set<T>().Add(item);
-        //}
+        public virtual void Add(T item)
+        {
+            context.Set<T>().Add(item);
+            context.SaveChanges();
+        }
 
-        //public void Delete(int id)
-        //{
-        //    throw new NotImplementedException();
-        //}
+        public virtual void Delete(int id)
+        {
+            T element = context.Set<T>().Find(id);
+            if (element != null)
+            {
+                context.Set<T>().Remove(element);
+            }
+            context.SaveChanges();
+        }
 
-        //public T Get(int id)
-        //{
-        //    throw new NotImplementedException();
-        //}
+        public virtual T Get(int id)
+        {
+            return context.Set<T>().Find(id);
+        }
 
-        //public IEnumerable<T> GetAll()
-        //{
-        //    throw new NotImplementedException();
-        //}
+        public virtual IEnumerable<T> GetAll()
+        {
+            return context.Set<T>();
+        }
 
-        public void Save()
+        public virtual void Save()
         {
             context.SaveChanges();
         }
 
-        //public void Update(T item)
-        //{
-        //    throw new NotImplementedException();
-        //}
+        public virtual void Update(T item)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
