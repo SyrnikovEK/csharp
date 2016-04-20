@@ -6,31 +6,11 @@ using System.Threading.Tasks;
 
 namespace FirTreeProject
 {
-    public enum TreeColor
-    {
-        Green,
-        Yellow,
-        Red,
-        Brown,
-        LightGreen,
-        DarkGreen
-    }
-    public enum TreeType
-    {
-        FirTree,
-        Oak
-    }
-    public enum TreeShape
-    {
-        Shapely,
-        Wide
-    }
     public interface ITree
     {
         double Height { get; }
-        double GrowingSpeed { get; set; }
+        double GrowthSpeed { get; set; }
         TreeColor Color { get; }
-        TreeType Type { get; }
         TreeShape Shape { get; }
 
         void GrowUp();

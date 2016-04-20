@@ -6,11 +6,7 @@ using System.Threading.Tasks;
 
 namespace FirTreeProject
 {
-    class Program
+    interface IFirTree : ITree
     {
-        static void Main(string[] args)
-        {
-            
-        }
     }
 }

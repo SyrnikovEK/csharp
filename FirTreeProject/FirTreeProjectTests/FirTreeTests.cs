@@ -31,14 +31,14 @@ namespace FirTreeProjectTests
         }
 
         [Test]
-        public void ChangeGrowingSpeed()
+        public void ChangeGrowthSpeed()
         {
             //arrange
             FirTree firTree = new FirTree();
 
             //act
             firTree.GrowUp(10.0);
-            firTree.GrowingSpeed = 1.3;
+            firTree.GrowthSpeed = 1.3;
             firTree.GrowUp();
 
             //assert
@@ -65,11 +65,15 @@ namespace FirTreeProjectTests
             testForest.AddTree(new FirTree());
 
             //act
-            //testForest.ChangeSeason();
+            while (NatureEnvironment.CurrentSeason != Season.Winter)
+            {
+                NatureEnvironment.ChangeSeason();
+            }
 
             //assert
-            Assert.AreEqual(TreeShape.Shapely , testForest.GetTree(TreeType.FirTree).Shape);
-            Assert.AreEqual(TreeColor.Green, testForest.GetTree(TreeType.FirTree).Color);
+            Assert.AreEqual(Season.Winter, NatureEnvironment.CurrentSeason);
+            Assert.AreEqual(TreeShape.Shapely , testForest.Trees.LastOrDefault(x => x is FirTree).Shape);
+            Assert.AreEqual(TreeColor.Green, testForest.Trees.LastOrDefault(x => x is FirTree).Color);
         }
 
         [Test]
@@ -80,12 +84,13 @@ namespace FirTreeProjectTests
             testForest.AddTree(new FirTree());
 
             //act
-            testForest.ChangeSeason();
-            testForest.ChangeSeason();
+            NatureEnvironment.ChangeSeason();
+            NatureEnvironment.ChangeSeason();
 
             //assert
-            Assert.AreEqual(TreeShape.Shapely, testForest.GetTree(TreeType.FirTree).Shape);
-            Assert.AreEqual(TreeColor.Green, testForest.GetTree(TreeType.FirTree).Color);
+            Assert.AreEqual(Season.Summer, NatureEnvironment.CurrentSeason);
+            Assert.AreEqual(TreeShape.Shapely, testForest.Trees.LastOrDefault(x => x is FirTree).Shape);
+            Assert.AreEqual(TreeColor.Green, testForest.Trees.LastOrDefault(x => x is FirTree).Color);
         }
     }
 }

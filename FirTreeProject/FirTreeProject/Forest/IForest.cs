@@ -6,20 +6,11 @@ using System.Threading.Tasks;
 
 namespace FirTreeProject
 {
-    public enum Season
-    {
-        Winter,
-        Spring,
-        Summer,
-        Autumn,
-    }
     public interface IForest
     {
+        List<ITree> Trees { get; }
         int TreeCount { get; }
-        Season CurrentSeason { get; }
 
         void AddTree(ITree tree);
-        ITree GetTree(TreeType treeType);
-        void ChangeSeason();
     }
 }

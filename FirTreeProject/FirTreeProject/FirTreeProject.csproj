@@ -43,13 +43,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AbstractTree.cs" />
-    <Compile Include="FirTree.cs" />
-    <Compile Include="Forest.cs" />
-    <Compile Include="IForest.cs" />
-    <Compile Include="ITree.cs" />
+    <Compile Include="Environment\NatureEnvironmentSettings.cs" />
+    <Compile Include="Trees\AbstractTree.cs" />
+    <Compile Include="Environment\NatureEnvironment.cs" />
+    <Compile Include="Trees\FirTree.cs" />
+    <Compile Include="Forest\Forest.cs" />
+    <Compile Include="Trees\IFirTree.cs" />
+    <Compile Include="Forest\IForest.cs" />
+    <Compile Include="Trees\ITree.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Trees\TreeSettings.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

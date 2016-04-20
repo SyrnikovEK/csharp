@@ -21,67 +21,75 @@ namespace FirTreeProjectTests
         public void FirTreeWasBornInForest()
         {
             //arrange
-            Forest testForest = new Forest();
+            IForest testForest = new Forest();
 
             //act
             testForest.AddTree(new FirTree());
 
             //assert
             Assert.AreEqual(1, testForest.TreeCount);
+            Assert.IsTrue(testForest.Trees.FirstOrDefault() is FirTree);
         }
 
         [Test]
         public void ChangeSeason()
         {
             //arrange
-            Forest testForest = new Forest();
-            testForest.AddTree(new FirTree());
+            while (NatureEnvironment.CurrentSeason != Season.Winter)
+            {
+                NatureEnvironment.ChangeSeason();
+            }
 
             //act
-            testForest.ChangeSeason();
+            NatureEnvironment.ChangeSeason();
 
             //assert
-            Assert.AreEqual(Season.Spring , testForest.CurrentSeason);
+            Assert.AreEqual(Season.Spring , NatureEnvironment.CurrentSeason);
         }
 
         [Test]
         public void ChangeSeasonOneYear()
         {
             //arrange
-            Forest testForest = new Forest();
-            testForest.AddTree(new FirTree());
+            while (NatureEnvironment.CurrentSeason != Season.Winter)
+            {
+                NatureEnvironment.ChangeSeason();
+            }
+            Season seasonYearAgo = NatureEnvironment.CurrentSeason;
 
             //act
-            testForest.ChangeSeason();
-            testForest.ChangeSeason();
-            testForest.ChangeSeason();
-            testForest.ChangeSeason();
+            NatureEnvironment.ChangeSeason();
+            NatureEnvironment.ChangeSeason();
+            NatureEnvironment.ChangeSeason();
+            NatureEnvironment.ChangeSeason();
 
             //assert
-            Assert.AreEqual(Season.Winter, testForest.CurrentSeason);
-            //Assert.AreEqual(TreeShape.Shapely , testForest.GetTree(TreeType.FirTree).Shape);
-            //Assert.AreEqual(TreeColor.Green, testForest.GetTree(TreeType.FirTree).Color);
+            Assert.AreEqual(seasonYearAgo, NatureEnvironment.CurrentSeason);
         }
 
         [Test]
         public void AllUseCase()
         {
-            Forest testForest = new Forest();
+            IForest testForest = new Forest();
             testForest.AddTree(new FirTree());
+            while (NatureEnvironment.CurrentSeason != Season.Winter)
+            {
+                NatureEnvironment.ChangeSeason();
+            }
 
             Assert.AreEqual(1 , testForest.TreeCount);  // В лесу родилась
-            Assert.AreEqual(TreeType.FirTree, testForest.GetTree(TreeType.FirTree).Type);  // ёлочка
-            Assert.AreEqual(Season.Winter , testForest.CurrentSeason);  // Зимой
-            Assert.AreEqual(TreeShape.Shapely, testForest.GetTree(TreeType.FirTree).Shape);  // стройная
-            Assert.AreEqual(TreeColor.Green, testForest.GetTree(TreeType.FirTree).Color);  // зеленая была
+            Assert.IsTrue(testForest.Trees.LastOrDefault() is FirTree);  // ёлочка
+            Assert.AreEqual(Season.Winter , NatureEnvironment.CurrentSeason);  // Зимой
+            Assert.AreEqual(TreeShape.Shapely, testForest.Trees.LastOrDefault(x => x is FirTree).Shape);  // стройная
+            Assert.AreEqual(TreeColor.Green, testForest.Trees.LastOrDefault(x => x is FirTree).Color);  // зеленая была
 
-            testForest.ChangeSeason();
-            testForest.ChangeSeason();
+            NatureEnvironment.ChangeSeason();
+            NatureEnvironment.ChangeSeason();
 
-            Assert.AreEqual(testForest.GetTree(TreeType.FirTree).GrowingSpeed * 2, testForest.GetTree(TreeType.FirTree).Height);  // В лесу она росла
-            Assert.AreEqual(Season.Summer, testForest.CurrentSeason);  // и летом
-            Assert.AreEqual(TreeShape.Shapely, testForest.GetTree(TreeType.FirTree).Shape);  // стройная
-            Assert.AreEqual(TreeColor.Green, testForest.GetTree(TreeType.FirTree).Color);  // зеленая была           
+            Assert.AreEqual(testForest.Trees.LastOrDefault(x => x is FirTree).GrowthSpeed * 2, testForest.Trees.LastOrDefault(x => x is FirTree).Height);  // В лесу она росла
+            Assert.AreEqual(Season.Summer, NatureEnvironment.CurrentSeason);  // и летом
+            Assert.AreEqual(TreeShape.Shapely, testForest.Trees.LastOrDefault(x => x is FirTree).Shape);  // стройная
+            Assert.AreEqual(TreeColor.Green, testForest.Trees.LastOrDefault(x => x is FirTree).Color);  // зеленая была           
         }
     }
 }

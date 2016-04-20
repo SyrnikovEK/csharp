@@ -6,11 +6,14 @@ using System.Threading.Tasks;
 
 namespace FirTreeProject
 {
-    class Program
+    public enum Season
     {
-        static void Main(string[] args)
-        {
-            
-        }
+        Winter,
+        Spring,
+        Summer,
+        Autumn,
     }
+    //class EnvironmentSettings
+    //{
+    //}
 }

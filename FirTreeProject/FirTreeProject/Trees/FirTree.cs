@@ -6,19 +6,18 @@ using System.Threading.Tasks;
 
 namespace FirTreeProject
 {
-    public class FirTree : AbstractTree , ITree
+    public class FirTree : AbstractTree , IFirTree
     {
         public FirTree()
         {
             height = 0;
             color = TreeColor.Green;
-            type = TreeType.FirTree;
             shape = TreeShape.Shapely;
         }
 
         public override void ChangeColor(Season season)
         {
-            color = TreeColor.Green;
+            //color = TreeColor.Green;
         }
     }
 }

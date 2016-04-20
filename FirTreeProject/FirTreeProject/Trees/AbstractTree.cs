@@ -9,9 +9,8 @@ namespace FirTreeProject
     public abstract class AbstractTree : ITree
     {
         protected double height;
-        protected double growingSpeed;
+        protected double growthSpeed = 10;
         protected TreeColor color;
-        protected TreeType type;
         protected TreeShape shape;
 
 
@@ -22,15 +21,22 @@ namespace FirTreeProject
                 return height;
             }
         }
-        public double GrowingSpeed
+        public double GrowthSpeed
         {
             get
             {
-                return growingSpeed;
+                return growthSpeed;
             }
             set
             {
-                growingSpeed = value;
+                if (value > 0)
+                {
+                    growthSpeed = value;
+                }
+                else
+                {
+                    growthSpeed = 0;
+                }
             }
         }
         public TreeColor Color
@@ -38,13 +44,6 @@ namespace FirTreeProject
             get
             {
                 return color;
-            }
-        }
-        public TreeType Type
-        {
-            get
-            {
-                return type;
             }
         }
         public TreeShape Shape
@@ -62,7 +61,7 @@ namespace FirTreeProject
 
         public virtual void GrowUp()
         {
-            height += growingSpeed;
+            GrowUp(growthSpeed);
         }
 
         public virtual void ChangeColor(Season season)
@@ -91,7 +90,7 @@ namespace FirTreeProject
                     }
                 default:
                     {
-                        break;
+                        throw new Exception();
                     }
             }
         }
