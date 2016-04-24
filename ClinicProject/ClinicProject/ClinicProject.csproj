@@ -51,7 +51,7 @@
     <Compile Include="Doctors\Dentist.cs" />
     <Compile Include="Patient\Diagnosis.cs" />
     <Compile Include="Doctors\ENT.cs" />
-    <Compile Include="Patient\Human.cs" />
+    <Compile Include="Patient\Human\Human.cs" />
     <Compile Include="Doctors\Interfaces\IDentist.cs" />
     <Compile Include="Doctors\Interfaces\IDoctor.cs" />
     <Compile Include="Doctors\Interfaces\IENT.cs" />
@@ -61,7 +61,7 @@
     <Compile Include="Doctors\Interfaces\IOrthopedist.cs" />
     <Compile Include="Doctors\Orthopedist.cs" />
     <Compile Include="InsuranceCompany\InsuranceCompany.cs" />
-    <Compile Include="Patient\IHuman.cs" />
+    <Compile Include="Patient\Human\IHuman.cs" />
     <Compile Include="Patient\IPatient.cs" />
     <Compile Include="Patient\Patient.cs" />
     <Compile Include="Program.cs" />

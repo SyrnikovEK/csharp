@@ -15,6 +15,7 @@ namespace ClinicProjectTests
         public void UseCaseTest()
         {
             // arrange
+
             IClinic testClinic = new Clinic();
             IDoctor testDoctor = new Dentist();
             IPatient testPatient = new Patient();
@@ -39,11 +40,14 @@ namespace ClinicProjectTests
             Bill billForPatient = testClinic.GiveBill(appointmentForPatient);
 
             //Страховая компания оплачивает счет.
-            testInsuranceCompany.PayBill(testPatient.Insurance, billForPatient);
+            testPatient.PayBill();
+            //testInsuranceCompany.PayBill(testPatient.Insurance, billForPatient);
 
+            //После оплаты больница начинает лечение.
+            testClinic.Cure(testPatient, diagnosisForPatient, appointmentForPatient);
 
             // assert
-
+            
 
         }
     }

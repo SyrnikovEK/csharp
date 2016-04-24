@@ -6,8 +6,8 @@ namespace ClinicProject
     public class Clinic : IClinic
     {
         public decimal Balance { get; set; }
-        public List<IDoctor> Doctors { get; set; }
-        public List<IPatient> Patients { get; set; }
+        public List<IDoctor> Doctors { get; }
+        public List<IPatient> Patients { get; }
 
         public void AddDoctor(IDoctor doctor)
         {

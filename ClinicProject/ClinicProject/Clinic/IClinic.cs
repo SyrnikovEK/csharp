@@ -5,8 +5,8 @@ namespace ClinicProject
     public interface IClinic
     {
         decimal Balance { get; set; }
-        List<IDoctor> Doctors { get; set; }
-        List<IPatient> Patients { get; set; }
+        List<IDoctor> Doctors { get; }
+        List<IPatient> Patients { get; }
 
         void AddDoctor(IDoctor doctor);
         void AddPatient(IPatient patient);

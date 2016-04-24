@@ -8,7 +8,7 @@ namespace ClinicProject
 {
     public interface IInsuranceCompany
     {
-        List<InsuranceAccount> Clients { get; set; }
+        List<InsuranceAccount> Clients { get; }
 
         void AddClient(InsuranceAccount client);
         void PayBill(InsuranceAccount client , Bill bill);

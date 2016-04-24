@@ -8,7 +8,7 @@ namespace ClinicProject
 {
     public class InsuranceCompany : IInsuranceCompany
     {
-        public List<InsuranceAccount> Clients { get; set; }
+        public List<InsuranceAccount> Clients { get; }
 
         public void AddClient(InsuranceAccount client)
         {
