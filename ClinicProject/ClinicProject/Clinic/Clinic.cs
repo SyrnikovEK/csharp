@@ -19,9 +19,26 @@ namespace ClinicProject
             Patients.Add(patient);
         }
 
+        public IDoctor GiveDoctor(IPatient patient)
+        {
+            IDoctor doctor = null;
+            // magic
+            return doctor;
+        }
+
+        public Bill GiveBill(Appointment appoitment)
+        {
+            return new Bill();
+        }
+
         public void Cure(IPatient patient, Diagnosis diagnosis, Appointment appoitment)
         {
-            //return null;
+            if (patient.IsBillPaid())
+            {
+                // magic
+            }
         }
+
+        
     }
 }

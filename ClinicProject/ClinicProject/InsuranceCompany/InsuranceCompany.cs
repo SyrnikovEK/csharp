@@ -12,10 +12,10 @@ namespace ClinicProject
 
         public void AddClient(InsuranceAccount client)
         {
-
+            Clients.Add(client);
         }
 
-        public void PayBill(IClinic clinic , InsuranceAccount client)
+        public void PayBill(InsuranceAccount client , Bill bill)
         {
 
         }

@@ -1,7 +1,6 @@
 ﻿namespace ClinicProject
 {
-    public enum Symptom
+    public class Bill
     {
-        Headache
     }
 }

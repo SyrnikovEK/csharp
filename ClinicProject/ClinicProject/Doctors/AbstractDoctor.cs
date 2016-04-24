@@ -10,11 +10,11 @@ namespace ClinicProject
     {
         public virtual Diagnosis Diagnosticate(Complaint complaint)
         {
-            return null;
+            return new Diagnosis();
         }      
         public virtual Appointment PrescribeAppointment(Diagnosis diagnosis)
         {
-            return null;
+            return new Appointment();
         }
     }
 }

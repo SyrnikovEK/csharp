@@ -11,6 +11,8 @@ namespace ClinicProject
         void AddDoctor(IDoctor doctor);
         void AddPatient(IPatient patient);
 
+        IDoctor GiveDoctor(IPatient patient);
+        Bill GiveBill(Appointment appoitment);
         void Cure(IPatient patient , Diagnosis diagnosis , Appointment appoitment);
     }
 }

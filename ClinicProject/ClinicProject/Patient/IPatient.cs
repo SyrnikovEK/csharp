@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace ClinicProject
 {
-    public interface IPatient
+    public interface IPatient : IHuman
     {
+        Bill PatientBill { get; set; }
+        Complaint PatientComplaint { get; set; }
+        bool IsBillPaid();
+        void PayBill();
     }
 }

@@ -46,6 +46,7 @@
     <Compile Include="Clinic\Clinic.cs" />
     <Compile Include="Doctors\AbstractDoctor.cs" />
     <Compile Include="Patient\Appointment.cs" />
+    <Compile Include="Patient\Bill.cs" />
     <Compile Include="Patient\Complaint.cs" />
     <Compile Include="Doctors\Dentist.cs" />
     <Compile Include="Patient\Diagnosis.cs" />
@@ -60,6 +61,7 @@
     <Compile Include="Doctors\Interfaces\IOrthopedist.cs" />
     <Compile Include="Doctors\Orthopedist.cs" />
     <Compile Include="InsuranceCompany\InsuranceCompany.cs" />
+    <Compile Include="Patient\IHuman.cs" />
     <Compile Include="Patient\IPatient.cs" />
     <Compile Include="Patient\Patient.cs" />
     <Compile Include="Program.cs" />
