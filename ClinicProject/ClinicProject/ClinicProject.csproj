@@ -45,7 +45,7 @@
   <ItemGroup>
     <Compile Include="Clinic\Clinic.cs" />
     <Compile Include="Doctors\AbstractDoctor.cs" />
-    <Compile Include="Patient\Appointment.cs" />
+    <Compile Include="Patient\Treatment.cs" />
     <Compile Include="Patient\Bill.cs" />
     <Compile Include="Patient\Complaint.cs" />
     <Compile Include="Doctors\Dentist.cs" />

@@ -11,6 +11,6 @@ namespace ClinicProject
         List<InsuranceAccount> Clients { get; }
 
         void AddClient(InsuranceAccount client);
-        void PayBill(InsuranceAccount client , Bill bill);
+        void PayBill(InsuranceAccount client , Bill bill , IClinic clinic);
     }
 }

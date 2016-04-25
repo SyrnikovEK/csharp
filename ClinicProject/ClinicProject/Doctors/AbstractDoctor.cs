@@ -12,9 +12,9 @@ namespace ClinicProject
         {
             return new Diagnosis();
         }      
-        public virtual Appointment PrescribeAppointment(Diagnosis diagnosis)
+        public virtual Treatment PrescribeTreatment(Diagnosis diagnosis)
         {
-            return new Appointment();
+            return new Treatment();
         }
     }
 }

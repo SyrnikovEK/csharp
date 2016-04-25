@@ -1,6 +1,6 @@
 ﻿namespace ClinicProject
 {
-    public class Appointment
+    public class Treatment
     {
     }
 }

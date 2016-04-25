@@ -15,9 +15,18 @@ namespace ClinicProject
             Clients.Add(client);
         }
 
-        public void PayBill(InsuranceAccount client , Bill bill)
+        public void PayBill(InsuranceAccount client , Bill bill , IClinic clinic)
         {
-
+            if (bill.Sum <= client.Balance)
+            {
+                clinic.Balance += bill.Sum;
+                client.Balance -= bill.Sum;
+                bill.IsPayed = true;
+            }
+            else
+            {
+                bill.IsPayed = false;
+            }
         }
     }
 }

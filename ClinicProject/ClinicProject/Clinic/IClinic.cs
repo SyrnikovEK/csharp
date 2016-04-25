@@ -12,7 +12,7 @@ namespace ClinicProject
         void AddPatient(IPatient patient);
 
         IDoctor GiveDoctor(IPatient patient);
-        Bill GiveBill(Appointment appoitment);
-        void Cure(IPatient patient , Diagnosis diagnosis , Appointment appoitment);
+        Bill GiveBill(Treatment appoitment);
+        void Cure(IPatient patient , Diagnosis diagnosis , Treatment appoitment);
     }
 }

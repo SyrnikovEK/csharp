@@ -9,6 +9,6 @@ namespace ClinicProject
     public interface IDoctor
     {
         Diagnosis Diagnosticate(Complaint complaint);
-        Appointment PrescribeAppointment(Diagnosis diagnosis);
+        Treatment PrescribeTreatment(Diagnosis diagnosis);
     }
 }

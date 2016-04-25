@@ -34,14 +34,14 @@ namespace ClinicProjectTests
 
             //Доктор ставит диагноз и выписывает назначение. 
             Diagnosis diagnosisForPatient = doctorForPatient.Diagnosticate(testPatient.PatientComplaint);
-            Appointment appointmentForPatient = doctorForPatient.PrescribeAppointment(diagnosisForPatient);
+            Treatment appointmentForPatient = doctorForPatient.PrescribeTreatment(diagnosisForPatient);
 
             //Больница выставляет счет страховой компании пациента.
             Bill billForPatient = testClinic.GiveBill(appointmentForPatient);
 
             //Страховая компания оплачивает счет.
-            testPatient.PayBill();
-            //testInsuranceCompany.PayBill(testPatient.Insurance, billForPatient);
+            testInsuranceCompany.PayBill(testPatient.Insurance, billForPatient);
+            //testPatient.PayBill();
 
             //После оплаты больница начинает лечение.
             testClinic.Cure(testPatient, diagnosisForPatient, appointmentForPatient);

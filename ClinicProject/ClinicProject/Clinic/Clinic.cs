@@ -26,14 +26,14 @@ namespace ClinicProject
             return doctor;
         }
 
-        public Bill GiveBill(Appointment appoitment)
+        public Bill GiveBill(Treatment appoitment)
         {
             return new Bill();
         }
 
-        public void Cure(IPatient patient, Diagnosis diagnosis, Appointment appoitment)
+        public void Cure(IPatient patient, Diagnosis diagnosis, Treatment appoitment)
         {
-            if (patient.IsBillPaid())
+            if (patient.PatientBill.IsPayed)
             {
                 // magic
             }

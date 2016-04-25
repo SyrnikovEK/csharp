@@ -12,20 +12,9 @@ namespace ClinicProject
 
         public Complaint PatientComplaint { get; set; }
 
-        public bool IsBillPaid()
-        {
-            bool isPaid = false;
-            if (PatientBill == null)
-            {
-                isPaid = true;
-            }
-
-            return isPaid;
-        }
-
         public void PayBill()
         {
-            // use InsuranceCompany
+            // use InsuranceCompany?
         }
     }
 }
