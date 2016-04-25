@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ClinicProject
 {
-    public interface IDentist
+    public interface IDentist : IDoctor
     {
     }
 }

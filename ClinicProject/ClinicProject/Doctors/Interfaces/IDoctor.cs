@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ClinicProject
 {
-    public interface IDoctor
+    public interface IDoctor : IHuman
     {
         Diagnosis Diagnosticate(Complaint complaint);
         Treatment PrescribeTreatment(Diagnosis diagnosis);
