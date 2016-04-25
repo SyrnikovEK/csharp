@@ -18,17 +18,6 @@ namespace ClinicProject
 
         public void PayBill(InsuranceAccount client , Bill bill)
         {
-            //if (bill.Sum <= client.Balance)
-            //{
-            //    clinic.Balance += bill.Sum;
-            //    client.Balance -= bill.Sum;
-            //    bill.IsPayed = true;
-            //    BillIsPayed.Invoke(client);
-            //}
-            //else
-            //{
-            //    bill.IsPayed = false;
-            //}
             BillIsPayed.Invoke(client);
         }
     }
