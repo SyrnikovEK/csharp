@@ -1,16 +1,18 @@
-﻿using System;
+﻿using FightClubPractice.Data;
+using FightClubPractice.Game;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace fight_club
+namespace FightClubPractice.UI.CombatScene
 {
     public class CombatScenePresenter
     {
         #region Fields
         CombatUserControl view = null;
-        public GameControl game; // = new GameControl();
+        public GameController game; // = new GameControl();
         public GameType gameType;
         public AbstractPlayer player1;
         AbstractPlayer player2;
@@ -19,17 +21,18 @@ namespace fight_club
         #region Constructors
         public CombatScenePresenter(CombatUserControl view, AbstractPlayer player1, AbstractPlayer player2)
         {
-            game = new GameControl(player1, player2);
-            this.view = view;
-
-            if (game.player2 is NPC)
+            if (player2 == null)
             {
+                game = new GameController(player1);
                 gameType = GameType.PvE;
             }
             else
             {
+                game = new GameController(player1, player2);
                 gameType = GameType.PvP;
             }
+            
+            this.view = view;
             DrawPlayersInfo();
         }
         #endregion
@@ -44,7 +47,7 @@ namespace fight_club
         {
             view.DrawTextLog(game.Turn((BodyPart)player1punch, (BodyPart)player1block, (BodyPart)player2punch, (BodyPart)player2block));
             DrawPlayersInfo();
-        } 
+        }
         #endregion
     }
 }
