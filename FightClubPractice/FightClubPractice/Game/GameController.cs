@@ -1,4 +1,5 @@
 ﻿using FightClubPractice.Data;
+using FightClubPractice.Repository;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,6 +14,7 @@ namespace FightClubPractice.Game
         public AbstractPlayer player1;
         public AbstractPlayer player2;
         public CombatLog combatLog = new CombatLog();
+        PlayerRepository repos = new PlayerRepository();
 
         string Blockstring = "";
         string PunchString = "";
@@ -25,6 +27,7 @@ namespace FightClubPractice.Game
         public GameController(AbstractPlayer player1)
         {
             this.player1 = new Player(player1.Name, player1.Straight, player1.Agility, player1.Stamina, player1.Exp);
+            (this.player1 as Player).PlayerId = (player1 as Player).PlayerId;
             this.player2 = new NPC(player1.Straight + player1.Agility + player1.Stamina);  // special Bot
 
             //combatLog.FirstPlayer = (Player)player1;
@@ -34,7 +37,9 @@ namespace FightClubPractice.Game
         public GameController(AbstractPlayer player1, AbstractPlayer player2)
         {
             this.player1 = new Player(player1.Name, player1.Straight, player1.Agility, player1.Stamina, player1.Exp);
+            (this.player1 as Player).PlayerId = (player1 as Player).PlayerId;
             this.player2 = new Player(player2.Name, player2.Straight, player2.Agility, player2.Stamina, player2.Exp);
+            (this.player2 as Player).PlayerId = (player2 as Player).PlayerId;
 
             //combatLog.FirstPlayer = (Player)player1;
             //combatLog.SecondPlayer = (Player)player2;
@@ -77,9 +82,13 @@ namespace FightClubPractice.Game
             {
                 if (!(player2 is NPC))
                 {
+                    int oldExp = player2.Exp;
                     player2.AddExp((int)(player1.MaxHp * ((double)(player1.Straight + player1.Stamina + player1.Agility) / (double)(player2.Straight + player2.Stamina + player2.Agility))));
                     combatLog.CombatTime = DateTime.Now;
                     combatLog.Exp = 0;
+                    repos.GetAll().Where(x => x.PlayerDTOId == (player2 as Player).PlayerId).First().Exp = player2.Exp;
+                    repos.Save();
+                    //repos.Update((Player)player2);
                     // need save
                 }
                 combatLog.Result = GameResult.Loss;
@@ -91,6 +100,10 @@ namespace FightClubPractice.Game
                 combatLog.CombatTime = DateTime.Now;
                 combatLog.Result = GameResult.Win;
                 combatLog.Exp = player1.Exp - oldExp;
+                PlayerDTO pl = repos.GetAll().Where(x => x.PlayerDTOId == (player1 as Player).PlayerId).First();
+                pl.Exp = player1.Exp;
+                repos.Save();
+                //repos.Update((Player)player1);
                 // need save
             }
             if ((player1.Hp <= 0) && (player2.Hp <= 0))  // draw

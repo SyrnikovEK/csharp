@@ -52,6 +52,7 @@
     <Compile Include="game\Dice.cs" />
     <Compile Include="data\IContainer.cs" />
     <Compile Include="data\IPlayersContainer.cs" />
+    <Compile Include="game\GameType.cs" />
     <Compile Include="UI\Extensions.cs" />
     <Compile Include="game\FightPapams.cs" />
     <Compile Include="game\IPlayer.cs" />

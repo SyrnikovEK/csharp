@@ -13,12 +13,12 @@ namespace FightClubPractice.Context
     {
         public FightClubContext()
         {
-            Database.SetInitializer(new FightClubContextInitializer());
+            //Database.SetInitializer(new FightClubContextInitializer());
         }
 
         public DbSet<User> Users { get; set; }
         public DbSet<CombatLog> CombatLogs { get; set; }
         public DbSet<HitLog> HitLogs { get; set; }
-        public DbSet<Player> Players { get; set; }
+        public DbSet<PlayerDTO> Players { get; set; }
     }
 }

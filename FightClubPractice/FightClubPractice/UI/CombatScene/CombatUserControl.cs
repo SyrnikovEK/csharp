@@ -23,7 +23,7 @@ namespace FightClubPractice.UI.CombatScene
         public BodyPart secondPlBlockChoosenPart;
         Player player1;
         Player player2;
-        PlayerRepository repos;
+        //PlayerRepository repos;
         #endregion
 
         #region Constructors
@@ -36,7 +36,7 @@ namespace FightClubPractice.UI.CombatScene
         public CombatUserControl(object par1)
         {
             InitializeComponent();
-            repos = new PlayerRepository();
+            //repos = new PlayerRepository();
             this.player1 = (Player)par1;
             presenter = new CombatScenePresenter(this, (AbstractPlayer)par1, null);
             if (presenter.gameType == GameType.PvE)
@@ -48,7 +48,7 @@ namespace FightClubPractice.UI.CombatScene
         public CombatUserControl(object par1, object par2)
         {
             InitializeComponent();
-            repos = new PlayerRepository();
+            //repos = new PlayerRepository();
             this.player1 = (Player)par1;
             presenter = new CombatScenePresenter(this, (AbstractPlayer)par1, (AbstractPlayer)par2);
             if (presenter.gameType == GameType.PvE)
@@ -97,7 +97,8 @@ namespace FightClubPractice.UI.CombatScene
             {
                 textlog.AppendText("Player " + player1.Name + " " + presenter.game.combatLog.Result + Environment.NewLine);
                 MessageBox.Show("Player " + player1.Name + " " + presenter.game.combatLog.Result);
-                SwitchScene(Scene.Menu, repos.Get(player1.Name));  // kostil
+                player1.Exp += presenter.game.combatLog.Exp;
+                SwitchScene(Scene.Menu, player1);  // kostil
             }
             if (presenter.gameType == GameType.PvE)
             {

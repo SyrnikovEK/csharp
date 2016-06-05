@@ -11,7 +11,16 @@ namespace FightClubPractice.Context
     {
         protected override void Seed(FightClubContext context)
         {
-            context.Players.Add(new Game.Player("pla", 3, 3, 3));
+            context.Players.Add(new Data.PlayerDTO
+            {
+                Name = "Ted",
+                Exp = 120,
+                Level = 1,
+                Hp = 115,
+                Agility = 2,
+                Stamina = 3,
+                Straight = 3
+            });
 
             base.Seed(context);
         }

@@ -61,6 +61,7 @@
     <Compile Include="Data\GameResult.cs" />
     <Compile Include="Data\GameType.cs" />
     <Compile Include="Data\HitLog.cs" />
+    <Compile Include="Data\PlayerDTO.cs" />
     <Compile Include="Data\TurnResult.cs" />
     <Compile Include="Data\User.cs" />
     <Compile Include="MainForm.cs">

@@ -1,5 +1,6 @@
 ﻿using FightClubPractice.Data;
 using FightClubPractice.Game;
+using FightClubPractice.Repository;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,6 +17,7 @@ namespace FightClubPractice.UI.CombatScene
         public GameType gameType;
         public AbstractPlayer player1;
         AbstractPlayer player2;
+        public PlayerRepository repos = new PlayerRepository();
         #endregion
 
         #region Constructors
