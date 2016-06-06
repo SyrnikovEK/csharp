@@ -15,6 +15,7 @@ namespace FightClubPractice.Game
         public AbstractPlayer player2;
         public CombatLog combatLog = new CombatLog();
         PlayerRepository repos = new PlayerRepository();
+        CombatLogRepository combatLogRep = new CombatLogRepository();
 
         string Blockstring = "";
         string PunchString = "";
@@ -30,7 +31,7 @@ namespace FightClubPractice.Game
             (this.player1 as Player).PlayerId = (player1 as Player).PlayerId;
             this.player2 = new NPC(player1.Straight + player1.Agility + player1.Stamina);  // special Bot
 
-            //combatLog.FirstPlayer = (Player)player1;
+            combatLog.PlayerId = (player1 as Player).PlayerId;
             //combatLog.SecondPlayer = (Player)player2;
             combatLog.GameType = GameType.PvE;
         }
@@ -41,7 +42,7 @@ namespace FightClubPractice.Game
             this.player2 = new Player(player2.Name, player2.Straight, player2.Agility, player2.Stamina, player2.Exp);
             (this.player2 as Player).PlayerId = (player2 as Player).PlayerId;
 
-            //combatLog.FirstPlayer = (Player)player1;
+            combatLog.PlayerId = (player1 as Player).PlayerId;
             //combatLog.SecondPlayer = (Player)player2;
             combatLog.GameType = GameType.PvP;
         }
@@ -88,6 +89,8 @@ namespace FightClubPractice.Game
                     combatLog.Exp = 0;
                     repos.GetAll().Where(x => x.PlayerDTOId == (player2 as Player).PlayerId).First().Exp = player2.Exp;
                     repos.Save();
+                    
+                    combatLogRep.Add(combatLog);
                     //repos.Update((Player)player2);
                     // need save
                 }
@@ -103,6 +106,8 @@ namespace FightClubPractice.Game
                 PlayerDTO pl = repos.GetAll().Where(x => x.PlayerDTOId == (player1 as Player).PlayerId).First();
                 pl.Exp = player1.Exp;
                 repos.Save();
+
+                combatLogRep.Add(combatLog);
                 //repos.Update((Player)player1);
                 // need save
             }
@@ -111,9 +116,14 @@ namespace FightClubPractice.Game
                 combatLog.CombatTime = DateTime.Now;
                 combatLog.Result = GameResult.Draw;
                 combatLog.Exp = 0;
+
+                combatLogRep.Add(combatLog);
                 // need save
             }
 
+            log.CombatLogId = combatLog.CombatLogId;
+            HitLogRepository hitLogRep = new HitLogRepository();
+            hitLogRep.Add(log);
             return log;
         }
 

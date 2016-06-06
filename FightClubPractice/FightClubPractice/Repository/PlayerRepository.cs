@@ -56,5 +56,20 @@ namespace FightClubPractice.Repository
             }
             return returnedList;
         }
+
+        public override void Update(PlayerDTO item)
+        {
+            PlayerDTO oldPlayer;
+            oldPlayer = context.Players.Where(x => x.PlayerDTOId == item.PlayerDTOId).FirstOrDefault();
+            oldPlayer.Name = item.Name;
+            oldPlayer.Level = item.Level;
+            oldPlayer.Exp = item.Exp;
+            oldPlayer.Hp = item.Hp;
+            oldPlayer.Straight = item.Straight;
+            oldPlayer.Stamina = item.Stamina;
+            oldPlayer.Agility = item.Agility;
+
+            context.SaveChanges();
+        }
     }
 }

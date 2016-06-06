@@ -44,7 +44,6 @@ namespace FightClubPractice.UI.PlayerCreationScene
                     {
                         Player pl = new Player(NewPlayerTextBox.Text, str, agi, stm);
                         repos.Add(pl);
-
                         SwitchScene(Scene.Menu, pl);
                     }
                     else

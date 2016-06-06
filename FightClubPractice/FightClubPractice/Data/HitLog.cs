@@ -11,7 +11,7 @@ namespace FightClubPractice.Data
     {
         public int HitLogId { get; set; }
 
-        int CombatLogId { get; set; }
+        public int CombatLogId { get; set; }
 
         public int FirstPalyerHitValue { get; set; }
         public int FirstPlayerCurrentHp { get; set; }

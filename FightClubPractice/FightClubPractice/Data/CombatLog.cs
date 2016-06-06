@@ -12,8 +12,6 @@ namespace FightClubPractice.Data
         public int CombatLogId { get; set; }
         public GameType GameType { get; set; }
         public int PlayerId { get; set; }
-        //public virtual Player FirstPlayer { get; set; }
-        //public virtual Player SecondPlayer { get; set; }
         public virtual List<HitLog> CombatHitLogs { get; set; }
         public GameResult Result { get; set; }
         public int Exp { get; set; }

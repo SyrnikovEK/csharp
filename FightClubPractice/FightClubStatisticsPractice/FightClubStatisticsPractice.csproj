@@ -33,7 +33,16 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.0.0\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.0.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -54,6 +63,48 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UI\BaseUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\CombatLogScene\CombatLogPresenter.cs" />
+    <Compile Include="UI\CombatLogScene\CombatLogUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\CombatLogScene\CombatLogUserControl.Designer.cs">
+      <DependentUpon>CombatLogUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\HitLogScene\HitLogPresenter.cs" />
+    <Compile Include="UI\HitLogScene\HitLogUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\HitLogScene\HitLogUserControl.Designer.cs">
+      <DependentUpon>HitLogUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\IUserControl.cs" />
+    <Compile Include="UI\MenuScene\MenuPresenter.cs" />
+    <Compile Include="UI\MenuScene\MenuUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\MenuScene\MenuUserControl.Designer.cs">
+      <DependentUpon>MenuUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\PlayerScene\IPlayerControl.cs" />
+    <Compile Include="UI\PlayerScene\PlayerControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\PlayerScene\PlayerControl.Designer.cs">
+      <DependentUpon>PlayerControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\PlayerScene\PlayerEditControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\PlayerScene\PlayerEditControl.Designer.cs">
+      <DependentUpon>PlayerEditControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\PlayerScene\PlayerPresenter.cs" />
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -63,6 +114,22 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="UI\CombatLogScene\CombatLogUserControl.resx">
+      <DependentUpon>CombatLogUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\HitLogScene\HitLogUserControl.resx">
+      <DependentUpon>HitLogUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\MenuScene\MenuUserControl.resx">
+      <DependentUpon>MenuUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\PlayerScene\PlayerControl.resx">
+      <DependentUpon>PlayerControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\PlayerScene\PlayerEditControl.resx">
+      <DependentUpon>PlayerEditControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -75,6 +142,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Repository\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\FightClubPractice\FightClubPractice.csproj">
+      <Project>{15e61a9a-07d9-49d2-bacd-0dd18db688d0}</Project>
+      <Name>FightClubPractice</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

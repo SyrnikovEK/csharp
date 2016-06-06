@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using FightClubPractice.Repository;
 using FightClubPractice.Game;
+using FightClubPractice.Data;
 
 namespace FightClubPractice.UI.AutorizationScene
 {
@@ -22,8 +23,8 @@ namespace FightClubPractice.UI.AutorizationScene
         private void LoginButton_Click(object sender, EventArgs e)
         {
             PlayerRepository repos = new PlayerRepository();
-            //List<Player> plList = new List<Player>();
-            //plList = repos.GetAllPlayers().ToList();
+            List<PlayerDTO> plList = new List<PlayerDTO>();
+            plList = repos.GetAll().ToList();
             if (PlaerNameTextBox.Text != "")
             {
                 if (repos.IsExist(PlaerNameTextBox.Text))
